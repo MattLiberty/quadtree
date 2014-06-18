@@ -13,7 +13,7 @@ QuadTree tree;
 
 
 class Cell extends AbstractInt2DShape with CustomInt2DCorner
-    , Unit2DDiameter {
+    , UnitDiameter {
   Cell(int x, int y){
     this.setIntCorner(x, y);
   }

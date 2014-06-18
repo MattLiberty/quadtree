@@ -274,18 +274,18 @@ var $$ = {};
 ["_foreign_helper", "dart:_foreign_helper", , H, {
   "^": "",
   JS_CONST: {
-    "^": "Object;code-"
+    "^": "Object;code"
   }
 }],
 ["_interceptors", "dart:_interceptors", , J, {
   "^": "",
-  getInterceptor: [function(object) {
+  getInterceptor: function(object) {
     return void 0;
-  }, "call$1", "getInterceptor$closure", 2, 0, 0, 1, "getInterceptor"],
-  makeDispatchRecord: [function(interceptor, proto, extension, indexability) {
+  },
+  makeDispatchRecord: function(interceptor, proto, extension, indexability) {
     return {i: interceptor, p: proto, e: extension, x: indexability};
-  }, "call$4", "makeDispatchRecord$closure", 8, 0, 2, 3, 4, 5, 6, "makeDispatchRecord"],
-  getNativeInterceptor: [function(object) {
+  },
+  getNativeInterceptor: function(object) {
     var record, proto, objectProto, interceptor;
     record = object[init.dispatchPropertyName];
     if (record == null)
@@ -314,47 +314,47 @@ var $$ = {};
         return C.UnknownJavaScriptObject_methods;
     }
     return interceptor;
-  }, "call$1", "getNativeInterceptor$closure", 2, 0, 0, 1, "getNativeInterceptor"],
+  },
   Interceptor: {
     "^": "Object;",
-    $eq: [function(receiver, other) {
+    $eq: function(receiver, other) {
       return receiver === other;
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(receiver) {
+    },
+    get$hashCode: function(receiver) {
       return H.Primitives_objectHashCode(receiver);
-    }, null, null, 1, 0, 229, "hashCode"],
-    toString$0: [function(receiver) {
+    },
+    toString$0: function(receiver) {
       return H.Primitives_objectToString(receiver);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     "%": "CanvasGradient|CanvasPattern|CanvasRenderingContext|CanvasRenderingContext2D|DOMError|FileError|MediaError|MediaKeyError|Navigator|NavigatorUserMediaError|PositionError|SQLError|SVGAnimatedLength|SVGAnimatedLengthList|SVGAnimatedNumber|SVGAnimatedNumberList|SVGAnimatedString"
   },
   JSBool: {
     "^": "Interceptor;",
-    toString$0: [function(receiver) {
+    toString$0: function(receiver) {
       return String(receiver);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    get$hashCode: [function(receiver) {
+    },
+    get$hashCode: function(receiver) {
       return receiver ? 519018 : 218159;
-    }, null, null, 1, 0, 229, "hashCode"],
+    },
     $isbool: true
   },
   JSNull: {
     "^": "Interceptor;",
-    $eq: [function(receiver, other) {
+    $eq: function(receiver, other) {
       return null == other;
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    toString$0: [function(receiver) {
+    },
+    toString$0: function(receiver) {
       return "null";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    get$hashCode: [function(receiver) {
+    },
+    get$hashCode: function(receiver) {
       return 0;
-    }, null, null, 1, 0, 229, "hashCode"]
+    }
   },
   JavaScriptObject: {
     "^": "Interceptor;",
-    get$hashCode: [function(_) {
+    get$hashCode: function(_) {
       return 0;
-    }, null, null, 1, 0, 229, "hashCode"]
+    }
   },
   PlainJavaScriptObject: {
     "^": "JavaScriptObject;"
@@ -364,7 +364,7 @@ var $$ = {};
   },
   JSArray: {
     "^": "Interceptor;",
-    remove$1: [function(receiver, element) {
+    remove$1: function(receiver, element) {
       var i;
       if (!!receiver.fixed$length)
         H.throwExpression(P.UnsupportedError$("remove"));
@@ -374,65 +374,49 @@ var $$ = {};
           return true;
         }
       return false;
-    }, "call$1", "get$remove", 2, 0, 232, 233, "remove"],
-    forEach$1: [function(receiver, f) {
+    },
+    forEach$1: function(receiver, f) {
       return H.IterableMixinWorkaround_forEach(receiver, f);
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__void__E", void: true, args: [{func: "void__E", void: true, args: [E]}]};
-      }, this.$receiver, "JSArray");
-    }, 121, "forEach"],
-    elementAt$1: [function(receiver, index) {
+    },
+    elementAt$1: function(receiver, index) {
       if (index < 0 || index >= receiver.length)
         return H.ioore(receiver, index);
       return receiver[index];
-    }, "call$1", "get$elementAt", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E__int", ret: E, args: [P.$int]};
-      }, this.$receiver, "JSArray");
-    }, 43, "elementAt"],
-    contains$1: [function(receiver, other) {
+    },
+    contains$1: function(receiver, other) {
       var i;
       for (i = 0; i < receiver.length; ++i)
         if (J.$eq(receiver[i], other))
           return true;
       return false;
-    }, "call$1", "get$contains", 2, 0, 232, 203, "contains"],
-    toString$0: [function(receiver) {
+    },
+    toString$0: function(receiver) {
       return H.IterableMixinWorkaround_toStringIterable(receiver, "[", "]");
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    get$iterator: [function(receiver) {
+    },
+    get$iterator: function(receiver) {
       return new H.ListIterator(receiver, receiver.length, 0, null);
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "Iterator_", ret: [P.Iterator, E]};
-      }, this.$receiver, "JSArray");
-    }, "iterator"],
-    get$hashCode: [function(receiver) {
+    },
+    get$hashCode: function(receiver) {
       return H.Primitives_objectHashCode(receiver);
-    }, null, null, 1, 0, 229, "hashCode"],
-    get$length: [function(receiver) {
+    },
+    get$length: function(receiver) {
       return receiver.length;
-    }, null, null, 1, 0, 229, "length"],
-    set$length: [function(receiver, newLength) {
+    },
+    set$length: function(receiver, newLength) {
       if (newLength < 0)
         throw H.wrapException(P.RangeError$value(newLength));
       if (!!receiver.fixed$length)
         H.throwExpression(P.UnsupportedError$("set length"));
       receiver.length = newLength;
-    }, null, null, 3, 0, 234, 235, "length"],
-    $index: [function(receiver, index) {
+    },
+    $index: function(receiver, index) {
       if (typeof index !== "number" || Math.floor(index) !== index)
         throw H.wrapException(P.ArgumentError$(index));
       if (index >= receiver.length || index < 0)
         throw H.wrapException(P.RangeError$value(index));
       return receiver[index];
-    }, "call$1", "get$[]", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E__int", ret: E, args: [P.$int]};
-      }, this.$receiver, "JSArray");
-    }, 43, "[]"],
-    $indexSet: [function(receiver, index, value) {
+    },
+    $indexSet: function(receiver, index, value) {
       if (!!receiver.immutable$list)
         H.throwExpression(P.UnsupportedError$("indexed set"));
       if (typeof index !== "number" || Math.floor(index) !== index)
@@ -440,21 +424,17 @@ var $$ = {};
       if (index >= receiver.length || index < 0)
         throw H.wrapException(P.RangeError$value(index));
       receiver[index] = value;
-    }, "call$2", "get$[]=", 4, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__int_E", void: true, args: [P.$int, E]};
-      }, this.$receiver, "JSArray");
-    }, 43, 32, "[]="],
+    },
     $isJSArray: true,
     $isList: true,
     $asList: null
   },
   JSNumber: {
     "^": "Interceptor;",
-    remainder$1: [function(receiver, b) {
+    remainder$1: function(receiver, b) {
       return receiver % b;
-    }, "call$1", "get$remainder", 2, 0, 236, 175, "remainder"],
-    toInt$0: [function(receiver) {
+    },
+    toInt$0: function(receiver) {
       var t1;
       if (receiver >= -2147483648 && receiver <= 2147483647)
         return receiver | 0;
@@ -463,25 +443,25 @@ var $$ = {};
         return t1 + 0;
       }
       throw H.wrapException(P.UnsupportedError$('' + receiver));
-    }, "call$0", "get$toInt", 0, 0, 229, "toInt"],
-    toString$0: [function(receiver) {
+    },
+    toString$0: function(receiver) {
       if (receiver === 0 && 1 / receiver < 0)
         return "-0.0";
       else
         return "" + receiver;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    get$hashCode: [function(receiver) {
+    },
+    get$hashCode: function(receiver) {
       return receiver & 0x1FFFFFFF;
-    }, null, null, 1, 0, 229, "hashCode"],
-    $add: [function(receiver, other) {
+    },
+    $add: function(receiver, other) {
       if (typeof other !== "number")
         throw H.wrapException(P.ArgumentError$(other));
       return receiver + other;
-    }, "call$1", "get$+", 2, 0, 236, 203, "+"],
-    _tdivFast$1: [function(receiver, other) {
+    },
+    _tdivFast$1: function(receiver, other) {
       return (receiver | 0) === receiver ? receiver / other | 0 : this.toInt$0(receiver / other);
-    }, "call$1", "get$_tdivFast", 2, 0, 236, 203, "_tdivFast"],
-    _shrOtherPositive$1: [function(receiver, other) {
+    },
+    _shrOtherPositive$1: function(receiver, other) {
       var t1;
       if (receiver > 0)
         t1 = other > 31 ? 0 : receiver >>> other;
@@ -490,46 +470,44 @@ var $$ = {};
         t1 = receiver >> t1 >>> 0;
       }
       return t1;
-    }, "call$1", "get$_shrOtherPositive", 2, 0, 236, 203, "_shrOtherPositive"],
-    $lt: [function(receiver, other) {
+    },
+    $lt: function(receiver, other) {
       if (typeof other !== "number")
         throw H.wrapException(P.ArgumentError$(other));
       return receiver < other;
-    }, "call$1", "get$<", 2, 0, 237, 203, "<"],
-    $ge: [function(receiver, other) {
+    },
+    $ge: function(receiver, other) {
       if (typeof other !== "number")
         throw H.wrapException(P.ArgumentError$(other));
       return receiver >= other;
-    }, "call$1", "get$>=", 2, 0, 237, 203, ">="],
+    },
     $isnum: true,
-    static: {"^": "JSNumber__MIN_INT32-,JSNumber__MAX_INT32-"}
+    static: {"^": "JSNumber__MIN_INT32,JSNumber__MAX_INT32"}
   },
   JSInt: {
     "^": "JSNumber;",
-    $is$double: true,
     $isnum: true,
     $is$int: true
   },
   JSDouble: {
     "^": "JSNumber;",
-    $is$double: true,
     $isnum: true
   },
   JSString: {
     "^": "Interceptor;",
-    codeUnitAt$1: [function(receiver, index) {
+    codeUnitAt$1: function(receiver, index) {
       if (index < 0)
         throw H.wrapException(P.RangeError$value(index));
       if (index >= receiver.length)
         throw H.wrapException(P.RangeError$value(index));
       return receiver.charCodeAt(index);
-    }, "call$1", "get$codeUnitAt", 2, 0, 215, 43, "codeUnitAt"],
-    $add: [function(receiver, other) {
+    },
+    $add: function(receiver, other) {
       if (typeof other !== "string")
         throw H.wrapException(P.ArgumentError$(other));
       return receiver + other;
-    }, "call$1", "get$+", 2, 0, 76, 203, "+"],
-    substring$2: [function(receiver, startIndex, endIndex) {
+    },
+    substring$2: function(receiver, startIndex, endIndex) {
       if (endIndex == null)
         endIndex = receiver.length;
       if (typeof endIndex !== "number" || Math.floor(endIndex) !== endIndex)
@@ -543,16 +521,17 @@ var $$ = {};
       if (endIndex > receiver.length)
         throw H.wrapException(P.RangeError$value(endIndex));
       return receiver.substring(startIndex, endIndex);
-    }, function($receiver, startIndex) {
+    },
+    substring$1: function($receiver, startIndex) {
       return this.substring$2($receiver, startIndex, null);
-    }, "substring$1", "call$2", "call$1", "get$substring", 2, 2, 238, 94, 99, 239, "substring"],
-    get$isEmpty: [function(receiver) {
+    },
+    get$isEmpty: function(receiver) {
       return receiver.length === 0;
-    }, null, null, 1, 0, 240, "isEmpty"],
-    toString$0: [function(receiver) {
+    },
+    toString$0: function(receiver) {
       return receiver;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    get$hashCode: [function(receiver) {
+    },
+    get$hashCode: function(receiver) {
       var t1, hash, i;
       for (t1 = receiver.length, hash = 0, i = 0; i < t1; ++i) {
         hash = 536870911 & hash + receiver.charCodeAt(i);
@@ -562,31 +541,31 @@ var $$ = {};
       hash = 536870911 & hash + ((67108863 & hash) << 3 >>> 0);
       hash ^= hash >> 11;
       return 536870911 & hash + ((16383 & hash) << 15 >>> 0);
-    }, null, null, 1, 0, 229, "hashCode"],
-    get$length: [function(receiver) {
+    },
+    get$length: function(receiver) {
       return receiver.length;
-    }, null, null, 1, 0, 229, "length"],
-    $index: [function(receiver, index) {
+    },
+    $index: function(receiver, index) {
       if (typeof index !== "number" || Math.floor(index) !== index)
         throw H.wrapException(P.ArgumentError$(index));
       if (index >= receiver.length || index < 0)
         throw H.wrapException(P.RangeError$value(index));
       return receiver[index];
-    }, "call$1", "get$[]", 2, 0, 241, 43, "[]"],
+    },
     $isString: true
   }
 }],
 ["_isolate_helper", "dart:_isolate_helper", , H, {
   "^": "",
-  _callInIsolate: [function(isolate, $function) {
+  _callInIsolate: function(isolate, $function) {
     var result = isolate.eval$1($function);
     init.globalState.topEventLoop.run$0();
     return result;
-  }, "call$2", "_callInIsolate$closure", 4, 0, 7, 8, 9, "_callInIsolate"],
-  leaveJsAsync: [function() {
+  },
+  leaveJsAsync: function() {
     --init.globalState.topEventLoop._activeJsAsyncCount;
-  }, "call$0", "leaveJsAsync$closure", 0, 0, 10, "leaveJsAsync"],
-  startRootIsolate: [function(entry, args) {
+  },
+  startRootIsolate: function(entry, args) {
     var t1, t2, t3, t4, t5, rootContext;
     t1 = {};
     t1.args_0 = args;
@@ -626,8 +605,8 @@ var $$ = {};
         rootContext.eval$1(entry);
     }
     init.globalState.topEventLoop.run$0();
-  }, "call$2", "startRootIsolate$closure", 4, 0, 11, 12, 13, "startRootIsolate"],
-  IsolateNatives_computeThisScript: [function() {
+  },
+  IsolateNatives_computeThisScript: function() {
     var currentScript = init.currentScript;
     if (currentScript != null)
       return String(currentScript.src);
@@ -638,8 +617,8 @@ var $$ = {};
     if (init.globalState.isWorker === true)
       return H.IsolateNatives_computeThisScriptFromTrace();
     return;
-  }, "call$0", "IsolateNatives_computeThisScript$closure", 0, 0, 14, "computeThisScript"],
-  IsolateNatives_computeThisScriptFromTrace: [function() {
+  },
+  IsolateNatives_computeThisScriptFromTrace: function() {
     var stack, matches;
     stack = new Error().stack;
     if (stack == null) {
@@ -661,8 +640,8 @@ var $$ = {};
     if (matches != null)
       return matches[1];
     throw H.wrapException(P.UnsupportedError$("Cannot extract URI from \"" + H.S(stack) + "\""));
-  }, "call$0", "IsolateNatives_computeThisScriptFromTrace$closure", 0, 0, 14, "computeThisScriptFromTrace"],
-  IsolateNatives__processWorkerMessage: [function(sender, e) {
+  },
+  IsolateNatives__processWorkerMessage: function(sender, e) {
     var msg, t1, functionName, entryPoint, args, message, isSpawnUri, startPaused, replyTo, t2, t3, t4, context, uri, t5, t6, worker, t7;
     msg = H._deserializeMessage(e.data);
     t1 = J.getInterceptor$asx(msg);
@@ -733,8 +712,8 @@ var $$ = {};
       case "error":
         throw H.wrapException(t1.$index(msg, "msg"));
     }
-  }, "call$2", "IsolateNatives__processWorkerMessage$closure", 4, 0, 11, 15, 16, "_processWorkerMessage"],
-  IsolateNatives__log: [function(msg) {
+  },
+  IsolateNatives__log: function(msg) {
     var trace, t1, t2, exception;
     if (init.globalState.isWorker === true) {
       t1 = init.globalState.mainManager;
@@ -750,8 +729,8 @@ var $$ = {};
         throw H.wrapException(P.Exception_Exception(trace));
       }
 
-  }, "call$1", "IsolateNatives__log$closure", 2, 0, 0, 17, "_log"],
-  IsolateNatives__startIsolate: [function(topLevel, args, message, isSpawnUri, startPaused, replyTo) {
+  },
+  IsolateNatives__startIsolate: function(topLevel, args, message, isSpawnUri, startPaused, replyTo) {
     var context, t1, t2, t3;
     context = init.globalState.currentContext;
     t1 = context.id;
@@ -767,8 +746,8 @@ var $$ = {};
       init.globalState.topEventLoop.events._add$1(new H._IsolateEvent(context, t2, "start isolate"));
     } else
       t2.call$0();
-  }, "call$6", "IsolateNatives__startIsolate$closure", 12, 0, 18, 19, 13, 20, 21, 22, 23, "_startIsolate"],
-  _serializeMessage: [function(message) {
+  },
+  _serializeMessage: function(message) {
     var t1;
     if (init.globalState.supportsWorkers === true) {
       t1 = new H._JsSerializer(0, new H._MessageTraverserVisitedMap());
@@ -779,34 +758,34 @@ var $$ = {};
       t1._visited = new H._JsVisitedMap(null);
       return t1.traverse$1(message);
     }
-  }, "call$1", "_serializeMessage$closure", 2, 0, 0, 20, "_serializeMessage"],
-  _deserializeMessage: [function(message) {
+  },
+  _deserializeMessage: function(message) {
     if (init.globalState.supportsWorkers === true)
       return new H._JsDeserializer(null).deserialize$1(message);
     else
       return message;
-  }, "call$1", "_deserializeMessage$closure", 2, 0, 0, 20, "_deserializeMessage"],
-  _MessageTraverser_isPrimitive: [function(x) {
+  },
+  _MessageTraverser_isPrimitive: function(x) {
     return x == null || typeof x === "string" || typeof x === "number" || typeof x === "boolean";
-  }, "call$1", "_MessageTraverser_isPrimitive$closure", 2, 0, 24, 25, "isPrimitive"],
-  _Deserializer_isPrimitive: [function(x) {
+  },
+  _Deserializer_isPrimitive: function(x) {
     return x == null || typeof x === "string" || typeof x === "number" || typeof x === "boolean";
-  }, "call$1", "_Deserializer_isPrimitive$closure", 2, 0, 24, 25, "isPrimitive"],
+  },
   startRootIsolate_closure: {
-    "^": "Closure:10;box_0-,entry_1-",
-    call$0: [function() {
+    "^": "Closure:6;box_0,entry_1",
+    call$0: function() {
       this.entry_1.call$1(this.box_0.args_0);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   startRootIsolate_closure0: {
-    "^": "Closure:10;box_0-,entry_2-",
-    call$0: [function() {
+    "^": "Closure:6;box_0,entry_2",
+    call$0: function() {
       this.entry_2.call$2(this.box_0.args_0, null);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _Manager: {
-    "^": "Object;nextIsolateId-,currentManagerId-,nextManagerId-,currentContext-,rootContext-,topEventLoop-,fromCommandLine-,isWorker-,supportsWorkers-,isolates-,mainManager-,managers-,entry-",
-    _Manager$1: [function(entry) {
+    "^": "Object;nextIsolateId,currentManagerId,nextManagerId,currentContext,rootContext,topEventLoop,fromCommandLine,isWorker,supportsWorkers,isolates,mainManager,managers,entry",
+    _Manager$1: function(entry) {
       var t1, t2, t3, $function;
       t1 = $.get$globalWindow() == null;
       t2 = $.get$globalWorker();
@@ -836,18 +815,18 @@ var $$ = {};
         $.get$globalThis().dartPrint = function(object) {
         };
       }
-    }, null, null, 2, 0, 242, 12, ""]
+    }
   },
   _IsolateContext: {
-    "^": "Object;id-,ports-,weakPorts-,isolateStatics<-,controlPort<-,pauseCapability-,terminateCapability-,isPaused-,delayedEvents-,pauseTokens-,doneHandlers-,_scheduledControlEvents-,_isExecutingEvent-,errorsAreFatal-",
-    addPause$2: [function(authentification, resume) {
+    "^": "Object;id,ports,weakPorts,isolateStatics<,controlPort<,pauseCapability,terminateCapability,isPaused,delayedEvents,pauseTokens,doneHandlers,_scheduledControlEvents,_isExecutingEvent,errorsAreFatal",
+    addPause$2: function(authentification, resume) {
       if (!this.pauseCapability.$eq(0, authentification))
         return;
       if (this.pauseTokens.add$1(0, resume) && !this.isPaused)
         this.isPaused = true;
       this._updateGlobalState$0();
-    }, "call$2", "get$addPause", 4, 0, 243, 244, 245, "addPause"],
-    removePause$1: [function(resume) {
+    },
+    removePause$1: function(resume) {
       var t1, t2, $event, t3, t4, t5;
       if (!this.isPaused)
         return;
@@ -874,8 +853,8 @@ var $$ = {};
         this.isPaused = false;
       }
       this._updateGlobalState$0();
-    }, "call$1", "get$removePause", 2, 0, 246, 245, "removePause"],
-    addDoneListener$1: [function(responsePort) {
+    },
+    addDoneListener$1: function(responsePort) {
       var t1 = this.doneHandlers;
       if (t1 == null) {
         t1 = [];
@@ -884,19 +863,19 @@ var $$ = {};
       if (J.contains$1$asx(t1, responsePort))
         return;
       this.doneHandlers.push(responsePort);
-    }, "call$1", "get$addDoneListener", 2, 0, 247, 248, "addDoneListener"],
-    removeDoneListener$1: [function(responsePort) {
+    },
+    removeDoneListener$1: function(responsePort) {
       var t1 = this.doneHandlers;
       if (t1 == null)
         return;
       J.remove$1$ax(t1, responsePort);
-    }, "call$1", "get$removeDoneListener", 2, 0, 247, 248, "removeDoneListener"],
-    setErrorsFatal$2: [function(authentification, errorsAreFatal) {
+    },
+    setErrorsFatal$2: function(authentification, errorsAreFatal) {
       if (!this.terminateCapability.$eq(0, authentification))
         return;
       this.errorsAreFatal = errorsAreFatal;
-    }, "call$2", "get$setErrorsFatal", 4, 0, 249, 244, 250, "setErrorsFatal"],
-    handlePing$2: [function(responsePort, pingType) {
+    },
+    handlePing$2: function(responsePort, pingType) {
       var t1, t2;
       t1 = J.getInterceptor(pingType);
       if (!t1.$eq(pingType, 0))
@@ -919,8 +898,8 @@ var $$ = {};
         this._scheduledControlEvents = t1;
       }
       t1._add$1(t2);
-    }, "call$2", "get$handlePing", 4, 0, 251, 248, 252, "handlePing"],
-    handleKill$2: [function(authentification, priority) {
+    },
+    handleKill$2: function(authentification, priority) {
       var t1, t2;
       if (!this.terminateCapability.$eq(0, authentification))
         return;
@@ -946,8 +925,8 @@ var $$ = {};
         this._scheduledControlEvents = t1;
       }
       t1._add$1(this.get$kill());
-    }, "call$2", "get$handleKill", 4, 0, 253, 244, 254, "handleKill"],
-    eval$1: [function(code) {
+    },
+    eval$1: function(code) {
       var old, result, t1;
       old = init.globalState.currentContext;
       init.globalState.currentContext = this;
@@ -966,22 +945,22 @@ var $$ = {};
             this._scheduledControlEvents.removeFirst$0().call$0();
       }
       return result;
-    }, "call$1", "get$eval", 2, 0, 242, 255, "eval"],
-    lookup$1: [function(portId) {
+    },
+    lookup$1: function(portId) {
       return this.ports.$index(0, portId);
-    }, "call$1", "get$lookup", 2, 0, 256, 257, "lookup"],
-    _addRegistration$2: [function(portId, port) {
+    },
+    _addRegistration$2: function(portId, port) {
       var t1 = this.ports;
       if (t1.containsKey$1(portId))
         throw H.wrapException(P.Exception_Exception("Registry: ports must be registered only once."));
       t1.$indexSet(0, portId, port);
-    }, "call$2", "get$_addRegistration", 4, 0, 258, 257, 259, "_addRegistration"],
-    _updateGlobalState$0: [function() {
+    },
+    _updateGlobalState$0: function() {
       if (this.ports._collection$_length - this.weakPorts._collection$_length > 0 || this.isPaused)
         init.globalState.isolates.$indexSet(0, this.id, this);
       else
         this.kill$0();
-    }, "call$0", "get$_updateGlobalState", 0, 0, 116, "_updateGlobalState"],
+    },
     kill$0: [function() {
       var t1, t2, t3;
       t1 = this._scheduledControlEvents;
@@ -1015,23 +994,23 @@ var $$ = {};
           t1._current.send$1(null);
         this.doneHandlers = null;
       }
-    }, "call$0", "get$kill", 0, 0, 116, "kill"]
+    }, "call$0", "get$kill", 0, 0, 1]
   },
   _IsolateContext_handlePing_respond: {
-    "^": "Closure:116;responsePort_0-",
-    call$0: [function() {
+    "^": "Closure:1;responsePort_0",
+    call$0: function() {
       this.responsePort_0.send$1(null);
-    }, "call$0", null, 0, 0, 116, "call"]
+    }
   },
   _EventLoop: {
-    "^": "Object;events-,_activeJsAsyncCount-",
-    dequeue$0: [function() {
+    "^": "Object;events,_activeJsAsyncCount",
+    dequeue$0: function() {
       var t1 = this.events;
       if (t1._head === t1._tail)
         return;
       return t1.removeFirst$0();
-    }, "call$0", "get$dequeue", 0, 0, 260, "dequeue"],
-    runIteration$0: [function() {
+    },
+    runIteration$0: function() {
       var $event, t1, t2;
       $event = this.dequeue$0();
       if ($event == null) {
@@ -1048,15 +1027,15 @@ var $$ = {};
       }
       $event.process$0();
       return true;
-    }, "call$0", "get$runIteration", 0, 0, 240, "runIteration"],
-    _runHelper$0: [function() {
+    },
+    _runHelper$0: function() {
       if ($.get$globalWindow() != null)
         new H._EventLoop__runHelper_next(this).call$0();
       else
         for (; this.runIteration$0();)
           ;
-    }, "call$0", "get$_runHelper", 0, 0, 116, "_runHelper"],
-    run$0: [function() {
+    },
+    run$0: function() {
       var e, trace, exception, t1, t2;
       if (init.globalState.isWorker !== true)
         this._runHelper$0();
@@ -1073,39 +1052,39 @@ var $$ = {};
           self.postMessage(t2);
         }
 
-    }, "call$0", "get$run", 0, 0, 116, "run"]
+    }
   },
   _EventLoop__runHelper_next: {
-    "^": "Closure:116;this_0-",
-    call$0: [function() {
+    "^": "Closure:1;this_0",
+    call$0: function() {
       if (!this.this_0.runIteration$0())
         return;
       P.Timer_Timer(C.Duration_0, this);
-    }, "call$0", null, 0, 0, 116, "call"]
+    }
   },
   _IsolateEvent: {
-    "^": "Object;isolate-,fn-,message-",
-    process$0: [function() {
+    "^": "Object;isolate,fn,message",
+    process$0: function() {
       var t1 = this.isolate;
       if (t1.isPaused) {
         t1.delayedEvents.push(this);
         return;
       }
       t1.eval$1(this.fn);
-    }, "call$0", "get$process", 0, 0, 116, "process"]
+    }
   },
   _MainManagerStub: {
     "^": "Object;"
   },
   IsolateNatives__processWorkerMessage_closure: {
-    "^": "Closure:10;entryPoint_0-,args_1-,message_2-,isSpawnUri_3-,startPaused_4-,replyTo_5-",
-    call$0: [function() {
+    "^": "Closure:6;entryPoint_0,args_1,message_2,isSpawnUri_3,startPaused_4,replyTo_5",
+    call$0: function() {
       H.IsolateNatives__startIsolate(this.entryPoint_0, this.args_1, this.message_2, this.isSpawnUri_3, this.startPaused_4, this.replyTo_5);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   IsolateNatives__startIsolate_runStartFunction: {
-    "^": "Closure:116;topLevel_0-,args_1-,message_2-,isSpawnUri_3-",
-    call$0: [function() {
+    "^": "Closure:1;topLevel_0,args_1,message_2,isSpawnUri_3",
+    call$0: function() {
       var t1, t2, t3;
       if (this.isSpawnUri_3 !== true)
         this.topLevel_0.call$1(this.message_2);
@@ -1123,7 +1102,7 @@ var $$ = {};
             t1.call$0();
         }
       }
-    }, "call$0", null, 0, 0, 116, "call"]
+    }
   },
   _BaseSendPort: {
     "^": "Object;",
@@ -1131,8 +1110,8 @@ var $$ = {};
     $isCapability: true
   },
   _NativeJsSendPort: {
-    "^": "_BaseSendPort;_receivePort-,_isolateId-",
-    send$1: [function(message) {
+    "^": "_BaseSendPort;_receivePort,_isolateId",
+    send$1: function(message) {
       var t1, t2, isolate, t3, shouldSerialize;
       t1 = {};
       t2 = this._isolateId;
@@ -1177,22 +1156,22 @@ var $$ = {};
       t2 = init.globalState.topEventLoop;
       t3 = "receive " + H.S(message);
       t2.events._add$1(new H._IsolateEvent(isolate, new H._NativeJsSendPort_send_closure(t1, this, shouldSerialize), t3));
-    }, "call$1", "get$send", 2, 0, 150, 20, "send"],
-    $eq: [function(_, other) {
+    },
+    $eq: function(_, other) {
       if (other == null)
         return false;
       return !!J.getInterceptor(other).$is_NativeJsSendPort && J.$eq(this._receivePort, other._receivePort);
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(_) {
+    },
+    get$hashCode: function(_) {
       return this._receivePort.get$_id();
-    }, null, null, 1, 0, 229, "hashCode"],
+    },
     $is_NativeJsSendPort: true,
     $isSendPort: true,
     $isCapability: true
   },
   _NativeJsSendPort_send_closure: {
-    "^": "Closure:10;box_0-,this_1-,shouldSerialize_2-",
-    call$0: [function() {
+    "^": "Closure:6;box_0,this_1,shouldSerialize_2",
+    call$0: function() {
       var t1, t2;
       t1 = this.this_1._receivePort;
       if (!t1.get$_isClosed()) {
@@ -1202,11 +1181,11 @@ var $$ = {};
         }
         t1.__isolate_helper$_add$1(this.box_0.msg_0);
       }
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _WorkerSendPort: {
-    "^": "_BaseSendPort;_workerId-,_receivePortId-,_isolateId-",
-    send$1: [function(message) {
+    "^": "_BaseSendPort;_workerId,_receivePortId,_isolateId",
+    send$1: function(message) {
       var workerMessage, manager;
       workerMessage = H._serializeMessage(P.LinkedHashMap_LinkedHashMap$_literal(["command", "message", "port", this, "msg", message], null, null));
       if (init.globalState.isWorker === true) {
@@ -1217,13 +1196,13 @@ var $$ = {};
         if (manager != null)
           manager.postMessage(workerMessage);
       }
-    }, "call$1", "get$send", 2, 0, 150, 20, "send"],
-    $eq: [function(_, other) {
+    },
+    $eq: function(_, other) {
       if (other == null)
         return false;
       return !!J.getInterceptor(other).$is_WorkerSendPort && J.$eq(this._workerId, other._workerId) && J.$eq(this._isolateId, other._isolateId) && J.$eq(this._receivePortId, other._receivePortId);
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(_) {
+    },
+    get$hashCode: function(_) {
       var t1, t2, t3;
       t1 = this._workerId;
       if (typeof t1 !== "number")
@@ -1235,60 +1214,60 @@ var $$ = {};
       if (typeof t3 !== "number")
         return H.iae(t3);
       return (t1 << 16 ^ t2 << 8 ^ t3) >>> 0;
-    }, null, null, 1, 0, 229, "hashCode"],
+    },
     $is_WorkerSendPort: true,
     $isSendPort: true,
     $isCapability: true
   },
   RawReceivePortImpl: {
-    "^": "Object;_id<-,_handler-,_isClosed<-",
+    "^": "Object;_id<,_handler,_isClosed<",
     _handler$1: function(arg0) {
       return this._handler.call$1(arg0);
     },
-    _close$0: [function() {
+    _close$0: function() {
       this._isClosed = true;
       this._handler = null;
-    }, "call$0", "get$_close", 0, 0, 116, "_close"],
-    __isolate_helper$_add$1: [function(dataEvent) {
+    },
+    __isolate_helper$_add$1: function(dataEvent) {
       if (this._isClosed)
         return;
       this._handler$1(dataEvent);
-    }, "call$1", "get$__isolate_helper$_add", 2, 0, 150, 261, "_add"],
-    static: {"^": "RawReceivePortImpl__nextFreeId-"}
+    },
+    static: {"^": "RawReceivePortImpl__nextFreeId"}
   },
   _JsSerializer: {
-    "^": "_Serializer;_nextFreeRefId-,_visited-",
-    visitSendPort$1: [function(x) {
+    "^": "_Serializer;_nextFreeRefId,_visited",
+    visitSendPort$1: function(x) {
       if (!!x.$is_NativeJsSendPort)
         return ["sendport", init.globalState.currentManagerId, x._isolateId, x._receivePort.get$_id()];
       if (!!x.$is_WorkerSendPort)
         return ["sendport", x._workerId, x._isolateId, x._receivePortId];
       throw H.wrapException("Illegal underlying port " + x.toString$0(0));
-    }, "call$1", "get$visitSendPort", 2, 0, 262, 25, "visitSendPort"],
-    visitCapability$1: [function(x) {
+    },
+    visitCapability$1: function(x) {
       if (!!x.$isCapabilityImpl)
         return ["capability", x._id];
       throw H.wrapException("Capability not serializable: " + x.toString$0(0));
-    }, "call$1", "get$visitCapability", 2, 0, 263, 25, "visitCapability"]
+    }
   },
   _JsCopier: {
-    "^": "_Copier;_visited-",
-    visitSendPort$1: [function(x) {
+    "^": "_Copier;_visited",
+    visitSendPort$1: function(x) {
       if (!!x.$is_NativeJsSendPort)
         return new H._NativeJsSendPort(x._receivePort, x._isolateId);
       if (!!x.$is_WorkerSendPort)
         return new H._WorkerSendPort(x._workerId, x._receivePortId, x._isolateId);
       throw H.wrapException("Illegal underlying port " + x.toString$0(0));
-    }, "call$1", "get$visitSendPort", 2, 0, 262, 25, "visitSendPort"],
-    visitCapability$1: [function(x) {
+    },
+    visitCapability$1: function(x) {
       if (!!x.$isCapabilityImpl)
         return new H.CapabilityImpl(x._id);
       throw H.wrapException("Capability not serializable: " + x.toString$0(0));
-    }, "call$1", "get$visitCapability", 2, 0, 263, 25, "visitCapability"]
+    }
   },
   _JsDeserializer: {
-    "^": "_Deserializer;_deserialized-",
-    deserializeSendPort$1: [function(list) {
+    "^": "_Deserializer;_deserialized",
+    deserializeSendPort$1: function(list) {
       var t1, managerId, isolateId, receivePortId, isolate, receivePort;
       t1 = J.getInterceptor$asx(list);
       managerId = t1.$index(list, 1);
@@ -1304,24 +1283,24 @@ var $$ = {};
         return new H._NativeJsSendPort(receivePort, isolateId);
       } else
         return new H._WorkerSendPort(managerId, receivePortId, isolateId);
-    }, "call$1", "get$deserializeSendPort", 2, 0, 264, 80, "deserializeSendPort"],
-    deserializeCapability$1: [function(list) {
+    },
+    deserializeCapability$1: function(list) {
       return new H.CapabilityImpl(J.$index$asx(list, 1));
-    }, "call$1", "get$deserializeCapability", 2, 0, 265, 80, "deserializeCapability"]
+    }
   },
   _JsVisitedMap: {
-    "^": "Object;tagged-",
-    $index: [function(_, object) {
+    "^": "Object;tagged",
+    $index: function(_, object) {
       return object.__MessageTraverser__attached_info__;
-    }, "call$1", "get$[]", 2, 0, 0, 1, "[]"],
-    $indexSet: [function(_, object, info) {
+    },
+    $indexSet: function(_, object, info) {
       this.tagged.push(object);
       object.__MessageTraverser__attached_info__ = info;
-    }, "call$2", "get$[]=", 4, 0, 11, 1, 266, "[]="],
-    reset$0: [function(_) {
+    },
+    reset$0: function(_) {
       this.tagged = [];
-    }, "call$0", "get$reset", 0, 0, 116, "reset"],
-    cleanup$0: [function() {
+    },
+    cleanup$0: function() {
       var $length, i, t1;
       for ($length = this.tagged.length, i = 0; i < $length; ++i) {
         t1 = this.tagged;
@@ -1330,23 +1309,23 @@ var $$ = {};
         t1[i].__MessageTraverser__attached_info__ = null;
       }
       this.tagged = null;
-    }, "call$0", "get$cleanup", 0, 0, 116, "cleanup"]
+    }
   },
   _MessageTraverserVisitedMap: {
     "^": "Object;",
-    $index: [function(_, object) {
+    $index: function(_, object) {
       return;
-    }, "call$1", "get$[]", 2, 0, 0, 1, "[]"],
-    $indexSet: [function(_, object, info) {
-    }, "call$2", "get$[]=", 4, 0, 11, 1, 266, "[]="],
-    reset$0: [function(_) {
-    }, "call$0", "get$reset", 0, 0, 116, "reset"],
-    cleanup$0: [function() {
-    }, "call$0", "get$cleanup", 0, 0, 116, "cleanup"]
+    },
+    $indexSet: function(_, object, info) {
+    },
+    reset$0: function(_) {
+    },
+    cleanup$0: function() {
+    }
   },
   _MessageTraverser: {
     "^": "Object;",
-    traverse$1: [function(x) {
+    traverse$1: function(x) {
       var result;
       if (H._MessageTraverser_isPrimitive(x))
         return this.visitPrimitive$1(x);
@@ -1358,8 +1337,8 @@ var $$ = {};
         this._visited.cleanup$0();
       }
       return result;
-    }, "call$1", "get$traverse", 2, 0, 0, 25, "traverse"],
-    _dispatch$1: [function(x) {
+    },
+    _dispatch$1: function(x) {
       var t1;
       if (x == null || typeof x === "string" || typeof x === "number" || typeof x === "boolean")
         return this.visitPrimitive$1(x);
@@ -1373,17 +1352,17 @@ var $$ = {};
       if (!!t1.$isCapability)
         return this.visitCapability$1(x);
       return this.visitObject$1(x);
-    }, "call$1", "get$_dispatch", 2, 0, 0, 25, "_dispatch"],
-    visitObject$1: [function(x) {
+    },
+    visitObject$1: function(x) {
       throw H.wrapException("Message serialization: Illegal value " + H.S(x) + " passed");
-    }, "call$1", "get$visitObject", 2, 0, 89, 25, "visitObject"]
+    }
   },
   _Copier: {
     "^": "_MessageTraverser;",
-    visitPrimitive$1: [function(x) {
+    visitPrimitive$1: function(x) {
       return x;
-    }, "call$1", "get$visitPrimitive", 2, 0, 0, 25, "visitPrimitive"],
-    visitList$1: [function(list) {
+    },
+    visitList$1: function(list) {
       var copy, len, i;
       copy = this._visited.$index(0, list);
       if (copy != null)
@@ -1398,8 +1377,8 @@ var $$ = {};
         copy[i] = this._dispatch$1(list[i]);
       }
       return copy;
-    }, "call$1", "get$visitList", 2, 0, 267, 80, "visitList"],
-    visitMap$1: [function(map) {
+    },
+    visitMap$1: function(map) {
       var t1, copy;
       t1 = {};
       copy = this._visited.$index(0, map);
@@ -1411,27 +1390,27 @@ var $$ = {};
       this._visited.$indexSet(0, map, copy);
       map.forEach$1(0, new H._Copier_visitMap_closure(t1, this));
       return t1.copy_0;
-    }, "call$1", "get$visitMap", 2, 0, 268, 269, "visitMap"],
-    visitSendPort$1: [function(x) {
+    },
+    visitSendPort$1: function(x) {
       return H.throwExpression(P.UnimplementedError$(null));
-    }, "call$1", "get$visitSendPort", 2, 0, 262, 25, "visitSendPort"],
-    visitCapability$1: [function(x) {
+    },
+    visitCapability$1: function(x) {
       return H.throwExpression(P.UnimplementedError$(null));
-    }, "call$1", "get$visitCapability", 2, 0, 263, 25, "visitCapability"]
+    }
   },
   _Copier_visitMap_closure: {
-    "^": "Closure:38;box_0-,this_1-",
-    call$2: [function(key, val) {
+    "^": "Closure:7;box_0,this_1",
+    call$2: function(key, val) {
       var t1 = this.this_1;
       J.$indexSet$ax(this.box_0.copy_0, t1._dispatch$1(key), t1._dispatch$1(val));
-    }, "call$2", null, 4, 0, 38, 39, 270, "call"]
+    }
   },
   _Serializer: {
     "^": "_MessageTraverser;",
-    visitPrimitive$1: [function(x) {
+    visitPrimitive$1: function(x) {
       return x;
-    }, "call$1", "get$visitPrimitive", 2, 0, 0, 25, "visitPrimitive"],
-    visitList$1: [function(list) {
+    },
+    visitList$1: function(list) {
       var copyId, t1;
       copyId = this._visited.$index(0, list);
       if (copyId != null)
@@ -1439,8 +1418,8 @@ var $$ = {};
       t1 = this._nextFreeRefId++;
       this._visited.$indexSet(0, list, t1);
       return ["list", t1, this._serializeList$1(list)];
-    }, "call$1", "get$visitList", 2, 0, 271, 80, "visitList"],
-    visitMap$1: [function(map) {
+    },
+    visitMap$1: function(map) {
       var copyId, t1, t2, keys;
       copyId = this._visited.$index(0, map);
       if (copyId != null)
@@ -1451,8 +1430,8 @@ var $$ = {};
       keys = this._serializeList$1(P.List_List$from(t2, true, H.getRuntimeTypeArgument(t2, "IterableBase", 0)));
       t2 = map.get$values(map);
       return ["map", t1, keys, this._serializeList$1(P.List_List$from(t2, true, H.getRuntimeTypeArgument(t2, "IterableBase", 0)))];
-    }, "call$1", "get$visitMap", 2, 0, 272, 269, "visitMap"],
-    _serializeList$1: [function(list) {
+    },
+    _serializeList$1: function(list) {
       var len, result, i, t1;
       len = J.get$length$asx(list);
       result = [];
@@ -1466,23 +1445,23 @@ var $$ = {};
         result[i] = t1;
       }
       return result;
-    }, "call$1", "get$_serializeList", 2, 0, 271, 80, "_serializeList"],
-    visitSendPort$1: [function(x) {
+    },
+    visitSendPort$1: function(x) {
       return H.throwExpression(P.UnimplementedError$(null));
-    }, "call$1", "get$visitSendPort", 2, 0, 262, 25, "visitSendPort"],
-    visitCapability$1: [function(x) {
+    },
+    visitCapability$1: function(x) {
       return H.throwExpression(P.UnimplementedError$(null));
-    }, "call$1", "get$visitCapability", 2, 0, 263, 25, "visitCapability"]
+    }
   },
   _Deserializer: {
     "^": "Object;",
-    deserialize$1: [function(x) {
+    deserialize$1: function(x) {
       if (H._Deserializer_isPrimitive(x))
         return x;
       this._deserialized = P.HashMap_HashMap(null, null, null, null, null);
       return this._deserializeHelper$1(x);
-    }, "call$1", "get$deserialize", 2, 0, 0, 25, "deserialize"],
-    _deserializeHelper$1: [function(x) {
+    },
+    _deserializeHelper$1: function(x) {
       var t1, id;
       if (x == null || typeof x === "string" || typeof x === "number" || typeof x === "boolean")
         return x;
@@ -1502,8 +1481,8 @@ var $$ = {};
         default:
           return this.deserializeObject$1(x);
       }
-    }, "call$1", "get$_deserializeHelper", 2, 0, 0, 25, "_deserializeHelper"],
-    _deserializeList$1: [function(x) {
+    },
+    _deserializeList$1: function(x) {
       var t1, id, dartList, len, i;
       t1 = J.getInterceptor$asx(x);
       id = t1.$index(x, 1);
@@ -1517,8 +1496,8 @@ var $$ = {};
       for (; i < len; ++i)
         t1.$indexSet(dartList, i, this._deserializeHelper$1(t1.$index(dartList, i)));
       return dartList;
-    }, "call$1", "get$_deserializeList", 2, 0, 267, 25, "_deserializeList"],
-    _deserializeMap$1: [function(x) {
+    },
+    _deserializeMap$1: function(x) {
       var result, t1, id, keys, values, len, t2, i;
       result = P.LinkedHashMap_LinkedHashMap(null, null, null, null, null);
       t1 = J.getInterceptor$asx(x);
@@ -1535,14 +1514,14 @@ var $$ = {};
       for (; i < len; ++i)
         result.$indexSet(0, this._deserializeHelper$1(t1.$index(keys, i)), this._deserializeHelper$1(t2.$index(values, i)));
       return result;
-    }, "call$1", "get$_deserializeMap", 2, 0, 273, 25, "_deserializeMap"],
-    deserializeObject$1: [function(x) {
+    },
+    deserializeObject$1: function(x) {
       throw H.wrapException("Unexpected serialized object");
-    }, "call$1", "get$deserializeObject", 2, 0, 271, 25, "deserializeObject"]
+    }
   },
   TimerImpl: {
-    "^": "Object;_once-,_inEventLoop-,_handle-",
-    TimerImpl$2: [function(milliseconds, callback) {
+    "^": "Object;_once,_inEventLoop,_handle",
+    TimerImpl$2: function(milliseconds, callback) {
       var t1, t2;
       if (milliseconds === 0)
         t1 = $.get$globalThis().setTimeout == null || init.globalState.isWorker === true;
@@ -1562,31 +1541,31 @@ var $$ = {};
         } else
           throw H.wrapException(P.UnsupportedError$("Timer greater than 0."));
       }
-    }, null, null, 4, 0, 26, 27, 28, ""],
-    static: {TimerImpl$: [function(milliseconds, callback) {
+    },
+    static: {TimerImpl$: function(milliseconds, callback) {
         var t1 = new H.TimerImpl(true, false, null);
         t1.TimerImpl$2(milliseconds, callback);
         return t1;
-      }, null, null, 4, 0, 26, 27, 28, "new TimerImpl"]}
+      }}
   },
   TimerImpl_internalCallback: {
-    "^": "Closure:116;this_0-,callback_1-",
-    call$0: [function() {
+    "^": "Closure:1;this_0,callback_1",
+    call$0: function() {
       this.this_0._handle = null;
       this.callback_1.call$0();
-    }, "call$0", null, 0, 0, 116, "call"]
+    }
   },
   TimerImpl_internalCallback0: {
-    "^": "Closure:116;this_2-,callback_3-",
-    call$0: [function() {
+    "^": "Closure:1;this_2,callback_3",
+    call$0: function() {
       this.this_2._handle = null;
       H.leaveJsAsync();
       this.callback_3.call$0();
-    }, "call$0", null, 0, 0, 116, "call"]
+    }
   },
   CapabilityImpl: {
-    "^": "Object;_id<-",
-    get$hashCode: [function(_) {
+    "^": "Object;_id<",
+    get$hashCode: function(_) {
       var hash = this._id;
       if (typeof hash !== "number")
         return hash.$shr();
@@ -1595,8 +1574,8 @@ var $$ = {};
       hash = ((hash ^ hash >>> 12) >>> 0) * 5 & 4294967295;
       hash = ((hash ^ hash >>> 4) >>> 0) * 2057 & 4294967295;
       return (hash ^ hash >>> 16) >>> 0;
-    }, null, null, 1, 0, 229, "hashCode"],
-    $eq: [function(_, other) {
+    },
+    $eq: function(_, other) {
       var t1, t2;
       if (other == null)
         return false;
@@ -1608,14 +1587,14 @@ var $$ = {};
         return t1 == null ? t2 == null : t1 === t2;
       }
       return false;
-    }, "call$1", "get$==", 2, 0, 232, 203, "=="],
+    },
     $isCapabilityImpl: true,
     $isCapability: true
   }
 }],
 ["_js_helper", "dart:_js_helper", , H, {
   "^": "",
-  isJsIndexable: [function(object, record) {
+  isJsIndexable: function(object, record) {
     var result;
     if (record != null) {
       result = record.x;
@@ -1623,8 +1602,8 @@ var $$ = {};
         return result;
     }
     return !!J.getInterceptor(object).$isJavaScriptIndexingBehavior;
-  }, "call$2", "isJsIndexable$closure", 4, 0, 29, 1, 30, "isJsIndexable"],
-  S: [function(value) {
+  },
+  S: function(value) {
     var res;
     if (typeof value === "string")
       return value;
@@ -1641,16 +1620,16 @@ var $$ = {};
     if (typeof res !== "string")
       throw H.wrapException(P.ArgumentError$(value));
     return res;
-  }, "call$1", "S$closure", 2, 0, 31, 32, "S"],
-  Primitives_objectHashCode: [function(object) {
+  },
+  Primitives_objectHashCode: function(object) {
     var hash = object.$identityHash;
     if (hash == null) {
       hash = Math.random() * 0x3fffffff | 0;
       object.$identityHash = hash;
     }
     return hash;
-  }, "call$1", "Primitives_objectHashCode$closure", 2, 0, 35, 1, "objectHashCode"],
-  Primitives_objectTypeName: [function(object) {
+  },
+  Primitives_objectTypeName: function(object) {
     var $name, decompiled;
     $name = C.JS_CONST_8ZY(J.getInterceptor(object));
     if ($name === "Object") {
@@ -1663,11 +1642,11 @@ var $$ = {};
     return ($name + H.joinArguments(H.getRuntimeTypeInfo(object), 0, null)).replace(/[^<,> ]+/g, function(m) {
       return init.mangledGlobalNames[m] || m;
     });
-  }, "call$1", "Primitives_objectTypeName$closure", 2, 0, 36, 1, "objectTypeName"],
-  Primitives_objectToString: [function(object) {
+  },
+  Primitives_objectToString: function(object) {
     return "Instance of '" + H.Primitives_objectTypeName(object) + "'";
-  }, "call$1", "Primitives_objectToString$closure", 2, 0, 36, 1, "objectToString"],
-  Primitives_stringFromCharCode: [function(charCode) {
+  },
+  Primitives_stringFromCharCode: function(charCode) {
     var bits;
     if (0 <= charCode) {
       if (charCode <= 65535)
@@ -1678,28 +1657,28 @@ var $$ = {};
       }
     }
     throw H.wrapException(P.RangeError$range(charCode, 0, 1114111));
-  }, "call$1", "Primitives_stringFromCharCode$closure", 2, 0, 31, 37, "stringFromCharCode"],
-  Primitives_getProperty: [function(object, key) {
+  },
+  Primitives_getProperty: function(object, key) {
     if (object == null || typeof object === "boolean" || typeof object === "number" || typeof object === "string")
       throw H.wrapException(P.ArgumentError$(object));
     return object[key];
-  }, "call$2", "Primitives_getProperty$closure", 4, 0, 38, 1, 39, "getProperty"],
-  Primitives_setProperty: [function(object, key, value) {
+  },
+  Primitives_setProperty: function(object, key, value) {
     if (object == null || typeof object === "boolean" || typeof object === "number" || typeof object === "string")
       throw H.wrapException(P.ArgumentError$(object));
     object[key] = value;
-  }, "call$3", "Primitives_setProperty$closure", 6, 0, 40, 1, 39, 32, "setProperty"],
-  iae: [function(argument) {
+  },
+  iae: function(argument) {
     throw H.wrapException(P.ArgumentError$(argument));
-  }, "call$1", "iae$closure", 2, 0, 0, 41, "iae"],
-  ioore: [function(receiver, index) {
+  },
+  ioore: function(receiver, index) {
     if (receiver == null)
       J.get$length$asx(receiver);
     if (typeof index !== "number" || Math.floor(index) !== index)
       H.iae(index);
     throw H.wrapException(P.RangeError$value(index));
-  }, "call$2", "ioore$closure", 4, 0, 38, 42, 43, "ioore"],
-  wrapException: [function(ex) {
+  },
+  wrapException: function(ex) {
     var wrapper;
     if (ex == null)
       ex = new P.NullThrownError();
@@ -1711,14 +1690,14 @@ var $$ = {};
     } else
       wrapper.toString = H.toStringWrapper;
     return wrapper;
-  }, "call$1", "wrapException$closure", 2, 0, 0, 44, "wrapException"],
-  toStringWrapper: [function() {
+  },
+  toStringWrapper: function() {
     return J.toString$0(this.dartException);
-  }, "call$0", "toStringWrapper$closure", 0, 0, 10, "toStringWrapper"],
-  throwExpression: [function(ex) {
+  },
+  throwExpression: function(ex) {
     throw H.wrapException(ex);
-  }, "call$1", "throwExpression$closure", 2, 0, 0, 44, "throwExpression"],
-  unwrapException: [function(ex) {
+  },
+  unwrapException: function(ex) {
     var t1, message, number, ieErrorCode, t2, t3, t4, nullLiteralCall, t5, t6, t7, t8, t9, match;
     t1 = new H.unwrapException_saveStackTrace(ex);
     if (ex == null)
@@ -1811,14 +1790,14 @@ var $$ = {};
       if (typeof message === "string" && message === "too much recursion")
         return new P.StackOverflowError();
     return ex;
-  }, "call$1", "unwrapException$closure", 2, 0, 0, 44, "unwrapException"],
-  objectHashCode: [function(object) {
+  },
+  objectHashCode: function(object) {
     if (object == null || typeof object != 'object')
       return J.get$hashCode$(object);
     else
       return H.Primitives_objectHashCode(object);
-  }, "call$1", "objectHashCode$closure", 2, 0, 35, 1, "objectHashCode"],
-  fillLiteralMap: [function(keyValuePairs, result) {
+  },
+  fillLiteralMap: function(keyValuePairs, result) {
     var $length, index, index0, index1;
     $length = keyValuePairs.length;
     for (index = 0; index < $length; index = index1) {
@@ -1827,8 +1806,8 @@ var $$ = {};
       result.$indexSet(0, keyValuePairs[index], keyValuePairs[index0]);
     }
     return result;
-  }, "call$2", "fillLiteralMap$closure", 4, 0, 50, 51, 52, "fillLiteralMap"],
-  invokeClosure: [function(closure, isolate, numberOfArguments, arg1, arg2, arg3, arg4) {
+  },
+  invokeClosure: function(closure, isolate, numberOfArguments, arg1, arg2, arg3, arg4) {
     var t1 = J.getInterceptor(numberOfArguments);
     if (t1.$eq(numberOfArguments, 0))
       return H._callInIsolate(isolate, new H.invokeClosure_closure(closure));
@@ -1842,8 +1821,8 @@ var $$ = {};
       return H._callInIsolate(isolate, new H.invokeClosure_closure3(closure, arg1, arg2, arg3, arg4));
     else
       throw H.wrapException(P.Exception_Exception("Unsupported number of arguments for wrapped closure"));
-  }, "call$7", "invokeClosure$closure", 14, 0, 53, 54, 8, 55, 56, 57, 58, 59, "invokeClosure"],
-  convertDartClosureToJS: [function(closure, arity) {
+  },
+  convertDartClosureToJS: function(closure, arity) {
     var $function;
     if (closure == null)
       return;
@@ -1857,8 +1836,8 @@ var $$ = {};
     }(closure, arity, init.globalState.currentContext, H.invokeClosure);
     closure.$identity = $function;
     return $function;
-  }, "call$2", "convertDartClosureToJS$closure", 4, 0, 60, 54, 61, "convertDartClosureToJS"],
-  Closure_fromTearOff: [function(receiver, functions, reflectionInfo, isStatic, jsArguments, propertyName) {
+  },
+  Closure_fromTearOff: function(receiver, functions, reflectionInfo, isStatic, jsArguments, propertyName) {
     var $function, callName, functionType, $prototype, $constructor, t1, isIntercepted, trampoline, signatureFunction, getReceiver, i, stub, stubCallName, t2;
     $function = functions[0];
     $function.$stubName;
@@ -1921,8 +1900,8 @@ var $$ = {};
     }
     $prototype["call*"] = trampoline;
     return $constructor;
-  }, "call$6", "Closure_fromTearOff$closure", 12, 0, 62, 42, 63, 64, 65, 66, 67, "fromTearOff"],
-  Closure_cspForwardCall: [function(arity, isSuperCall, stubName, $function) {
+  },
+  Closure_cspForwardCall: function(arity, isSuperCall, stubName, $function) {
     var getSelf = H.BoundClosure_selfOf;
     switch (isSuperCall ? -1 : arity) {
       case 0:
@@ -1968,8 +1947,8 @@ var $$ = {};
           };
         }($function, getSelf);
     }
-  }, "call$4", "Closure_cspForwardCall$closure", 8, 0, 68, 61, 69, 70, 9, "cspForwardCall"],
-  Closure_forwardCallTo: [function(receiver, $function, isIntercepted) {
+  },
+  Closure_forwardCallTo: function(receiver, $function, isIntercepted) {
     var stubName, arity, lookedUpFunction, t1, t2, $arguments;
     if (isIntercepted)
       return H.Closure_forwardInterceptedCallTo(receiver, $function);
@@ -2001,8 +1980,8 @@ var $$ = {};
     t1 = $.Closure_functionCounter;
     $.Closure_functionCounter = J.$add$ns(t1, 1);
     return new Function(t2 + H.S(t1) + "}")();
-  }, "call$3", "Closure_forwardCallTo$closure", 6, 0, 71, 42, 9, 72, "forwardCallTo"],
-  Closure_cspForwardInterceptedCall: [function(arity, isSuperCall, $name, $function) {
+  },
+  Closure_cspForwardInterceptedCall: function(arity, isSuperCall, $name, $function) {
     var getSelf, getReceiver;
     getSelf = H.BoundClosure_selfOf;
     getReceiver = H.BoundClosure_receiverOf;
@@ -2054,8 +2033,8 @@ var $$ = {};
           };
         }($function, getSelf, getReceiver);
     }
-  }, "call$4", "Closure_cspForwardInterceptedCall$closure", 8, 0, 68, 61, 69, 73, 9, "cspForwardInterceptedCall"],
-  Closure_forwardInterceptedCallTo: [function(receiver, $function) {
+  },
+  Closure_forwardInterceptedCallTo: function(receiver, $function) {
     var selfField, t1, stubName, arity, isCsp, lookedUpFunction, t2, $arguments;
     selfField = H.BoundClosure_selfFieldName();
     t1 = $.BoundClosure_receiverFieldNameCache;
@@ -2081,43 +2060,43 @@ var $$ = {};
     t2 = $.Closure_functionCounter;
     $.Closure_functionCounter = J.$add$ns(t2, 1);
     return new Function(t1 + H.S(t2) + "}")();
-  }, "call$2", "Closure_forwardInterceptedCallTo$closure", 4, 0, 38, 42, 9, "forwardInterceptedCallTo"],
-  closureFromTearOff: [function(receiver, functions, reflectionInfo, isStatic, jsArguments, $name) {
+  },
+  closureFromTearOff: function(receiver, functions, reflectionInfo, isStatic, jsArguments, $name) {
     functions.fixed$length = init;
     reflectionInfo.fixed$length = init;
     return H.Closure_fromTearOff(receiver, functions, reflectionInfo, !!isStatic, jsArguments, $name);
-  }, "call$6", "closureFromTearOff$closure", 12, 0, 74, 42, 63, 64, 65, 66, 73, "closureFromTearOff"],
-  throwCyclicInit: [function(staticName) {
+  },
+  throwCyclicInit: function(staticName) {
     throw H.wrapException(P.CyclicInitializationError$("Cyclic initialization for static " + H.S(staticName)));
-  }, "call$1", "throwCyclicInit$closure", 2, 0, 78, 79, "throwCyclicInit"],
-  buildFunctionType: [function(returnType, parameterTypes, optionalParameterTypes) {
+  },
+  buildFunctionType: function(returnType, parameterTypes, optionalParameterTypes) {
     return new H.RuntimeFunctionType(returnType, parameterTypes, optionalParameterTypes, null);
-  }, "call$3", "buildFunctionType$closure", 6, 0, 81, 82, 83, 84, "buildFunctionType"],
-  getDynamicRuntimeType: [function() {
+  },
+  getDynamicRuntimeType: function() {
     return C.C_DynamicRuntimeType;
-  }, "call$0", "getDynamicRuntimeType$closure", 0, 0, 85, "getDynamicRuntimeType"],
-  setRuntimeTypeInfo: [function(target, typeInfo) {
+  },
+  setRuntimeTypeInfo: function(target, typeInfo) {
     if (target != null)
       target.$builtinTypeInfo = typeInfo;
     return target;
-  }, "call$2", "setRuntimeTypeInfo$closure", 4, 0, 86, 87, 88, "setRuntimeTypeInfo"],
-  getRuntimeTypeInfo: [function(target) {
+  },
+  getRuntimeTypeInfo: function(target) {
     if (target == null)
       return;
     return target.$builtinTypeInfo;
-  }, "call$1", "getRuntimeTypeInfo$closure", 2, 0, 89, 87, "getRuntimeTypeInfo"],
-  getRuntimeTypeArguments: [function(target, substitutionName) {
+  },
+  getRuntimeTypeArguments: function(target, substitutionName) {
     return H.substitute(target["$as" + H.S(substitutionName)], H.getRuntimeTypeInfo(target));
-  }, "call$2", "getRuntimeTypeArguments$closure", 4, 0, 38, 87, 90, "getRuntimeTypeArguments"],
-  getRuntimeTypeArgument: [function(target, substitutionName, index) {
+  },
+  getRuntimeTypeArgument: function(target, substitutionName, index) {
     var $arguments = H.getRuntimeTypeArguments(target, substitutionName);
     return $arguments == null ? null : $arguments[index];
-  }, "call$3", "getRuntimeTypeArgument$closure", 6, 0, 91, 87, 90, 43, "getRuntimeTypeArgument"],
-  getTypeArgumentByIndex: [function(target, index) {
+  },
+  getTypeArgumentByIndex: function(target, index) {
     var rti = H.getRuntimeTypeInfo(target);
     return rti == null ? null : rti[index];
-  }, "call$2", "getTypeArgumentByIndex$closure", 4, 0, 92, 87, 43, "getTypeArgumentByIndex"],
-  runtimeTypeToString: [function(type, onTypeVariable) {
+  },
+  runtimeTypeToString: function(type, onTypeVariable) {
     if (type == null)
       return "dynamic";
     else if (typeof type === "object" && type !== null && type.constructor === Array)
@@ -2128,10 +2107,8 @@ var $$ = {};
       return C.JSInt_methods.toString$0(type);
     else
       return;
-  }, function(type) {
-    return H.runtimeTypeToString(type, null);
-  }, null, "call$2$onTypeVariable", "call$1", "runtimeTypeToString$closure", 2, 3, 93, 94, 95, 96, "runtimeTypeToString"],
-  joinArguments: [function(types, startIndex, onTypeVariable) {
+  },
+  joinArguments: function(types, startIndex, onTypeVariable) {
     var buffer, index, firstArgument, allDynamic, argument, str;
     if (types == null)
       return "";
@@ -2148,10 +2125,8 @@ var $$ = {};
       buffer._contents += typeof str === "string" ? str : H.S(str);
     }
     return allDynamic ? "" : "<" + H.S(buffer) + ">";
-  }, function(types, startIndex) {
-    return H.joinArguments(types, startIndex, null);
-  }, null, "call$3$onTypeVariable", "call$2", "joinArguments$closure", 4, 3, 97, 94, 98, 99, 96, "joinArguments"],
-  substitute: [function(substitution, $arguments) {
+  },
+  substitute: function(substitution, $arguments) {
     if (typeof substitution === "object" && substitution !== null && substitution.constructor === Array)
       $arguments = substitution;
     else if (typeof substitution == "function") {
@@ -2162,8 +2137,8 @@ var $$ = {};
         $arguments = H.invokeOn(substitution, null, $arguments);
     }
     return $arguments;
-  }, "call$2", "substitute$closure", 4, 0, 38, 100, 101, "substitute"],
-  areSubtypes: [function(s, t) {
+  },
+  areSubtypes: function(s, t) {
     var len, i;
     if (s == null || t == null)
       return true;
@@ -2172,11 +2147,11 @@ var $$ = {};
       if (!H.isSubtype(s[i], t[i]))
         return false;
     return true;
-  }, "call$2", "areSubtypes$closure", 4, 0, 29, 102, 103, "areSubtypes"],
-  computeSignature: [function(signature, context, contextName) {
+  },
+  computeSignature: function(signature, context, contextName) {
     return H.invokeOn(signature, context, H.getRuntimeTypeArguments(context, contextName));
-  }, "call$3", "computeSignature$closure", 6, 0, 104, 105, 106, 107, "computeSignature"],
-  isSubtype: [function(s, t) {
+  },
+  isSubtype: function(s, t) {
     var targetSignatureFunction, t1, typeOfS, t2, typeOfT, $name, substitution;
     if (s === t)
       return true;
@@ -2211,8 +2186,8 @@ var $$ = {};
     t1 = t1 ? s.slice(1) : null;
     t2 = t2 ? t.slice(1) : null;
     return H.areSubtypes(H.substitute(substitution, t1), t2);
-  }, "call$2", "isSubtype$closure", 4, 0, 29, 102, 103, "isSubtype"],
-  areAssignable: [function(s, t, allowShorter) {
+  },
+  areAssignable: function(s, t, allowShorter) {
     var sLength, tLength, i, t1, t2;
     if (t == null && s == null)
       return true;
@@ -2234,8 +2209,8 @@ var $$ = {};
         return false;
     }
     return true;
-  }, "call$3", "areAssignable$closure", 6, 0, 108, 102, 103, 109, "areAssignable"],
-  areAssignableMaps: [function(s, t) {
+  },
+  areAssignableMaps: function(s, t) {
     var t1, names, i, $name, tType, sType;
     if (t == null)
       return true;
@@ -2254,8 +2229,8 @@ var $$ = {};
         return false;
     }
     return true;
-  }, "call$2", "areAssignableMaps$closure", 4, 0, 29, 102, 103, "areAssignableMaps"],
-  isFunctionSubtype: [function(s, t) {
+  },
+  isFunctionSubtype: function(s, t) {
     var sReturnType, tReturnType, sParameterTypes, tParameterTypes, sOptionalParameterTypes, tOptionalParameterTypes, sParametersLen, tParametersLen, sOptionalParametersLen, tOptionalParametersLen, pos, t1, t2, tPos, sPos;
     if (!("func" in s))
       return false;
@@ -2306,21 +2281,21 @@ var $$ = {};
       }
     }
     return H.areAssignableMaps(s.named, t.named);
-  }, "call$2", "isFunctionSubtype$closure", 4, 0, 29, 102, 103, "isFunctionSubtype"],
-  invokeOn: [function($function, receiver, $arguments) {
+  },
+  invokeOn: function($function, receiver, $arguments) {
     return $function.apply(receiver, $arguments);
-  }, "call$3", "invokeOn$closure", 6, 0, 110, 9, 42, 101, "invokeOn"],
-  toStringForNativeObject: [function(obj) {
+  },
+  toStringForNativeObject: function(obj) {
     var t1 = $.getTagFunction;
     return "Instance of " + (t1 == null ? "<Unknown>" : t1.call$1(obj));
-  }, "call$1", "toStringForNativeObject$closure", 2, 0, 31, 111, "toStringForNativeObject"],
-  hashCodeForNativeObject: [function(object) {
+  },
+  hashCodeForNativeObject: function(object) {
     return H.Primitives_objectHashCode(object);
-  }, "call$1", "hashCodeForNativeObject$closure", 2, 0, 35, 1, "hashCodeForNativeObject"],
-  defineProperty: [function(obj, property, value) {
+  },
+  defineProperty: function(obj, property, value) {
     Object.defineProperty(obj, property, {value: value, enumerable: false, writable: true, configurable: true});
-  }, "call$3", "defineProperty$closure", 6, 0, 112, 111, 113, 32, "defineProperty"],
-  lookupAndCacheInterceptor: [function(obj) {
+  },
+  lookupAndCacheInterceptor: function(obj) {
     var tag, record, interceptor, interceptorClass, mark, t1;
     tag = $.getTagFunction.call$1(obj);
     record = $.dispatchRecordsForInstanceTags[tag];
@@ -2375,31 +2350,31 @@ var $$ = {};
       return t1.i;
     } else
       return H.patchInteriorProto(obj, interceptor);
-  }, "call$1", "lookupAndCacheInterceptor$closure", 2, 0, 0, 111, "lookupAndCacheInterceptor"],
-  patchInteriorProto: [function(obj, interceptor) {
+  },
+  patchInteriorProto: function(obj, interceptor) {
     var proto, record;
     proto = Object.getPrototypeOf(obj);
     record = J.makeDispatchRecord(interceptor, proto, null, null);
     Object.defineProperty(proto, init.dispatchPropertyName, {value: record, enumerable: false, writable: true, configurable: true});
     return interceptor;
-  }, "call$2", "patchInteriorProto$closure", 4, 0, 38, 111, 3, "patchInteriorProto"],
-  makeLeafDispatchRecord: [function(interceptor) {
+  },
+  makeLeafDispatchRecord: function(interceptor) {
     return J.makeDispatchRecord(interceptor, false, null, !!interceptor.$isJavaScriptIndexingBehavior);
-  }, "call$1", "makeLeafDispatchRecord$closure", 2, 0, 0, 3, "makeLeafDispatchRecord"],
-  makeDefaultDispatchRecord: [function(tag, interceptorClass, proto) {
+  },
+  makeDefaultDispatchRecord: function(tag, interceptorClass, proto) {
     var interceptor = interceptorClass.prototype;
     if (init.leafTags[tag] === true)
       return J.makeDispatchRecord(interceptor, false, null, !!interceptor.$isJavaScriptIndexingBehavior);
     else
       return J.makeDispatchRecord(interceptor, proto, null, null);
-  }, "call$3", "makeDefaultDispatchRecord$closure", 6, 0, 104, 114, 115, 4, "makeDefaultDispatchRecord"],
-  initNativeDispatch: [function() {
+  },
+  initNativeDispatch: function() {
     if (true === $.initNativeDispatchFlag)
       return;
     $.initNativeDispatchFlag = true;
     H.initNativeDispatchContinue();
-  }, "call$0", "initNativeDispatch$closure", 0, 0, 116, "initNativeDispatch"],
-  initNativeDispatchContinue: [function() {
+  },
+  initNativeDispatchContinue: function() {
     var map, tags, fun, i, tag, proto, record, interceptorClass;
     $.dispatchRecordsForInstanceTags = Object.create(null);
     $.interceptorsForUncacheableTags = Object.create(null);
@@ -2433,8 +2408,8 @@ var $$ = {};
         map["*" + tag] = interceptorClass;
       }
     }
-  }, "call$0", "initNativeDispatchContinue$closure", 0, 0, 116, "initNativeDispatchContinue"],
-  initHooks: [function() {
+  },
+  initHooks: function() {
     var hooks, transformers, i, transformer, getTag, getUnknownTag, prototypeForTag;
     hooks = C.JS_CONST_aQP();
     hooks = H.applyHooksTransformer(C.JS_CONST_0, H.applyHooksTransformer(C.JS_CONST_rr7, H.applyHooksTransformer(C.JS_CONST_Fs4, H.applyHooksTransformer(C.JS_CONST_Fs4, H.applyHooksTransformer(C.JS_CONST_gkc, H.applyHooksTransformer(C.JS_CONST_4hp, H.applyHooksTransformer(C.JS_CONST_QJm(C.JS_CONST_8ZY), hooks)))))));
@@ -2455,13 +2430,13 @@ var $$ = {};
     $.getTagFunction = new H.initHooks_closure(getTag);
     $.alternateTagFunction = new H.initHooks_closure0(getUnknownTag);
     $.prototypeForTagFunction = new H.initHooks_closure1(prototypeForTag);
-  }, "call$0", "initHooks$closure", 0, 0, 116, "initHooks"],
-  applyHooksTransformer: [function(transformer, hooks) {
+  },
+  applyHooksTransformer: function(transformer, hooks) {
     return transformer(hooks) || hooks;
-  }, "call$2", "applyHooksTransformer$closure", 4, 0, 38, 117, 118, "applyHooksTransformer"],
+  },
   ReflectionInfo: {
-    "^": "Object;jsFunction-,data-,isAccessor-,requiredParameterCount-,optionalParameterCount-,areOptionalParametersNamed-,functionType-,cachedSortedIndices-",
-    static: {"^": "ReflectionInfo_REQUIRED_PARAMETERS_INFO-,ReflectionInfo_OPTIONAL_PARAMETERS_INFO-,ReflectionInfo_FUNCTION_TYPE_INDEX-,ReflectionInfo_FIRST_DEFAULT_ARGUMENT-", ReflectionInfo_ReflectionInfo: [function(jsFunction) {
+    "^": "Object;jsFunction,data,isAccessor,requiredParameterCount,optionalParameterCount,areOptionalParametersNamed,functionType,cachedSortedIndices",
+    static: {"^": "ReflectionInfo_REQUIRED_PARAMETERS_INFO,ReflectionInfo_OPTIONAL_PARAMETERS_INFO,ReflectionInfo_FUNCTION_TYPE_INDEX,ReflectionInfo_FIRST_DEFAULT_ARGUMENT", ReflectionInfo_ReflectionInfo: function(jsFunction) {
         var data, requiredParametersInfo, optionalParametersInfo;
         data = jsFunction.$reflectionInfo;
         if (data == null)
@@ -2471,11 +2446,11 @@ var $$ = {};
         requiredParametersInfo = data[0];
         optionalParametersInfo = data[1];
         return new H.ReflectionInfo(jsFunction, data, (requiredParametersInfo & 1) === 1, requiredParametersInfo >> 1, optionalParametersInfo >> 1, (optionalParametersInfo & 1) === 1, data[2], null);
-      }, "call$1", null, 2, 0, 33, 34, "new ReflectionInfo"]}
+      }}
   },
   TypeErrorDecoder: {
-    "^": "Object;_pattern-,_arguments-,_argumentsExpr-,_expr-,_method-,_receiver-",
-    matchTypeError$1: [function(message) {
+    "^": "Object;_pattern,_arguments,_argumentsExpr,_expr,_method,_receiver",
+    matchTypeError$1: function(message) {
       var match, result, t1;
       match = new RegExp(this._pattern).exec(message);
       if (match == null)
@@ -2497,8 +2472,8 @@ var $$ = {};
       if (t1 !== -1)
         result.receiver = match[t1 + 1];
       return result;
-    }, "call$1", "get$matchTypeError", 2, 0, 0, 20, "matchTypeError"],
-    static: {"^": "TypeErrorDecoder_noSuchMethodPattern-,TypeErrorDecoder_notClosurePattern-,TypeErrorDecoder_nullCallPattern-,TypeErrorDecoder_nullLiteralCallPattern-,TypeErrorDecoder_undefinedCallPattern-,TypeErrorDecoder_undefinedLiteralCallPattern-,TypeErrorDecoder_nullPropertyPattern-,TypeErrorDecoder_nullLiteralPropertyPattern-,TypeErrorDecoder_undefinedPropertyPattern-,TypeErrorDecoder_undefinedLiteralPropertyPattern-", TypeErrorDecoder_extractPattern: [function(message) {
+    },
+    static: {"^": "TypeErrorDecoder_noSuchMethodPattern,TypeErrorDecoder_notClosurePattern,TypeErrorDecoder_nullCallPattern,TypeErrorDecoder_nullLiteralCallPattern,TypeErrorDecoder_undefinedCallPattern,TypeErrorDecoder_undefinedLiteralCallPattern,TypeErrorDecoder_nullPropertyPattern,TypeErrorDecoder_nullLiteralPropertyPattern,TypeErrorDecoder_undefinedPropertyPattern,TypeErrorDecoder_undefinedLiteralPropertyPattern", TypeErrorDecoder_extractPattern: function(message) {
         var match, $arguments, argumentsExpr, expr, method, receiver;
         message = message.replace(String({}), '$receiver$').replace(new RegExp("[[\\]{}()*+?.\\\\^$|]", 'g'), '\\$&');
         match = message.match(/\\\$[a-zA-Z]+\\\$/g);
@@ -2510,7 +2485,7 @@ var $$ = {};
         method = match.indexOf("\\$method\\$");
         receiver = match.indexOf("\\$receiver\\$");
         return new H.TypeErrorDecoder(message.replace('\\$arguments\\$', '((?:x|[^x])*)').replace('\\$argumentsExpr\\$', '((?:x|[^x])*)').replace('\\$expr\\$', '((?:x|[^x])*)').replace('\\$method\\$', '((?:x|[^x])*)').replace('\\$receiver\\$', '((?:x|[^x])*)'), $arguments, argumentsExpr, expr, method, receiver);
-      }, "call$1", "TypeErrorDecoder_extractPattern$closure", 2, 0, 45, 20, "extractPattern"], TypeErrorDecoder_provokeCallErrorOn: [function(expression) {
+      }, TypeErrorDecoder_provokeCallErrorOn: function(expression) {
         return function($expr$) {
           var $argumentsExpr$ = '$arguments$';
           try {
@@ -2520,7 +2495,7 @@ var $$ = {};
           }
 
         }(expression);
-      }, "call$1", "TypeErrorDecoder_provokeCallErrorOn$closure", 2, 0, 31, 46, "provokeCallErrorOn"], TypeErrorDecoder_provokePropertyErrorOn: [function(expression) {
+      }, TypeErrorDecoder_provokePropertyErrorOn: function(expression) {
         return function($expr$) {
           try {
             $expr$.$method$;
@@ -2529,21 +2504,21 @@ var $$ = {};
           }
 
         }(expression);
-      }, "call$1", "TypeErrorDecoder_provokePropertyErrorOn$closure", 2, 0, 31, 46, "provokePropertyErrorOn"]}
+      }}
   },
   NullError: {
-    "^": "Error;_message-,_method-",
-    toString$0: [function(_) {
+    "^": "Error;_message,_method",
+    toString$0: function(_) {
       var t1 = this._method;
       if (t1 == null)
         return "NullError: " + H.S(this._message);
       return "NullError: Cannot call \"" + H.S(t1) + "\" on null";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     $isError: true
   },
   JsNoSuchMethodError: {
-    "^": "Error;_message-,_method-,_receiver-",
-    toString$0: [function(_) {
+    "^": "Error;_message,_method,_receiver",
+    toString$0: function(_) {
       var t1, t2;
       t1 = this._method;
       if (t1 == null)
@@ -2552,35 +2527,35 @@ var $$ = {};
       if (t2 == null)
         return "NoSuchMethodError: Cannot call \"" + H.S(t1) + "\" (" + H.S(this._message) + ")";
       return "NoSuchMethodError: Cannot call \"" + H.S(t1) + "\" on \"" + H.S(t2) + "\" (" + H.S(this._message) + ")";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     $isError: true,
-    static: {JsNoSuchMethodError$: [function(_message, match) {
+    static: {JsNoSuchMethodError$: function(_message, match) {
         var t1, t2;
         t1 = match == null;
         t2 = t1 ? null : match.method;
         t1 = t1 ? null : match.receiver;
         return new H.JsNoSuchMethodError(_message, t2, t1);
-      }, null, null, 4, 0, 47, 48, 49, "new JsNoSuchMethodError"]}
+      }}
   },
   UnknownJsTypeError: {
-    "^": "Error;_message-",
-    toString$0: [function(_) {
+    "^": "Error;_message",
+    toString$0: function(_) {
       var t1 = this._message;
       return C.JSString_methods.get$isEmpty(t1) ? "Error" : "Error: " + t1;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"]
+    }
   },
   unwrapException_saveStackTrace: {
-    "^": "Closure:0;ex_0-",
-    call$1: [function(error) {
+    "^": "Closure:8;ex_0",
+    call$1: function(error) {
       if (!!J.getInterceptor(error).$isError)
         if (error.$thrownJsError == null)
           error.$thrownJsError = this.ex_0;
       return error;
-    }, "call$1", null, 2, 0, 0, 158, "call"]
+    }
   },
   _StackTrace: {
-    "^": "Object;_exception-,_trace-",
-    toString$0: [function(_) {
+    "^": "Object;_exception,_trace",
+    toString$0: function(_) {
       var t1, trace;
       t1 = this._trace;
       if (t1 != null)
@@ -2590,43 +2565,43 @@ var $$ = {};
       t1 = trace == null ? "" : trace;
       this._trace = t1;
       return t1;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"]
+    }
   },
   invokeClosure_closure: {
-    "^": "Closure:10;closure_0-",
-    call$0: [function() {
+    "^": "Closure:6;closure_0",
+    call$0: function() {
       return this.closure_0.call$0();
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   invokeClosure_closure0: {
-    "^": "Closure:10;closure_1-,arg1_2-",
-    call$0: [function() {
+    "^": "Closure:6;closure_1,arg1_2",
+    call$0: function() {
       return this.closure_1.call$1(this.arg1_2);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   invokeClosure_closure1: {
-    "^": "Closure:10;closure_3-,arg1_4-,arg2_5-",
-    call$0: [function() {
+    "^": "Closure:6;closure_3,arg1_4,arg2_5",
+    call$0: function() {
       return this.closure_3.call$2(this.arg1_4, this.arg2_5);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   invokeClosure_closure2: {
-    "^": "Closure:10;closure_6-,arg1_7-,arg2_8-,arg3_9-",
-    call$0: [function() {
+    "^": "Closure:6;closure_6,arg1_7,arg2_8,arg3_9",
+    call$0: function() {
       return this.closure_6.call$3(this.arg1_7, this.arg2_8, this.arg3_9);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   invokeClosure_closure3: {
-    "^": "Closure:10;closure_10-,arg1_11-,arg2_12-,arg3_13-,arg4_14-",
-    call$0: [function() {
+    "^": "Closure:6;closure_10,arg1_11,arg2_12,arg3_13,arg4_14",
+    call$0: function() {
       return this.closure_10.call$4(this.arg1_11, this.arg2_12, this.arg3_13, this.arg4_14);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   Closure: {
     "^": "Object;",
-    toString$0: [function(_) {
+    toString$0: function(_) {
       return "Closure";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     get$$call: function() {
       return this;
     }
@@ -2635,8 +2610,8 @@ var $$ = {};
     "^": "Closure;"
   },
   BoundClosure: {
-    "^": "TearOffClosure;_self-,__js_helper$_target-,_receiver-,__js_helper$_name-",
-    $eq: [function(_, other) {
+    "^": "TearOffClosure;_self,__js_helper$_target,_receiver,__js_helper$_name",
+    $eq: function(_, other) {
       if (other == null)
         return false;
       if (this === other)
@@ -2644,8 +2619,8 @@ var $$ = {};
       if (!J.getInterceptor(other).$isBoundClosure)
         return false;
       return this._self === other._self && this.__js_helper$_target === other.__js_helper$_target && this._receiver === other._receiver;
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(_) {
+    },
+    get$hashCode: function(_) {
       var t1, receiverHashCode;
       t1 = this._receiver;
       if (t1 == null)
@@ -2656,20 +2631,20 @@ var $$ = {};
       if (typeof receiverHashCode !== "number")
         return receiverHashCode.$xor();
       return (receiverHashCode ^ t1) >>> 0;
-    }, null, null, 1, 0, 229, "hashCode"],
+    },
     $isBoundClosure: true,
-    static: {"^": "BoundClosure_selfFieldNameCache-,BoundClosure_receiverFieldNameCache-", BoundClosure_selfOf: [function(closure) {
+    static: {"^": "BoundClosure_selfFieldNameCache,BoundClosure_receiverFieldNameCache", BoundClosure_selfOf: function(closure) {
         return closure._self;
-      }, "call$1", "BoundClosure_selfOf$closure", 2, 0, 75, 54, "selfOf"], BoundClosure_receiverOf: [function(closure) {
+      }, BoundClosure_receiverOf: function(closure) {
         return closure._receiver;
-      }, "call$1", "BoundClosure_receiverOf$closure", 2, 0, 75, 54, "receiverOf"], BoundClosure_selfFieldName: [function() {
+      }, BoundClosure_selfFieldName: function() {
         var t1 = $.BoundClosure_selfFieldNameCache;
         if (t1 == null) {
           t1 = H.BoundClosure_computeFieldNamed("self");
           $.BoundClosure_selfFieldNameCache = t1;
         }
         return t1;
-      }, "call$0", "BoundClosure_selfFieldName$closure", 0, 0, 14, "selfFieldName"], BoundClosure_computeFieldNamed: [function(fieldName) {
+      }, BoundClosure_computeFieldNamed: function(fieldName) {
         var template, t1, names, i, $name;
         template = new H.BoundClosure("self", "target", "receiver", "name");
         t1 = Object.getOwnPropertyNames(template);
@@ -2680,31 +2655,31 @@ var $$ = {};
           if (template[$name] === fieldName)
             return $name;
         }
-      }, "call$1", "BoundClosure_computeFieldNamed$closure", 2, 0, 76, 77, "computeFieldNamed"]}
+      }}
   },
   RuntimeError: {
-    "^": "Error;message-",
-    toString$0: [function(_) {
+    "^": "Error;message",
+    toString$0: function(_) {
       return "RuntimeError: " + H.S(this.message);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    static: {RuntimeError$: [function(message) {
+    },
+    static: {RuntimeError$: function(message) {
         return new H.RuntimeError(message);
-      }, null, null, 2, 0, 0, 20, "new RuntimeError"]}
+      }}
   },
   RuntimeType: {
     "^": "Object;"
   },
   RuntimeFunctionType: {
-    "^": "RuntimeType;returnType-,parameterTypes-,optionalParameterTypes-,namedParameters-",
-    _isTest$1: [function(expression) {
+    "^": "RuntimeType;returnType,parameterTypes,optionalParameterTypes,namedParameters",
+    _isTest$1: function(expression) {
       var functionTypeObject = this._extractFunctionTypeObjectFrom$1(expression);
       return functionTypeObject == null ? false : H.isFunctionSubtype(functionTypeObject, this.toRti$0());
-    }, "call$1", "get$_isTest", 2, 0, 24, 46, "_isTest"],
-    _extractFunctionTypeObjectFrom$1: [function(o) {
+    },
+    _extractFunctionTypeObjectFrom$1: function(o) {
       var interceptor = J.getInterceptor(o);
       return "$signature" in interceptor ? interceptor.$signature() : null;
-    }, "call$1", "get$_extractFunctionTypeObjectFrom", 2, 0, 0, 274, "_extractFunctionTypeObjectFrom"],
-    toRti$0: [function() {
+    },
+    toRti$0: function() {
       var result, t1, t2, namedRti, keys, i, $name;
       result = {func: "dynafunc"};
       t1 = this.returnType;
@@ -2730,8 +2705,8 @@ var $$ = {};
         result.named = namedRti;
       }
       return result;
-    }, "call$0", "get$toRti", 0, 0, 10, "toRti"],
-    toString$0: [function(_) {
+    },
+    toString$0: function(_) {
       var t1, t2, result, needsComma, i, type, keys, $name;
       t1 = this.parameterTypes;
       if (t1 != null)
@@ -2770,81 +2745,69 @@ var $$ = {};
         }
       }
       return result + (") -> " + H.S(this.returnType));
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    static: {"^": "RuntimeFunctionType_inAssert-", RuntimeFunctionType_listToRti: [function(list) {
+    },
+    static: {"^": "RuntimeFunctionType_inAssert", RuntimeFunctionType_listToRti: function(list) {
         var result, t1, i;
         list = list;
         result = [];
         for (t1 = list.length, i = 0; i < t1; ++i)
           result.push(list[i].toRti$0());
         return result;
-      }, "call$1", "RuntimeFunctionType_listToRti$closure", 2, 0, 0, 80, "listToRti"]}
+      }}
   },
   DynamicRuntimeType: {
     "^": "RuntimeType;",
-    toString$0: [function(_) {
+    toString$0: function(_) {
       return "dynamic";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    toRti$0: [function() {
+    },
+    toRti$0: function() {
       return;
-    }, "call$0", "get$toRti", 0, 0, 10, "toRti"],
+    },
     $isDynamicRuntimeType: true
   },
   initHooks_closure: {
-    "^": "Closure:0;getTag_0-",
-    call$1: [function(o) {
+    "^": "Closure:8;getTag_0",
+    call$1: function(o) {
       return this.getTag_0(o);
-    }, "call$1", null, 2, 0, 0, 274, "call"]
+    }
   },
   initHooks_closure0: {
-    "^": "Closure:275;getUnknownTag_1-",
-    call$2: [function(o, tag) {
+    "^": "Closure:9;getUnknownTag_1",
+    call$2: function(o, tag) {
       return this.getUnknownTag_1(o, tag);
-    }, "call$2", null, 4, 0, 275, 274, 114, "call"]
+    }
   },
   initHooks_closure1: {
-    "^": "Closure:45;prototypeForTag_2-",
-    call$1: [function(tag) {
+    "^": "Closure:10;prototypeForTag_2",
+    call$1: function(tag) {
       return this.prototypeForTag_2(tag);
-    }, "call$1", null, 2, 0, 45, 114, "call"]
+    }
   }
 }],
 ["corner2d", "corner.dart", , G, {
   "^": "",
   CustomInt2DCorner: {
     "^": "Object;",
-    get$intLeftX: [function() {
+    get$intLeftX: function() {
       return this.corner2d$CustomInt2DCorner$_x;
-    }, null, null, 1, 0, 229, "intLeftX"],
-    get$intTopY: [function() {
+    },
+    get$intTopY: function() {
       return this.corner2d$CustomInt2DCorner$_y;
-    }, null, null, 1, 0, 229, "intTopY"],
-    setIntCorner$2: [function(x, y) {
+    },
+    setIntCorner$2: function(x, y) {
       this.corner2d$CustomInt2DCorner$_x = x;
       this.corner2d$CustomInt2DCorner$_y = y;
-    }, "call$2", "get$setIntCorner", 4, 0, 230, 25, 276, "setIntCorner"]
-  }
-}],
-["custom2d", "custom.dart", , A, {
-  "^": "",
-  CustomInt2DBox: {
-    "^": "AbstractInt2DShape_CustomInt2DCorner_CustomInt2DSize;size2d$CustomInt2DSize$_width-,size2d$CustomInt2DSize$_height-,corner2d$CustomInt2DCorner$_x-,corner2d$CustomInt2DCorner$_y-"
-  },
-  AbstractInt2DShape_CustomInt2DCorner: {
-    "^": "AbstractInt2DShape+CustomInt2DCorner;"
-  },
-  AbstractInt2DShape_CustomInt2DCorner_CustomInt2DSize: {
-    "^": "AbstractInt2DShape_CustomInt2DCorner+CustomInt2DSize;"
+    }
   }
 }],
 ["dart._internal", "dart:_internal", , H, {
   "^": "",
-  IterableMixinWorkaround_forEach: [function(iterable, f) {
+  IterableMixinWorkaround_forEach: function(iterable, f) {
     var t1;
     for (t1 = new H.ListIterator(iterable, iterable.length, 0, null); t1.moveNext$0();)
       f.call$1(t1._current);
-  }, "call$2", "IterableMixinWorkaround_forEach$closure", 4, 0, 120, 119, 121, "forEach"],
-  IterableMixinWorkaround_toStringIterable: [function(iterable, leftDelimiter, rightDelimiter) {
+  },
+  IterableMixinWorkaround_toStringIterable: function(iterable, leftDelimiter, rightDelimiter) {
     var result, i, t1;
     for (i = 0; t1 = $.get$IterableMixinWorkaround__toStringList(), i < t1.length; ++i)
       if (t1[i] === iterable)
@@ -2862,8 +2825,8 @@ var $$ = {};
       t1.pop();
     }
     return result.get$_contents();
-  }, "call$3", "IterableMixinWorkaround_toStringIterable$closure", 6, 0, 122, 119, 123, 124, "toStringIterable"],
-  IterableMixinWorkaround_setRangeList: [function(list, start, end, from, skipCount) {
+  },
+  IterableMixinWorkaround_setRangeList: function(list, start, end, from, skipCount) {
     var $length;
     if (start < 0 || start > list.length)
       H.throwExpression(P.RangeError$range(start, 0, list.length));
@@ -2875,11 +2838,11 @@ var $$ = {};
     if (skipCount + $length > from.length)
       throw H.wrapException(H.IterableElementError_tooFew());
     H.Lists_copy(from, skipCount, list, start, $length);
-  }, "call$5", "IterableMixinWorkaround_setRangeList$closure", 10, 0, 125, 80, 126, 127, 128, 129, "setRangeList"],
-  IterableElementError_tooFew: [function() {
+  },
+  IterableElementError_tooFew: function() {
     return new P.StateError("Too few elements");
-  }, "call$0", "IterableElementError_tooFew$closure", 0, 0, 130, "tooFew"],
-  Lists_copy: [function(src, srcStart, dst, dstStart, count) {
+  },
+  Lists_copy: function(src, srcStart, dst, dstStart, count) {
     var i, j, t1, t2;
     if (srcStart < dstStart)
       for (i = srcStart + count - 1, j = dstStart + count - 1, t1 = src.length; i >= srcStart; --i, --j) {
@@ -2893,20 +2856,16 @@ var $$ = {};
           return H.ioore(src, i);
         C.JSArray_methods.$indexSet(dst, j, src[i]);
       }
-  }, "call$5", "Lists_copy$closure", 10, 0, 131, 132, 133, 134, 135, 136, "copy"],
-  Symbol_getName: [function(symbol) {
+  },
+  Symbol_getName: function(symbol) {
     return symbol.get$_name();
-  }, "call$1", "Symbol_getName$closure", 2, 0, 137, 138, "getName"],
+  },
   ListIterator: {
-    "^": "Object;_iterable-,_length-,_index-,_current-",
-    get$current: [function() {
+    "^": "Object;_iterable,_length,_index,_current",
+    get$current: function() {
       return this._current;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E_", ret: E};
-      }, this.$receiver, "ListIterator");
-    }, "current"],
-    moveNext$0: [function() {
+    },
+    moveNext$0: function() {
       var t1, t2, $length, t3;
       t1 = this._iterable;
       t2 = J.getInterceptor$asx(t1);
@@ -2921,44 +2880,36 @@ var $$ = {};
       this._current = t2.elementAt$1(t1, t3);
       ++this._index;
       return true;
-    }, "call$0", "get$moveNext", 0, 0, 240, "moveNext"]
+    }
   },
   MappedIterable: {
-    "^": "IterableBase;_iterable-,_f-",
-    get$iterator: [function(_) {
+    "^": "IterableBase;_iterable,_f",
+    get$iterator: function(_) {
       var t1 = this._iterable;
       t1 = new H.MappedIterator(null, t1.get$iterator(t1), this._f);
       t1.$builtinTypeInfo = this.$builtinTypeInfo;
       return t1;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(S, T) {
-        return {func: "Iterator_0", ret: [P.Iterator, T]};
-      }, this.$receiver, "MappedIterable");
-    }, "iterator"],
-    get$length: [function(_) {
+    },
+    get$length: function(_) {
       var t1 = this._iterable;
       return t1.get$length(t1);
-    }, null, null, 1, 0, 229, "length"],
+    },
     $asIterableBase: function($S, $T) {
       return [$T];
     },
-    static: {MappedIterable_MappedIterable: [function(iterable, $function, $S, $T) {
+    static: {MappedIterable_MappedIterable: function(iterable, $function, $S, $T) {
         return H.setRuntimeTypeInfo(new H.EfficientLengthMappedIterable(iterable, $function), [$S, $T]);
-      }, "call$2", null, 4, 0, function() {
-        return H.computeSignature(function(S, T) {
-          return {func: "MappedIterable__Iterable_T__S", ret: [H.MappedIterable, S, T], args: [P.Iterable, {func: "T__S", ret: T, args: [S]}]};
-        }, this.$receiver, "MappedIterable");
-      }, 119, 9, "new MappedIterable"]}
+      }}
   },
   EfficientLengthMappedIterable: {
-    "^": "MappedIterable;_iterable-,_f-"
+    "^": "MappedIterable;_iterable,_f"
   },
   MappedIterator: {
-    "^": "Iterator;_current-,_iterator-,_f-",
+    "^": "Iterator;_current,_iterator,_f",
     _f$1: function(arg0) {
       return this._f.call$1(arg0);
     },
-    moveNext$0: [function() {
+    moveNext$0: function() {
       var t1 = this._iterator;
       if (t1.moveNext$0()) {
         this._current = this._f$1(t1.get$current());
@@ -2966,25 +2917,18 @@ var $$ = {};
       }
       this._current = null;
       return false;
-    }, "call$0", "get$moveNext", 0, 0, 240, "moveNext"],
-    get$current: [function() {
+    },
+    get$current: function() {
       return this._current;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(S, T) {
-        return {func: "T_", ret: T};
-      }, this.$receiver, "MappedIterator");
-    }, "current"]
+    }
   },
   FixedLengthListMixin: {
-    "^": "Object;"
-  },
-  Symbol: {
     "^": "Object;"
   }
 }],
 ["dart._js_names", "dart:_js_names", , H, {
   "^": "",
-  extractKeys: [function(victim) {
+  extractKeys: function(victim) {
     var t1 = H.setRuntimeTypeInfo(function(victim, hasOwnProperty) {
       var result = [];
       for (var key in victim) {
@@ -2995,23 +2939,23 @@ var $$ = {};
     }(victim, Object.prototype.hasOwnProperty), [null]);
     t1.fixed$length = init;
     return t1;
-  }, "call$1", "extractKeys$closure", 2, 0, 139, 140, "extractKeys"]
+  }
 }],
 ["dart.async", "dart:async", , P, {
   "^": "",
-  _AsyncRun__initializeScheduleImmediate: [function() {
+  _AsyncRun__initializeScheduleImmediate: function() {
     if ($.get$globalThis().scheduleImmediate != null)
       return P._AsyncRun__scheduleImmediateJsOverride$closure();
     return P._AsyncRun__scheduleImmediateWithTimer$closure();
-  }, "call$0", "_AsyncRun__initializeScheduleImmediate$closure", 0, 0, 141, "_initializeScheduleImmediate"],
+  },
   _AsyncRun__scheduleImmediateJsOverride: [function(callback) {
     ++init.globalState.topEventLoop._activeJsAsyncCount;
     $.get$globalThis().scheduleImmediate(H.convertDartClosureToJS(new P._AsyncRun__scheduleImmediateJsOverride_internalCallback(callback), 0));
-  }, "call$1", "_AsyncRun__scheduleImmediateJsOverride$closure", 2, 0, 142, 28, "_scheduleImmediateJsOverride"],
+  }, "call$1", "_AsyncRun__scheduleImmediateJsOverride$closure", 2, 0, 0],
   _AsyncRun__scheduleImmediateWithTimer: [function(callback) {
     P._createTimer(C.Duration_0, callback);
-  }, "call$1", "_AsyncRun__scheduleImmediateWithTimer$closure", 2, 0, 142, 28, "_scheduleImmediateWithTimer"],
-  _registerErrorHandler: [function(errorHandler, zone) {
+  }, "call$1", "_AsyncRun__scheduleImmediateWithTimer$closure", 2, 0, 0],
+  _registerErrorHandler: function(errorHandler, zone) {
     var t1 = H.getDynamicRuntimeType();
     t1 = H.buildFunctionType(t1, [t1, t1])._isTest$1(errorHandler);
     if (t1) {
@@ -3021,8 +2965,8 @@ var $$ = {};
       zone.toString;
       return errorHandler;
     }
-  }, "call$2", "_registerErrorHandler$closure", 4, 0, 143, 144, 145, "_registerErrorHandler"],
-  _asyncRunCallbackLoop: [function() {
+  },
+  _asyncRunCallbackLoop: function() {
     var entry = $._nextCallback;
     for (; entry != null;) {
       entry.callback$0();
@@ -3030,7 +2974,7 @@ var $$ = {};
       $._nextCallback = entry;
     }
     $._lastCallback = null;
-  }, "call$0", "_asyncRunCallbackLoop$closure", 0, 0, 116, "_asyncRunCallbackLoop"],
+  },
   _asyncRunCallback: [function() {
     var exception;
     try {
@@ -3042,8 +2986,8 @@ var $$ = {};
       throw exception;
     }
 
-  }, "call$0", "_asyncRunCallback$closure", 0, 0, 116, "_asyncRunCallback"],
-  _scheduleAsyncCallback: [function(callback) {
+  }, "call$0", "_asyncRunCallback$closure", 0, 0, 1],
+  _scheduleAsyncCallback: function(callback) {
     var t1, t2;
     t1 = $._lastCallback;
     if (t1 == null) {
@@ -3056,8 +3000,8 @@ var $$ = {};
       t1.next = t2;
       $._lastCallback = t2;
     }
-  }, "call$1", "_scheduleAsyncCallback$closure", 2, 0, 150, 28, "_scheduleAsyncCallback"],
-  _runUserCode: [function(userCode, onSuccess, onError) {
+  },
+  _runUserCode: function(userCode, onSuccess, onError) {
     var e, s, exception, t1;
     try {
       onSuccess.call$1(userCode.call$0());
@@ -3068,35 +3012,35 @@ var $$ = {};
       onError.call$2(e, s);
     }
 
-  }, "call$3", "_runUserCode$closure", 6, 0, 151, 152, 153, 154, "_runUserCode"],
-  _cancelAndError: [function(subscription, future, error, stackTrace) {
+  },
+  _cancelAndError: function(subscription, future, error, stackTrace) {
     subscription.cancel$0();
     future._completeError$2(error, stackTrace);
-  }, "call$4", "_cancelAndError$closure", 8, 0, 155, 156, 157, 158, 159, "_cancelAndError"],
-  _cancelAndErrorClosure: [function(subscription, future) {
+  },
+  _cancelAndErrorClosure: function(subscription, future) {
     return new P._cancelAndErrorClosure_closure(subscription, future);
-  }, "call$2", "_cancelAndErrorClosure$closure", 4, 0, 160, 156, 157, "_cancelAndErrorClosure"],
-  Timer_Timer: [function(duration, callback) {
+  },
+  Timer_Timer: function(duration, callback) {
     var t1 = $.Zone__current;
     if (t1 === C.C__RootZone) {
       t1.toString;
       return P._rootCreateTimer(t1, null, t1, duration, callback);
     }
     return P._rootCreateTimer(t1, null, t1, duration, t1.bindCallback$2$runGuarded(callback, true));
-  }, "call$2", null, 4, 0, 161, 162, 28, "new Timer"],
-  _createTimer: [function(duration, callback) {
+  },
+  _createTimer: function(duration, callback) {
     var milliseconds = C.JSInt_methods._tdivFast$1(duration._duration, 1000);
     return H.TimerImpl$(milliseconds < 0 ? 0 : milliseconds, callback);
-  }, "call$2", "_createTimer$closure", 4, 0, 161, 162, 28, "_createTimer"],
-  Zone__enter: [function(zone) {
+  },
+  Zone__enter: function(zone) {
     var previous = $.Zone__current;
     $.Zone__current = zone;
     return previous;
-  }, "call$1", "Zone__enter$closure", 2, 0, 163, 145, "_enter"],
-  _rootHandleUncaughtError: [function($self, $parent, zone, error, stackTrace) {
+  },
+  _rootHandleUncaughtError: function($self, $parent, zone, error, stackTrace) {
     P._rootRun($self, null, $self, new P._rootHandleUncaughtError_closure(error, stackTrace));
-  }, "call$5", "_rootHandleUncaughtError$closure", 10, 0, 164, 165, 166, 145, 158, 159, "_rootHandleUncaughtError"],
-  _rootRun: [function($self, $parent, zone, f) {
+  },
+  _rootRun: function($self, $parent, zone, f) {
     var old, t1;
     if ($.Zone__current === zone)
       return f.call$0();
@@ -3107,8 +3051,8 @@ var $$ = {};
     } finally {
       $.Zone__current = old;
     }
-  }, "call$4", "_rootRun$closure", 8, 0, 167, 165, 166, 145, 121, "_rootRun"],
-  _rootRunUnary: [function($self, $parent, zone, f, arg) {
+  },
+  _rootRunUnary: function($self, $parent, zone, f, arg) {
     var old, t1;
     if ($.Zone__current === zone)
       return f.call$1(arg);
@@ -3119,8 +3063,8 @@ var $$ = {};
     } finally {
       $.Zone__current = old;
     }
-  }, "call$5", "_rootRunUnary$closure", 10, 0, 168, 165, 166, 145, 121, 169, "_rootRunUnary"],
-  _rootRunBinary: [function($self, $parent, zone, f, arg1, arg2) {
+  },
+  _rootRunBinary: function($self, $parent, zone, f, arg1, arg2) {
     var old, t1;
     if ($.Zone__current === zone)
       return f.call$2(arg1, arg2);
@@ -3131,82 +3075,64 @@ var $$ = {};
     } finally {
       $.Zone__current = old;
     }
-  }, "call$6", "_rootRunBinary$closure", 12, 0, 170, 165, 166, 145, 121, 56, 57, "_rootRunBinary"],
-  _rootScheduleMicrotask: [function($self, $parent, zone, f) {
+  },
+  _rootScheduleMicrotask: function($self, $parent, zone, f) {
     P._scheduleAsyncCallback(C.C__RootZone !== zone ? zone.bindCallback$1(f) : f);
-  }, "call$4", "_rootScheduleMicrotask$closure", 8, 0, 171, 165, 166, 145, 121, "_rootScheduleMicrotask"],
-  _rootCreateTimer: [function($self, $parent, zone, duration, callback) {
+  },
+  _rootCreateTimer: function($self, $parent, zone, duration, callback) {
     return P._createTimer(duration, C.C__RootZone !== zone ? zone.bindCallback$1(callback) : callback);
-  }, "call$5", "_rootCreateTimer$closure", 10, 0, 172, 165, 166, 145, 162, 28, "_rootCreateTimer"],
+  },
   _AsyncRun__scheduleImmediateJsOverride_internalCallback: {
-    "^": "Closure:10;callback_0-",
-    call$0: [function() {
+    "^": "Closure:6;callback_0",
+    call$0: function() {
       H.leaveJsAsync();
       this.callback_0.call$0();
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _AsyncError: {
-    "^": "Object;error>-,stackTrace<-",
+    "^": "Object;error>,stackTrace<",
     $isError: true
   },
-  Future: {
-    "^": "Object;",
-    $isFuture: true
-  },
   _Future: {
-    "^": "Object;_state-,_zone<-,_resultOrListeners-,_nextListener<-,_onValueCallback-,_errorTestCallback-,_onErrorCallback-,_whenCompleteActionCallback-",
-    get$_isComplete: [function() {
+    "^": "Object;_state,_zone<,_resultOrListeners,_nextListener<,_onValueCallback,_errorTestCallback,_onErrorCallback,_whenCompleteActionCallback",
+    get$_isComplete: function() {
       return this._state >= 4;
-    }, null, null, 1, 0, 240, "_isComplete"],
-    get$_hasValue: [function() {
+    },
+    get$_hasValue: function() {
       return this._state === 4;
-    }, null, null, 1, 0, 240, "_hasValue"],
-    get$_hasError: [function() {
+    },
+    get$_hasError: function() {
       return this._state === 8;
-    }, null, null, 1, 0, 240, "_hasError"],
-    set$_isChained: [function(value) {
+    },
+    set$_isChained: function(value) {
       if (value)
         this._state = 2;
       else
         this._state = 0;
-    }, null, null, 3, 0, 277, 32, "_isChained"],
-    then$2$onError: [function(f, onError) {
+    },
+    then$2$onError: function(f, onError) {
       var t1, result;
       t1 = $.Zone__current;
       t1.toString;
       result = H.setRuntimeTypeInfo(new P._Future(0, t1, null, null, f, null, P._registerErrorHandler(onError, t1), null), [null]);
       this._addListener$1(result);
       return result;
-    }, function(f) {
-      return this.then$2$onError(f, null);
-    }, "then$1", "call$2$onError", "call$1", "get$then", 2, 3, function() {
-      return H.computeSignature(function(T) {
-        return {func: "Future__dynamic__T__Function", ret: P.Future, args: [{func: "dynamic__T", args: [T]}], named: {onError: P.Function}};
-      }, this.$receiver, "_Future");
-    }, 94, 121, 154, "then"],
-    get$_value: [function() {
+    },
+    get$_value: function() {
       return this._resultOrListeners;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "T_0", ret: T};
-      }, this.$receiver, "_Future");
-    }, "_value"],
-    get$_error: [function() {
+    },
+    get$_error: function() {
       return this._resultOrListeners;
-    }, null, null, 1, 0, 278, "_error"],
-    _setValue$1: [function(value) {
+    },
+    _setValue$1: function(value) {
       this._state = 4;
       this._resultOrListeners = value;
-    }, "call$1", "get$_setValue", 2, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "void__T", void: true, args: [T]};
-      }, this.$receiver, "_Future");
-    }, 32, "_setValue"],
-    _setError$2: [function(error, stackTrace) {
+    },
+    _setError$2: function(error, stackTrace) {
       this._state = 8;
       this._resultOrListeners = new P._AsyncError(error, stackTrace);
-    }, "call$2", "get$_setError", 4, 0, 279, 158, 159, "_setError"],
-    _addListener$1: [function(listener) {
+    },
+    _addListener$1: function(listener) {
       var t1;
       if (this._state >= 4) {
         t1 = this._zone;
@@ -3216,8 +3142,8 @@ var $$ = {};
         listener._nextListener = this._resultOrListeners;
         this._resultOrListeners = listener;
       }
-    }, "call$1", "get$_addListener", 2, 0, 280, 226, "_addListener"],
-    _removeListeners$0: [function() {
+    },
+    _removeListeners$0: function() {
       var current, prev, next;
       current = this._resultOrListeners;
       this._resultOrListeners = null;
@@ -3226,8 +3152,8 @@ var $$ = {};
         current._nextListener = prev;
       }
       return prev;
-    }, "call$0", "get$_removeListeners", 0, 0, 281, "_removeListeners"],
-    _complete$1: [function(value) {
+    },
+    _complete$1: function(value) {
       var t1, listeners;
       t1 = J.getInterceptor(value);
       if (!!t1.$isFuture)
@@ -3240,28 +3166,28 @@ var $$ = {};
         this._setValue$1(value);
         P._Future__propagateToListeners(this, listeners);
       }
-    }, "call$1", "get$_complete", 2, 0, 150, 32, "_complete"],
+    },
     _completeError$2: [function(error, stackTrace) {
       var listeners = this._removeListeners$0();
       this._setError$2(error, stackTrace);
       P._Future__propagateToListeners(this, listeners);
     }, function(error) {
       return this._completeError$2(error, null);
-    }, "_completeError$1", "call$2", "call$1", "get$_completeError", 2, 2, 282, 94, 158, 159, "_completeError"],
+    }, "_completeError$1", "call$2", "call$1", "get$_completeError", 2, 2, 11, 12],
     $is_Future: true,
     $isFuture: true,
-    static: {"^": "_Future__INCOMPLETE-,_Future__PENDING_COMPLETE-,_Future__CHAINED-,_Future__VALUE-,_Future__ERROR-", _Future$: [function($T) {
+    static: {"^": "_Future__INCOMPLETE,_Future__PENDING_COMPLETE,_Future__CHAINED,_Future__VALUE,_Future__ERROR", _Future$: function($T) {
         return H.setRuntimeTypeInfo(new P._Future(0, $.Zone__current, null, null, null, null, null, null), [$T]);
-      }, null, null, 0, 0, 10, "new _Future"], _Future__chainForeignFuture: [function(source, target) {
+      }, _Future__chainForeignFuture: function(source, target) {
         target._state = 2;
         source.then$2$onError(new P._Future__chainForeignFuture_closure(target), new P._Future__chainForeignFuture_closure0(target));
-      }, "call$2", "_Future__chainForeignFuture$closure", 4, 0, 146, 147, 87, "_chainForeignFuture"], _Future__chainCoreFuture: [function(source, target) {
+      }, _Future__chainCoreFuture: function(source, target) {
         target._state = 2;
         if (source._state >= 4)
           P._Future__propagateToListeners(source, target);
         else
           source._addListener$1(target);
-      }, "call$2", "_Future__chainCoreFuture$closure", 4, 0, 148, 147, 87, "_chainCoreFuture"], _Future__propagateMultipleListeners: [function(source, listeners) {
+      }, _Future__propagateMultipleListeners: function(source, listeners) {
         var listeners0;
         do {
           listeners0 = listeners.get$_nextListener();
@@ -3273,7 +3199,7 @@ var $$ = {};
           } else
             break;
         } while (true);
-      }, "call$2", "_Future__propagateMultipleListeners$closure", 4, 0, 148, 147, 149, "_propagateMultipleListeners"], _Future__propagateToListeners: [function(source, listeners) {
+      }, _Future__propagateToListeners: function(source, listeners) {
         var t1, t2, t3, hasError, asyncError, t4, sourceValue, t5, zone, oldZone, chainSource, listeners0;
         t1 = {};
         t1.source_4 = source;
@@ -3382,35 +3308,36 @@ var $$ = {};
           t2 = listeners;
           listeners = listeners0;
         }
-      }, "call$2", "_Future__propagateToListeners$closure", 4, 0, 148, 147, 149, "_propagateToListeners"]}
+      }}
   },
   _Future__addListener_closure: {
-    "^": "Closure:10;this_0-,listener_1-",
-    call$0: [function() {
+    "^": "Closure:6;this_0,listener_1",
+    call$0: function() {
       P._Future__propagateToListeners(this.this_0, this.listener_1);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _Future__chainForeignFuture_closure: {
-    "^": "Closure:0;target_0-",
-    call$1: [function(value) {
+    "^": "Closure:8;target_0",
+    call$1: function(value) {
       var t1, listeners;
       t1 = this.target_0;
       listeners = t1._removeListeners$0();
       t1._setValue$1(value);
       P._Future__propagateToListeners(t1, listeners);
-    }, "call$1", null, 2, 0, 0, 32, "call"]
+    }
   },
   _Future__chainForeignFuture_closure0: {
-    "^": "Closure:283;target_1-",
-    call$2: [function(error, stackTrace) {
+    "^": "Closure:13;target_1",
+    call$2: function(error, stackTrace) {
       this.target_1._completeError$2(error, stackTrace);
-    }, function(error) {
+    },
+    call$1: function(error) {
       return this.call$2(error, null);
-    }, "call$1", "call$2", null, null, 2, 2, 283, 94, 158, 159, "call"]
+    }
   },
   _Future__propagateToListeners_handleValueCallback: {
-    "^": "Closure:240;box_1-,listener_3-,sourceValue_4-,zone_5-",
-    call$0: [function() {
+    "^": "Closure:14;box_1,listener_3,sourceValue_4,zone_5",
+    call$0: function() {
       var e, s, t1, t2, exception;
       try {
         t1 = this.zone_5;
@@ -3427,11 +3354,11 @@ var $$ = {};
         return false;
       }
 
-    }, "call$0", null, 0, 0, 240, "call"]
+    }
   },
   _Future__propagateToListeners_handleError: {
-    "^": "Closure:116;box_2-,box_1-,listener_6-,zone_7-",
-    call$0: [function() {
+    "^": "Closure:1;box_2,box_1,listener_6,zone_7",
+    call$0: function() {
       var asyncError, test, matchesTest, e, s, errorCallback, e0, s0, t1, t2, t3, exception, listenerValueOrError, t4;
       asyncError = this.box_2.source_4.get$_error();
       t1 = this.listener_6;
@@ -3493,11 +3420,11 @@ var $$ = {};
         t1.listenerValueOrError_2 = asyncError;
         t1.listenerHasValue_1 = false;
       }
-    }, "call$0", null, 0, 0, 116, "call"]
+    }
   },
   _Future__propagateToListeners_handleWhenCompleteCallback: {
-    "^": "Closure:116;box_2-,box_1-,hasError_8-,listener_9-,zone_10-",
-    call$0: [function() {
+    "^": "Closure:1;box_2,box_1,hasError_8,listener_9,zone_10",
+    call$0: function() {
       var t1, e, s, t2, t3, exception;
       t1 = {};
       t1.completeResult_0 = null;
@@ -3532,17 +3459,17 @@ var $$ = {};
         this.box_1.isPropagationAborted_3 = true;
         t1.completeResult_0.then$2$onError(new P._Future__propagateToListeners_handleWhenCompleteCallback_closure(this.box_2, t2), new P._Future__propagateToListeners_handleWhenCompleteCallback_closure0(t1, t2));
       }
-    }, "call$0", null, 0, 0, 116, "call"]
+    }
   },
   _Future__propagateToListeners_handleWhenCompleteCallback_closure: {
-    "^": "Closure:0;box_2-,listener_11-",
-    call$1: [function(ignored) {
+    "^": "Closure:8;box_2,listener_11",
+    call$1: function(ignored) {
       P._Future__propagateToListeners(this.box_2.source_4, this.listener_11);
-    }, "call$1", null, 2, 0, 0, 284, "call"]
+    }
   },
   _Future__propagateToListeners_handleWhenCompleteCallback_closure0: {
-    "^": "Closure:283;box_0-,listener_12-",
-    call$2: [function(error, stackTrace) {
+    "^": "Closure:13;box_0,listener_12",
+    call$2: function(error, stackTrace) {
       var t1, completeResult;
       t1 = this.box_0;
       if (!J.getInterceptor(t1.completeResult_0).$is_Future) {
@@ -3551,82 +3478,75 @@ var $$ = {};
         completeResult._setError$2(error, stackTrace);
       }
       P._Future__propagateToListeners(t1.completeResult_0, this.listener_12);
-    }, function(error) {
+    },
+    call$1: function(error) {
       return this.call$2(error, null);
-    }, "call$1", "call$2", null, null, 2, 2, 283, 94, 158, 159, "call"]
+    }
   },
   _AsyncCallbackEntry: {
-    "^": "Object;callback-,next-",
+    "^": "Object;callback,next",
     callback$0: function() {
       return this.callback.call$0();
     }
   },
   Stream: {
     "^": "Object;",
-    forEach$1: [function(_, action) {
+    forEach$1: function(_, action) {
       var t1, future;
       t1 = {};
       future = P._Future$(null);
       t1.subscription_0 = null;
       t1.subscription_0 = this.listen$4$cancelOnError$onDone$onError(new P.Stream_forEach_closure(t1, this, action, future), true, new P.Stream_forEach_closure0(future), future.get$_completeError());
       return future;
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "Future__void__T", ret: P.Future, args: [{func: "void__T0", void: true, args: [T]}]};
-      }, this.$receiver, "Stream");
-    }, 285, "forEach"],
-    get$length: [function(_) {
+    },
+    get$length: function(_) {
       var t1, future;
       t1 = {};
       future = P._Future$(P.$int);
       t1.count_0 = 0;
       this.listen$4$cancelOnError$onDone$onError(new P.Stream_length_closure(t1), true, new P.Stream_length_closure0(t1, future), future.get$_completeError());
       return future;
-    }, null, null, 1, 0, 286, "length"]
+    }
   },
   Stream_forEach_closure: {
-    "^": "Closure;box_0-,this_1-,action_2-,future_3-",
-    call$1: [function(element) {
+    "^": "Closure;box_0,this_1,action_2,future_3",
+    call$1: function(element) {
       P._runUserCode(new P.Stream_forEach__closure(this.action_2, element), new P.Stream_forEach__closure0(), P._cancelAndErrorClosure(this.box_0.subscription_0, this.future_3));
-    }, "call$1", null, 2, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "dynamic__T0", args: [T]};
-      }, this.$receiver, "Stream");
-    }, 233, "call"],
+    },
     $signature: function() {
       return H.computeSignature(function(T) {
-        return {func: "dynamic__T0", args: [T]};
+        return {func: "dynamic__T", args: [T]};
       }, this.this_1, "Stream");
     }
   },
   Stream_forEach__closure: {
-    "^": "Closure:10;action_4-,element_5-",
-    call$0: [function() {
+    "^": "Closure:6;action_4,element_5",
+    call$0: function() {
       return this.action_4.call$1(this.element_5);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   Stream_forEach__closure0: {
-    "^": "Closure:0;",
-    call$1: [function(_) {
-    }, "call$1", null, 2, 0, 0, 287, "call"]
+    "^": "Closure:8;",
+    call$1: function(_) {
+    }
   },
   Stream_forEach_closure0: {
-    "^": "Closure:10;future_6-",
-    call$0: [function() {
+    "^": "Closure:6;future_6",
+    call$0: function() {
       this.future_6._complete$1(null);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   Stream_length_closure: {
-    "^": "Closure:0;box_0-",
-    call$1: [function(_) {
+    "^": "Closure:8;box_0",
+    call$1: function(_) {
       ++this.box_0.count_0;
-    }, "call$1", null, 2, 0, 0, 287, "call"]
+    }
   },
   Stream_length_closure0: {
-    "^": "Closure:10;box_0-,future_1-",
-    call$0: [function() {
+    "^": "Closure:6;box_0,future_1",
+    call$0: function() {
       this.future_1._complete$1(this.box_0.count_0);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   StreamSubscription: {
     "^": "Object;"
@@ -3635,29 +3555,20 @@ var $$ = {};
     "^": "Object;"
   },
   _cancelAndError_closure: {
-    "^": "Closure:10;future_0-,error_1-,stackTrace_2-",
-    call$0: [function() {
+    "^": "Closure:6;future_0,error_1,stackTrace_2",
+    call$0: function() {
       return this.future_0._completeError$2(this.error_1, this.stackTrace_2);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _cancelAndErrorClosure_closure: {
-    "^": "Closure:288;subscription_0-,future_1-",
-    call$2: [function(error, stackTrace) {
+    "^": "Closure:15;subscription_0,future_1",
+    call$2: function(error, stackTrace) {
       return P._cancelAndError(this.subscription_0, this.future_1, error, stackTrace);
-    }, "call$2", null, 4, 0, 288, 158, 159, "call"]
-  },
-  Timer: {
-    "^": "Object;"
-  },
-  ZoneDelegate: {
-    "^": "Object;"
-  },
-  Zone: {
-    "^": "Object;"
+    }
   },
   _BaseZone: {
     "^": "Object;",
-    runGuarded$1: [function(f) {
+    runGuarded$1: function(f) {
       var e, s, t1, exception;
       try {
         t1 = this.run$1(f);
@@ -3669,8 +3580,8 @@ var $$ = {};
         return this.handleUncaughtError$2(e, s);
       }
 
-    }, "call$1", "get$runGuarded", 2, 0, 289, 121, "runGuarded"],
-    runUnaryGuarded$2: [function(f, arg) {
+    },
+    runUnaryGuarded$2: function(f, arg) {
       var e, s, t1, exception;
       try {
         t1 = this.runUnary$2(f, arg);
@@ -3682,59 +3593,58 @@ var $$ = {};
         return this.handleUncaughtError$2(e, s);
       }
 
-    }, "call$2", "get$runUnaryGuarded", 4, 0, 290, 121, 169, "runUnaryGuarded"],
-    bindCallback$2$runGuarded: [function(f, runGuarded) {
+    },
+    bindCallback$2$runGuarded: function(f, runGuarded) {
       var registered = this.registerCallback$1(f);
       if (runGuarded)
         return new P._BaseZone_bindCallback_closure(this, registered);
       else
         return new P._BaseZone_bindCallback_closure0(this, registered);
-    }, function(f) {
+    },
+    bindCallback$1: function(f) {
       return this.bindCallback$2$runGuarded(f, true);
-    }, "bindCallback$1", "call$2$runGuarded", "call$1", "get$bindCallback", 2, 3, 291, 202, 121, 292, "bindCallback"],
-    bindUnaryCallback$2$runGuarded: [function(f, runGuarded) {
+    },
+    bindUnaryCallback$2$runGuarded: function(f, runGuarded) {
       var registered = this.registerUnaryCallback$1(f);
       if (runGuarded)
         return new P._BaseZone_bindUnaryCallback_closure(this, registered);
       else
         return new P._BaseZone_bindUnaryCallback_closure0(this, registered);
-    }, function(f) {
-      return this.bindUnaryCallback$2$runGuarded(f, true);
-    }, "bindUnaryCallback$1", "call$2$runGuarded", "call$1", "get$bindUnaryCallback", 2, 3, 293, 202, 121, 292, "bindUnaryCallback"]
+    }
   },
   _BaseZone_bindCallback_closure: {
-    "^": "Closure:10;this_0-,registered_1-",
-    call$0: [function() {
+    "^": "Closure:6;this_0,registered_1",
+    call$0: function() {
       return this.this_0.runGuarded$1(this.registered_1);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _BaseZone_bindCallback_closure0: {
-    "^": "Closure:10;this_2-,registered_3-",
-    call$0: [function() {
+    "^": "Closure:6;this_2,registered_3",
+    call$0: function() {
       return this.this_2.run$1(this.registered_3);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _BaseZone_bindUnaryCallback_closure: {
-    "^": "Closure:0;this_0-,registered_1-",
-    call$1: [function(arg) {
+    "^": "Closure:8;this_0,registered_1",
+    call$1: function(arg) {
       return this.this_0.runUnaryGuarded$2(this.registered_1, arg);
-    }, "call$1", null, 2, 0, 0, 169, "call"]
+    }
   },
   _BaseZone_bindUnaryCallback_closure0: {
-    "^": "Closure:0;this_2-,registered_3-",
-    call$1: [function(arg) {
+    "^": "Closure:8;this_2,registered_3",
+    call$1: function(arg) {
       return this.this_2.runUnary$2(this.registered_3, arg);
-    }, "call$1", null, 2, 0, 0, 169, "call"]
+    }
   },
   _rootHandleUncaughtError_closure: {
-    "^": "Closure:10;error_0-,stackTrace_1-",
-    call$0: [function() {
+    "^": "Closure:6;error_0,stackTrace_1",
+    call$0: function() {
       P._scheduleAsyncCallback(new P._rootHandleUncaughtError__closure(this.error_0, this.stackTrace_1));
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _rootHandleUncaughtError__closure: {
-    "^": "Closure:10;error_2-,stackTrace_3-",
-    call$0: [function() {
+    "^": "Closure:6;error_2,stackTrace_3",
+    call$0: function() {
       var t1, trace;
       t1 = this.error_2;
       P.print("Uncaught Error: " + H.S(t1));
@@ -3744,66 +3654,54 @@ var $$ = {};
       if (trace != null)
         P.print("Stack Trace: \n" + H.S(trace) + "\n");
       throw H.wrapException(t1);
-    }, "call$0", null, 0, 0, 10, "call"]
+    }
   },
   _RootZone: {
     "^": "_BaseZone;",
-    $index: [function(_, key) {
+    $index: function(_, key) {
       return;
-    }, "call$1", "get$[]", 2, 0, 89, 39, "[]"],
-    handleUncaughtError$2: [function(error, stackTrace) {
+    },
+    handleUncaughtError$2: function(error, stackTrace) {
       return P._rootHandleUncaughtError(this, null, this, error, stackTrace);
-    }, "call$2", "get$handleUncaughtError", 4, 0, 288, 158, 159, "handleUncaughtError"],
-    run$1: [function(f) {
+    },
+    run$1: function(f) {
       return P._rootRun(this, null, this, f);
-    }, "call$1", "get$run", 2, 0, 289, 121, "run"],
-    runUnary$2: [function(f, arg) {
+    },
+    runUnary$2: function(f, arg) {
       return P._rootRunUnary(this, null, this, f, arg);
-    }, "call$2", "get$runUnary", 4, 0, 290, 121, 169, "runUnary"],
-    registerCallback$1: [function(f) {
+    },
+    registerCallback$1: function(f) {
       return f;
-    }, "call$1", "get$registerCallback", 2, 0, 294, 121, "registerCallback"],
-    registerUnaryCallback$1: [function(f) {
+    },
+    registerUnaryCallback$1: function(f) {
       return f;
-    }, "call$1", "get$registerUnaryCallback", 2, 0, 295, 121, "registerUnaryCallback"]
+    }
   }
 }],
 ["dart.collection", "dart:collection", , P, {
   "^": "",
-  LinkedHashMap_LinkedHashMap$_literal: [function(keyValuePairs, $K, $V) {
+  LinkedHashMap_LinkedHashMap$_literal: function(keyValuePairs, $K, $V) {
     return H.fillLiteralMap(keyValuePairs, H.setRuntimeTypeInfo(new P._LinkedHashMap(0, null, null, null, null, null, 0), [$K, $V]));
-  }, "call$1", null, 2, 0, function() {
-    return H.computeSignature(function(K, V) {
-      return {func: "LinkedHashMap__List", ret: [P.LinkedHashMap, K, V], args: [P.List]};
-    }, this.$receiver, "LinkedHashMap");
-  }, 51, "new LinkedHashMap$_literal"],
-  _HashSet__newHashTable: [function() {
+  },
+  _HashSet__newHashTable: function() {
     var table = Object.create(null);
     table["<non-identifier-key>"] = table;
     delete table["<non-identifier-key>"];
     return table;
-  }, "call$0", "_HashSet__newHashTable$closure", 0, 0, 10, "_newHashTable"],
+  },
   _defaultEquals: [function(a, b) {
     return J.$eq(a, b);
-  }, "call$2", "_defaultEquals$closure", 4, 0, 29, 174, 175, "_defaultEquals"],
+  }, "call$2", "_defaultEquals$closure", 4, 0, 2],
   _defaultHashCode: [function(a) {
     return J.get$hashCode$(a);
-  }, "call$1", "_defaultHashCode$closure", 2, 0, 35, 174, "_defaultHashCode"],
-  HashMap_HashMap: [function(equals, hashCode, isValidKey, $K, $V) {
+  }, "call$1", "_defaultHashCode$closure", 2, 0, 3],
+  HashMap_HashMap: function(equals, hashCode, isValidKey, $K, $V) {
     return H.setRuntimeTypeInfo(new P._HashMap(0, null, null, null, null), [$K, $V]);
-  }, "call$3$equals$hashCode$isValidKey", null, 0, 7, function() {
-    return H.computeSignature(function(K, V) {
-      return {func: "HashMap___bool__K_K_int__K_bool__dynamic", ret: [P.HashMap, K, V], named: {equals: {func: "bool__K_K", ret: P.bool, args: [K, K]}, hashCode: {func: "int__K", ret: P.$int, args: [K]}, isValidKey: {func: "bool__dynamic", ret: P.bool, args: [null]}}};
-    }, this.$receiver, "HashMap");
-  }, 94, 94, 94, 176, 177, 178, "new HashMap"],
-  HashSet_HashSet$identity: [function($E) {
+  },
+  HashSet_HashSet$identity: function($E) {
     return H.setRuntimeTypeInfo(new P._IdentityHashSet(0, null, null, null, null), [$E]);
-  }, "call$0", null, 0, 0, function() {
-    return H.computeSignature(function(E) {
-      return {func: "HashSet_", ret: [P.HashSet, E]};
-    }, this.$receiver, "HashSet");
-  }, "new HashSet$identity"],
-  _iterableToString: [function(iterable) {
+  },
+  _iterableToString: function(iterable) {
     var parts, t1;
     if ($.get$_toStringVisiting().contains$1(0, iterable))
       return "(...)";
@@ -3818,8 +3716,8 @@ var $$ = {};
     t1.writeAll$2(parts, ", ");
     t1.write$1(")");
     return t1._contents;
-  }, "call$1", "_iterableToString$closure", 2, 0, 179, 119, "_iterableToString"],
-  _iterablePartsToStrings: [function(iterable, parts) {
+  },
+  _iterablePartsToStrings: function(iterable, parts) {
     var it, $length, count, next, ultimateString, penultimateString, penultimate, ultimate, ultimate0, elision;
     it = iterable.get$iterator(iterable);
     $length = 0;
@@ -3900,22 +3798,14 @@ var $$ = {};
       parts.push(elision);
     parts.push(penultimateString);
     parts.push(ultimateString);
-  }, "call$2", "_iterablePartsToStrings$closure", 4, 0, 180, 119, 181, "_iterablePartsToStrings"],
-  LinkedHashMap_LinkedHashMap: [function(equals, hashCode, isValidKey, $K, $V) {
+  },
+  LinkedHashMap_LinkedHashMap: function(equals, hashCode, isValidKey, $K, $V) {
     return H.setRuntimeTypeInfo(new P._LinkedHashMap(0, null, null, null, null, null, 0), [$K, $V]);
-  }, "call$3$equals$hashCode$isValidKey", null, 0, 7, function() {
-    return H.computeSignature(function(K, V) {
-      return {func: "LinkedHashMap___bool__K_K_int__K_bool__dynamic", ret: [P.LinkedHashMap, K, V], named: {equals: {func: "bool__K_K0", ret: P.bool, args: [K, K]}, hashCode: {func: "int__K0", ret: P.$int, args: [K]}, isValidKey: {func: "bool__dynamic", ret: P.bool, args: [null]}}};
-    }, this.$receiver, "LinkedHashMap");
-  }, 94, 94, 94, 176, 177, 178, "new LinkedHashMap"],
-  LinkedHashSet_LinkedHashSet: [function(equals, hashCode, isValidKey, $E) {
+  },
+  LinkedHashSet_LinkedHashSet: function(equals, hashCode, isValidKey, $E) {
     return H.setRuntimeTypeInfo(new P._LinkedHashSet(0, null, null, null, null, null, 0), [$E]);
-  }, "call$3$equals$hashCode$isValidKey", null, 0, 7, function() {
-    return H.computeSignature(function(E) {
-      return {func: "LinkedHashSet___bool__E_E_int__E_bool__dynamic", ret: [P.LinkedHashSet, E], named: {equals: {func: "bool__E_E", ret: P.bool, args: [E, E]}, hashCode: {func: "int__E", ret: P.$int, args: [E]}, isValidKey: {func: "bool__dynamic", ret: P.bool, args: [null]}}};
-    }, this.$receiver, "LinkedHashSet");
-  }, 94, 94, 94, 176, 177, 178, "new LinkedHashSet"],
-  Maps_mapToString: [function(m) {
+  },
+  Maps_mapToString: function(m) {
     var t1, result, i, t2;
     t1 = {};
     for (i = 0; t2 = $.get$Maps__toStringList(), i < t2.length; ++i)
@@ -3935,27 +3825,19 @@ var $$ = {};
       t1.pop();
     }
     return result.get$_contents();
-  }, "call$1", "Maps_mapToString$closure", 2, 0, 182, 183, "mapToString"],
+  },
   _HashMap: {
-    "^": "Object;_collection$_length-,_strings-,_nums-,_rest-,_keys-",
-    get$length: [function(_) {
+    "^": "Object;_collection$_length,_strings,_nums,_rest,_keys",
+    get$length: function(_) {
       return this._collection$_length;
-    }, null, null, 1, 0, 229, "length"],
-    get$keys: [function() {
+    },
+    get$keys: function() {
       return H.setRuntimeTypeInfo(new P.HashMapKeyIterable(this), [H.getTypeArgumentByIndex(this, 0)]);
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "Iterable_", ret: [P.Iterable, K]};
-      }, this.$receiver, "_HashMap");
-    }, "keys"],
-    get$values: [function(_) {
+    },
+    get$values: function(_) {
       return H.MappedIterable_MappedIterable(H.setRuntimeTypeInfo(new P.HashMapKeyIterable(this), [H.getTypeArgumentByIndex(this, 0)]), new P._HashMap_values_closure(this), H.getTypeArgumentByIndex(this, 0), H.getTypeArgumentByIndex(this, 1));
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "Iterable_0", ret: [P.Iterable, V]};
-      }, this.$receiver, "_HashMap");
-    }, "values"],
-    $index: [function(_, key) {
+    },
+    $index: function(_, key) {
       var strings, t1, entry, nums;
       if (typeof key === "string" && key !== "__proto__") {
         strings = this._strings;
@@ -3977,12 +3859,8 @@ var $$ = {};
         return t1;
       } else
         return this._get$1(key);
-    }, "call$1", "get$[]", 2, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "V__Object", ret: V, args: [P.Object]};
-      }, this.$receiver, "_HashMap");
-    }, 39, "[]"],
-    _get$1: [function(key) {
+    },
+    _get$1: function(key) {
       var rest, bucket, index;
       rest = this._rest;
       if (rest == null)
@@ -3990,12 +3868,8 @@ var $$ = {};
       bucket = rest[this._computeHashCode$1(key)];
       index = this._findBucketIndex$2(bucket, key);
       return index < 0 ? null : bucket[index + 1];
-    }, "call$1", "get$_get", 2, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "V__Object", ret: V, args: [P.Object]};
-      }, this.$receiver, "_HashMap");
-    }, 39, "_get"],
-    $indexSet: [function(_, key, value) {
+    },
+    $indexSet: function(_, key, value) {
       var strings, nums;
       if (typeof key === "string" && key !== "__proto__") {
         strings = this._strings;
@@ -4013,12 +3887,8 @@ var $$ = {};
         this._addHashTableEntry$3(nums, key, value);
       } else
         this._set$2(key, value);
-    }, "call$2", "get$[]=", 4, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "void__K_V", void: true, args: [K, V]};
-      }, this.$receiver, "_HashMap");
-    }, 39, 32, "[]="],
-    _set$2: [function(key, value) {
+    },
+    _set$2: function(key, value) {
       var rest, hash, bucket, index;
       rest = this._rest;
       if (rest == null) {
@@ -4041,12 +3911,8 @@ var $$ = {};
           this._keys = null;
         }
       }
-    }, "call$2", "get$_set", 4, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "void__K_V", void: true, args: [K, V]};
-      }, this.$receiver, "_HashMap");
-    }, 39, 32, "_set"],
-    forEach$1: [function(_, action) {
+    },
+    forEach$1: function(_, action) {
       var keys, $length, i, key;
       keys = this._computeKeys$0();
       for ($length = keys.length, i = 0; i < $length; ++i) {
@@ -4055,12 +3921,8 @@ var $$ = {};
         if (keys !== this._keys)
           throw H.wrapException(P.ConcurrentModificationError$(this));
       }
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "void__void__K_V", void: true, args: [{func: "void__K_V", void: true, args: [K, V]}]};
-      }, this.$receiver, "_HashMap");
-    }, 285, "forEach"],
-    _computeKeys$0: [function() {
+    },
+    _computeKeys$0: function() {
       var t1, result, strings, names, entries, index, i, nums, rest, bucket, $length, i0;
       t1 = this._keys;
       if (t1 != null)
@@ -4101,22 +3963,18 @@ var $$ = {};
       }
       this._keys = result;
       return result;
-    }, "call$0", "get$_computeKeys", 0, 0, 296, "_computeKeys"],
-    _addHashTableEntry$3: [function(table, key, value) {
+    },
+    _addHashTableEntry$3: function(table, key, value) {
       if (table[key] == null) {
         ++this._collection$_length;
         this._keys = null;
       }
       P._HashMap__setTableEntry(table, key, value);
-    }, "call$3", "get$_addHashTableEntry", 6, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "void__dynamic_K_V", void: true, args: [null, K, V]};
-      }, this.$receiver, "_HashMap");
-    }, 173, 39, 32, "_addHashTableEntry"],
-    _computeHashCode$1: [function(key) {
+    },
+    _computeHashCode$1: function(key) {
       return J.get$hashCode$(key) & 0x3ffffff;
-    }, "call$1", "get$_computeHashCode", 2, 0, 35, 39, "_computeHashCode"],
-    _findBucketIndex$2: [function(bucket, key) {
+    },
+    _findBucketIndex$2: function(bucket, key) {
       var $length, i;
       if (bucket == null)
         return -1;
@@ -4125,40 +3983,36 @@ var $$ = {};
         if (J.$eq(bucket[i], key))
           return i;
       return -1;
-    }, "call$2", "get$_findBucketIndex", 4, 0, 297, 298, 39, "_findBucketIndex"],
+    },
     $isMap: true,
-    static: {_HashMap__setTableEntry: [function(table, key, value) {
+    static: {_HashMap__setTableEntry: function(table, key, value) {
         if (value == null)
           table[key] = table;
         else
           table[key] = value;
-      }, "call$3", "_HashMap__setTableEntry$closure", 6, 0, 40, 173, 39, 32, "_setTableEntry"], _HashMap__newHashTable: [function() {
+      }, _HashMap__newHashTable: function() {
         var table = Object.create(null);
         P._HashMap__setTableEntry(table, "<non-identifier-key>", table);
         delete table["<non-identifier-key>"];
         return table;
-      }, "call$0", "_HashMap__newHashTable$closure", 0, 0, 10, "_newHashTable"]}
+      }}
   },
   _HashMap_values_closure: {
-    "^": "Closure:0;this_0-",
-    call$1: [function(each) {
+    "^": "Closure:8;this_0",
+    call$1: function(each) {
       return this.this_0.$index(0, each);
-    }, "call$1", null, 2, 0, 0, 299, "call"]
+    }
   },
   HashMapKeyIterable: {
-    "^": "IterableBase;_map-",
-    get$length: [function(_) {
+    "^": "IterableBase;_map",
+    get$length: function(_) {
       return this._map._collection$_length;
-    }, null, null, 1, 0, 229, "length"],
-    get$iterator: [function(_) {
+    },
+    get$iterator: function(_) {
       var t1 = this._map;
       return new P.HashMapKeyIterator(t1, t1._computeKeys$0(), 0, null);
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "Iterator_1", ret: [P.Iterator, E]};
-      }, this.$receiver, "HashMapKeyIterable");
-    }, "iterator"],
-    forEach$1: [function(_, f) {
+    },
+    forEach$1: function(_, f) {
       var t1, keys, $length, i;
       t1 = this._map;
       keys = t1._computeKeys$0();
@@ -4167,22 +4021,14 @@ var $$ = {};
         if (keys !== t1._keys)
           throw H.wrapException(P.ConcurrentModificationError$(t1));
       }
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__void__E0", void: true, args: [{func: "void__E0", void: true, args: [E]}]};
-      }, this.$receiver, "HashMapKeyIterable");
-    }, 121, "forEach"]
+    }
   },
   HashMapKeyIterator: {
-    "^": "Object;_map-,_keys-,_offset-,_collection$_current-",
-    get$current: [function() {
+    "^": "Object;_map,_keys,_offset,_collection$_current",
+    get$current: function() {
       return this._collection$_current;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E_0", ret: E};
-      }, this.$receiver, "HashMapKeyIterator");
-    }, "current"],
-    moveNext$0: [function() {
+    },
+    moveNext$0: function() {
       var keys, offset, t1;
       keys = this._keys;
       offset = this._offset;
@@ -4197,28 +4043,20 @@ var $$ = {};
         this._offset = offset + 1;
         return true;
       }
-    }, "call$0", "get$moveNext", 0, 0, 240, "moveNext"]
+    }
   },
   _LinkedHashMap: {
-    "^": "Object;_collection$_length-,_strings-,_nums-,_rest-,_first-,_last-,_modifications-",
-    get$length: [function(_) {
+    "^": "Object;_collection$_length,_strings,_nums,_rest,_first,_last,_modifications",
+    get$length: function(_) {
       return this._collection$_length;
-    }, null, null, 1, 0, 229, "length"],
-    get$keys: [function() {
+    },
+    get$keys: function() {
       return H.setRuntimeTypeInfo(new P.LinkedHashMapKeyIterable(this), [H.getTypeArgumentByIndex(this, 0)]);
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "Iterable_1", ret: [P.Iterable, K]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, "keys"],
-    get$values: [function(_) {
+    },
+    get$values: function(_) {
       return H.MappedIterable_MappedIterable(H.setRuntimeTypeInfo(new P.LinkedHashMapKeyIterable(this), [H.getTypeArgumentByIndex(this, 0)]), new P._LinkedHashMap_values_closure(this), H.getTypeArgumentByIndex(this, 0), H.getTypeArgumentByIndex(this, 1));
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "Iterable_2", ret: [P.Iterable, V]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, "values"],
-    containsKey$1: [function(key) {
+    },
+    containsKey$1: function(key) {
       var nums;
       if ((key & 0x3ffffff) === key) {
         nums = this._nums;
@@ -4227,14 +4065,14 @@ var $$ = {};
         return nums[key] != null;
       } else
         return this._containsKey$1(key);
-    }, "call$1", "get$containsKey", 2, 0, 232, 39, "containsKey"],
-    _containsKey$1: [function(key) {
+    },
+    _containsKey$1: function(key) {
       var rest = this._rest;
       if (rest == null)
         return false;
       return this._findBucketIndex$2(rest[this._computeHashCode$1(key)], key) >= 0;
-    }, "call$1", "get$_containsKey", 2, 0, 232, 39, "_containsKey"],
-    $index: [function(_, key) {
+    },
+    $index: function(_, key) {
       var strings, cell, nums;
       if (typeof key === "string" && key !== "__proto__") {
         strings = this._strings;
@@ -4250,12 +4088,8 @@ var $$ = {};
         return cell == null ? null : cell.get$_collection$_value();
       } else
         return this._get$1(key);
-    }, "call$1", "get$[]", 2, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "V__Object0", ret: V, args: [P.Object]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 39, "[]"],
-    _get$1: [function(key) {
+    },
+    _get$1: function(key) {
       var rest, bucket, index;
       rest = this._rest;
       if (rest == null)
@@ -4265,12 +4099,8 @@ var $$ = {};
       if (index < 0)
         return;
       return bucket[index].get$_collection$_value();
-    }, "call$1", "get$_get", 2, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "V__Object0", ret: V, args: [P.Object]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 39, "_get"],
-    $indexSet: [function(_, key, value) {
+    },
+    $indexSet: function(_, key, value) {
       var strings, nums;
       if (typeof key === "string" && key !== "__proto__") {
         strings = this._strings;
@@ -4288,12 +4118,8 @@ var $$ = {};
         this._addHashTableEntry$3(nums, key, value);
       } else
         this._set$2(key, value);
-    }, "call$2", "get$[]=", 4, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "void__K_V0", void: true, args: [K, V]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 39, 32, "[]="],
-    _set$2: [function(key, value) {
+    },
+    _set$2: function(key, value) {
       var rest, hash, bucket, index;
       rest = this._rest;
       if (rest == null) {
@@ -4311,24 +4137,16 @@ var $$ = {};
         else
           bucket.push(this._newLinkedCell$2(key, value));
       }
-    }, "call$2", "get$_set", 4, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "void__K_V0", void: true, args: [K, V]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 39, 32, "_set"],
-    remove$1: [function(_, key) {
+    },
+    remove$1: function(_, key) {
       if (typeof key === "string" && key !== "__proto__")
         return this._removeHashTableEntry$2(this._strings, key);
       else if (typeof key === "number" && (key & 0x3ffffff) === key)
         return this._removeHashTableEntry$2(this._nums, key);
       else
         return this._remove$1(key);
-    }, "call$1", "get$remove", 2, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "V__Object0", ret: V, args: [P.Object]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 39, "remove"],
-    _remove$1: [function(key) {
+    },
+    _remove$1: function(key) {
       var rest, bucket, index, cell;
       rest = this._rest;
       if (rest == null)
@@ -4340,12 +4158,8 @@ var $$ = {};
       cell = bucket.splice(index, 1)[0];
       this._unlinkCell$1(cell);
       return cell.get$_collection$_value();
-    }, "call$1", "get$_remove", 2, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "V__Object0", ret: V, args: [P.Object]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 39, "_remove"],
-    forEach$1: [function(_, action) {
+    },
+    forEach$1: function(_, action) {
       var cell, modifications;
       cell = this._first;
       modifications = this._modifications;
@@ -4355,23 +4169,15 @@ var $$ = {};
           throw H.wrapException(P.ConcurrentModificationError$(this));
         cell = cell._next;
       }
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "void__void__K_V0", void: true, args: [{func: "void__K_V0", void: true, args: [K, V]}]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 285, "forEach"],
-    _addHashTableEntry$3: [function(table, key, value) {
+    },
+    _addHashTableEntry$3: function(table, key, value) {
       var cell = table[key];
       if (cell == null)
         table[key] = this._newLinkedCell$2(key, value);
       else
         cell.set$_collection$_value(value);
-    }, "call$3", "get$_addHashTableEntry", 6, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "void__dynamic_K_V0", void: true, args: [null, K, V]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 173, 39, 32, "_addHashTableEntry"],
-    _removeHashTableEntry$2: [function(table, key) {
+    },
+    _removeHashTableEntry$2: function(table, key) {
       var cell;
       if (table == null)
         return;
@@ -4381,12 +4187,8 @@ var $$ = {};
       this._unlinkCell$1(cell);
       delete table[key];
       return cell.get$_collection$_value();
-    }, "call$2", "get$_removeHashTableEntry", 4, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "V__dynamic_Object", ret: V, args: [null, P.Object]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 173, 39, "_removeHashTableEntry"],
-    _newLinkedCell$2: [function(key, value) {
+    },
+    _newLinkedCell$2: function(key, value) {
       var cell, last;
       cell = new P.LinkedHashMapCell(key, value, null, null);
       if (this._first == null) {
@@ -4401,12 +4203,8 @@ var $$ = {};
       ++this._collection$_length;
       this._modifications = this._modifications + 1 & 67108863;
       return cell;
-    }, "call$2", "get$_newLinkedCell", 4, 0, function() {
-      return H.computeSignature(function(K, V) {
-        return {func: "LinkedHashMapCell__K_V", ret: P.LinkedHashMapCell, args: [K, V]};
-      }, this.$receiver, "_LinkedHashMap");
-    }, 39, 32, "_newLinkedCell"],
-    _unlinkCell$1: [function(cell) {
+    },
+    _unlinkCell$1: function(cell) {
       var previous, next;
       previous = cell.get$_previous();
       next = cell.get$_next();
@@ -4420,11 +4218,11 @@ var $$ = {};
         next.set$_previous(previous);
       --this._collection$_length;
       this._modifications = this._modifications + 1 & 67108863;
-    }, "call$1", "get$_unlinkCell", 2, 0, 300, 301, "_unlinkCell"],
-    _computeHashCode$1: [function(key) {
+    },
+    _computeHashCode$1: function(key) {
       return J.get$hashCode$(key) & 0x3ffffff;
-    }, "call$1", "get$_computeHashCode", 2, 0, 35, 39, "_computeHashCode"],
-    _findBucketIndex$2: [function(bucket, key) {
+    },
+    _findBucketIndex$2: function(bucket, key) {
       var $length, i;
       if (bucket == null)
         return -1;
@@ -4433,44 +4231,40 @@ var $$ = {};
         if (J.$eq(bucket[i].get$_key(), key))
           return i;
       return -1;
-    }, "call$2", "get$_findBucketIndex", 4, 0, 297, 298, 39, "_findBucketIndex"],
-    toString$0: [function(_) {
+    },
+    toString$0: function(_) {
       return P.Maps_mapToString(this);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     $isMap: true,
-    static: {_LinkedHashMap__newHashTable: [function() {
+    static: {_LinkedHashMap__newHashTable: function() {
         var table = Object.create(null);
         table["<non-identifier-key>"] = table;
         delete table["<non-identifier-key>"];
         return table;
-      }, "call$0", "_LinkedHashMap__newHashTable$closure", 0, 0, 10, "_newHashTable"]}
+      }}
   },
   _LinkedHashMap_values_closure: {
-    "^": "Closure:0;this_0-",
-    call$1: [function(each) {
+    "^": "Closure:8;this_0",
+    call$1: function(each) {
       return this.this_0.$index(0, each);
-    }, "call$1", null, 2, 0, 0, 299, "call"]
+    }
   },
   LinkedHashMapCell: {
-    "^": "Object;_key<-,_collection$_value@-,_next@-,_previous@-"
+    "^": "Object;_key<,_collection$_value@,_next@,_previous@"
   },
   LinkedHashMapKeyIterable: {
-    "^": "IterableBase;_map-",
-    get$length: [function(_) {
+    "^": "IterableBase;_map",
+    get$length: function(_) {
       return this._map._collection$_length;
-    }, null, null, 1, 0, 229, "length"],
-    get$iterator: [function(_) {
+    },
+    get$iterator: function(_) {
       var t1, t2;
       t1 = this._map;
       t2 = new P.LinkedHashMapKeyIterator(t1, t1._modifications, null, null);
       t2._cell = t1._first;
       return t2;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "Iterator_2", ret: [P.Iterator, E]};
-      }, this.$receiver, "LinkedHashMapKeyIterable");
-    }, "iterator"],
-    forEach$1: [function(_, f) {
+    },
+    forEach$1: function(_, f) {
       var t1, cell, modifications;
       t1 = this._map;
       cell = t1._first;
@@ -4481,22 +4275,14 @@ var $$ = {};
           throw H.wrapException(P.ConcurrentModificationError$(t1));
         cell = cell._next;
       }
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__void__E1", void: true, args: [{func: "void__E1", void: true, args: [E]}]};
-      }, this.$receiver, "LinkedHashMapKeyIterable");
-    }, 121, "forEach"]
+    }
   },
   LinkedHashMapKeyIterator: {
-    "^": "Object;_map-,_modifications-,_cell-,_collection$_current-",
-    get$current: [function() {
+    "^": "Object;_map,_modifications,_cell,_collection$_current",
+    get$current: function() {
       return this._collection$_current;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E_1", ret: E};
-      }, this.$receiver, "LinkedHashMapKeyIterator");
-    }, "current"],
-    moveNext$0: [function() {
+    },
+    moveNext$0: function() {
       var t1 = this._map;
       if (this._modifications !== t1._modifications)
         throw H.wrapException(P.ConcurrentModificationError$(t1));
@@ -4511,21 +4297,17 @@ var $$ = {};
           return true;
         }
       }
-    }, "call$0", "get$moveNext", 0, 0, 240, "moveNext"]
+    }
   },
   _HashSet: {
     "^": "_HashSetBase;",
-    get$iterator: [function(_) {
+    get$iterator: function(_) {
       return new P.HashSetIterator(this, this._computeElements$0(), 0, null);
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "Iterator_3", ret: [P.Iterator, E]};
-      }, this.$receiver, "_HashSet");
-    }, "iterator"],
-    get$length: [function(_) {
+    },
+    get$length: function(_) {
       return this._collection$_length;
-    }, null, null, 1, 0, 229, "length"],
-    contains$1: [function(_, object) {
+    },
+    contains$1: function(_, object) {
       var strings, nums;
       if (typeof object === "string" && object !== "__proto__") {
         strings = this._strings;
@@ -4535,14 +4317,14 @@ var $$ = {};
         return nums == null ? false : nums[object] != null;
       } else
         return this._contains$1(object);
-    }, "call$1", "get$contains", 2, 0, 232, 1, "contains"],
-    _contains$1: [function(object) {
+    },
+    _contains$1: function(object) {
       var rest = this._rest;
       if (rest == null)
         return false;
       return this._findBucketIndex$2(rest[this._computeHashCode$1(object)], object) >= 0;
-    }, "call$1", "get$_contains", 2, 0, 232, 1, "_contains"],
-    lookup$1: [function(object) {
+    },
+    lookup$1: function(object) {
       var t1;
       if (!(typeof object === "string" && object !== "__proto__"))
         t1 = typeof object === "number" && (object & 0x3ffffff) === object;
@@ -4551,12 +4333,8 @@ var $$ = {};
       if (t1)
         return this.contains$1(0, object) ? object : null;
       return this._lookup$1(object);
-    }, "call$1", "get$lookup", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E__Object", ret: E, args: [P.Object]};
-      }, this.$receiver, "_HashSet");
-    }, 1, "lookup"],
-    _lookup$1: [function(object) {
+    },
+    _lookup$1: function(object) {
       var rest, bucket, index;
       rest = this._rest;
       if (rest == null)
@@ -4566,19 +4344,11 @@ var $$ = {};
       if (index < 0)
         return;
       return J.$index$asx(bucket, index);
-    }, "call$1", "get$_lookup", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E__Object", ret: E, args: [P.Object]};
-      }, this.$receiver, "_HashSet");
-    }, 1, "_lookup"],
-    add$1: [function(_, element) {
+    },
+    add$1: function(_, element) {
       return this._add$1(element);
-    }, "call$1", "get$add", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "bool__E", ret: P.bool, args: [E]};
-      }, this.$receiver, "_HashSet");
-    }, 233, "add"],
-    _add$1: [function(element) {
+    },
+    _add$1: function(element) {
       var rest, hash, bucket;
       rest = this._rest;
       if (rest == null) {
@@ -4597,15 +4367,11 @@ var $$ = {};
       ++this._collection$_length;
       this._elements = null;
       return true;
-    }, "call$1", "get$_add", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "bool__E", ret: P.bool, args: [E]};
-      }, this.$receiver, "_HashSet");
-    }, 233, "_add"],
-    remove$1: [function(_, object) {
+    },
+    remove$1: function(_, object) {
       return this._remove$1(object);
-    }, "call$1", "get$remove", 2, 0, 232, 1, "remove"],
-    _remove$1: [function(object) {
+    },
+    _remove$1: function(object) {
       var rest, bucket, index;
       rest = this._rest;
       if (rest == null)
@@ -4618,8 +4384,8 @@ var $$ = {};
       this._elements = null;
       bucket.splice(index, 1);
       return true;
-    }, "call$1", "get$_remove", 2, 0, 232, 1, "_remove"],
-    _computeElements$0: [function() {
+    },
+    _computeElements$0: function() {
       var t1, result, strings, names, entries, index, i, nums, rest, bucket, $length, i0;
       t1 = this._elements;
       if (t1 != null)
@@ -4660,11 +4426,11 @@ var $$ = {};
       }
       this._elements = result;
       return result;
-    }, "call$0", "get$_computeElements", 0, 0, 296, "_computeElements"],
-    _computeHashCode$1: [function(element) {
+    },
+    _computeHashCode$1: function(element) {
       return J.get$hashCode$(element) & 0x3ffffff;
-    }, "call$1", "get$_computeHashCode", 2, 0, 35, 233, "_computeHashCode"],
-    _findBucketIndex$2: [function(bucket, element) {
+    },
+    _findBucketIndex$2: function(bucket, element) {
       var $length, i;
       if (bucket == null)
         return -1;
@@ -4673,14 +4439,14 @@ var $$ = {};
         if (J.$eq(bucket[i], element))
           return i;
       return -1;
-    }, "call$2", "get$_findBucketIndex", 4, 0, 297, 298, 233, "_findBucketIndex"]
+    }
   },
   _IdentityHashSet: {
-    "^": "_HashSet;_collection$_length-,_strings-,_nums-,_rest-,_elements-",
-    _computeHashCode$1: [function(key) {
+    "^": "_HashSet;_collection$_length,_strings,_nums,_rest,_elements",
+    _computeHashCode$1: function(key) {
       return H.objectHashCode(key) & 0x3ffffff;
-    }, "call$1", "get$_computeHashCode", 2, 0, 35, 39, "_computeHashCode"],
-    _findBucketIndex$2: [function(bucket, element) {
+    },
+    _findBucketIndex$2: function(bucket, element) {
       var $length, i, t1;
       if (bucket == null)
         return -1;
@@ -4691,18 +4457,14 @@ var $$ = {};
           return i;
       }
       return -1;
-    }, "call$2", "get$_findBucketIndex", 4, 0, 297, 298, 233, "_findBucketIndex"]
+    }
   },
   HashSetIterator: {
-    "^": "Object;_set-,_elements-,_offset-,_collection$_current-",
-    get$current: [function() {
+    "^": "Object;_set,_elements,_offset,_collection$_current",
+    get$current: function() {
       return this._collection$_current;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E_2", ret: E};
-      }, this.$receiver, "HashSetIterator");
-    }, "current"],
-    moveNext$0: [function() {
+    },
+    moveNext$0: function() {
       var elements, offset, t1;
       elements = this._elements;
       offset = this._offset;
@@ -4717,23 +4479,19 @@ var $$ = {};
         this._offset = offset + 1;
         return true;
       }
-    }, "call$0", "get$moveNext", 0, 0, 240, "moveNext"]
+    }
   },
   _LinkedHashSet: {
-    "^": "_HashSetBase;_collection$_length-,_strings-,_nums-,_rest-,_first-,_last-,_modifications-",
-    get$iterator: [function(_) {
+    "^": "_HashSetBase;_collection$_length,_strings,_nums,_rest,_first,_last,_modifications",
+    get$iterator: function(_) {
       var t1 = new P.LinkedHashSetIterator(this, this._modifications, null, null);
       t1._cell = this._first;
       return t1;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "Iterator_4", ret: [P.Iterator, E]};
-      }, this.$receiver, "_LinkedHashSet");
-    }, "iterator"],
-    get$length: [function(_) {
+    },
+    get$length: function(_) {
       return this._collection$_length;
-    }, null, null, 1, 0, 229, "length"],
-    contains$1: [function(_, object) {
+    },
+    contains$1: function(_, object) {
       var strings, nums;
       if (typeof object === "string" && object !== "__proto__") {
         strings = this._strings;
@@ -4747,14 +4505,14 @@ var $$ = {};
         return nums[object] != null;
       } else
         return this._contains$1(object);
-    }, "call$1", "get$contains", 2, 0, 232, 1, "contains"],
-    _contains$1: [function(object) {
+    },
+    _contains$1: function(object) {
       var rest = this._rest;
       if (rest == null)
         return false;
       return this._findBucketIndex$2(rest[this._computeHashCode$1(object)], object) >= 0;
-    }, "call$1", "get$_contains", 2, 0, 232, 1, "_contains"],
-    lookup$1: [function(object) {
+    },
+    lookup$1: function(object) {
       var t1;
       if (!(typeof object === "string" && object !== "__proto__"))
         t1 = typeof object === "number" && (object & 0x3ffffff) === object;
@@ -4764,12 +4522,8 @@ var $$ = {};
         return this.contains$1(0, object) ? object : null;
       else
         return this._lookup$1(object);
-    }, "call$1", "get$lookup", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E__Object0", ret: E, args: [P.Object]};
-      }, this.$receiver, "_LinkedHashSet");
-    }, 1, "lookup"],
-    _lookup$1: [function(object) {
+    },
+    _lookup$1: function(object) {
       var rest, bucket, index;
       rest = this._rest;
       if (rest == null)
@@ -4779,12 +4533,8 @@ var $$ = {};
       if (index < 0)
         return;
       return J.$index$asx(bucket, index).get$_element();
-    }, "call$1", "get$_lookup", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E__Object0", ret: E, args: [P.Object]};
-      }, this.$receiver, "_LinkedHashSet");
-    }, 1, "_lookup"],
-    forEach$1: [function(_, action) {
+    },
+    forEach$1: function(_, action) {
       var cell, modifications;
       cell = this._first;
       modifications = this._modifications;
@@ -4794,12 +4544,8 @@ var $$ = {};
           throw H.wrapException(P.ConcurrentModificationError$(this));
         cell = cell._next;
       }
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__void__E2", void: true, args: [{func: "void__E2", void: true, args: [E]}]};
-      }, this.$receiver, "_LinkedHashSet");
-    }, 285, "forEach"],
-    add$1: [function(_, element) {
+    },
+    add$1: function(_, element) {
       var strings, nums;
       if (typeof element === "string" && element !== "__proto__") {
         strings = this._strings;
@@ -4817,12 +4563,8 @@ var $$ = {};
         return this._addHashTableEntry$2(nums, element);
       } else
         return this._add$1(element);
-    }, "call$1", "get$add", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "bool__E0", ret: P.bool, args: [E]};
-      }, this.$receiver, "_LinkedHashSet");
-    }, 233, "add"],
-    _add$1: [function(element) {
+    },
+    _add$1: function(element) {
       var rest, hash, bucket;
       rest = this._rest;
       if (rest == null) {
@@ -4839,20 +4581,16 @@ var $$ = {};
         bucket.push(this._newLinkedCell$1(element));
       }
       return true;
-    }, "call$1", "get$_add", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "bool__E0", ret: P.bool, args: [E]};
-      }, this.$receiver, "_LinkedHashSet");
-    }, 233, "_add"],
-    remove$1: [function(_, object) {
+    },
+    remove$1: function(_, object) {
       if (typeof object === "string" && object !== "__proto__")
         return this._removeHashTableEntry$2(this._strings, object);
       else if (typeof object === "number" && (object & 0x3ffffff) === object)
         return this._removeHashTableEntry$2(this._nums, object);
       else
         return this._remove$1(object);
-    }, "call$1", "get$remove", 2, 0, 232, 1, "remove"],
-    _remove$1: [function(object) {
+    },
+    _remove$1: function(object) {
       var rest, bucket, index;
       rest = this._rest;
       if (rest == null)
@@ -4863,18 +4601,14 @@ var $$ = {};
         return false;
       this._unlinkCell$1(bucket.splice(index, 1)[0]);
       return true;
-    }, "call$1", "get$_remove", 2, 0, 232, 1, "_remove"],
-    _addHashTableEntry$2: [function(table, element) {
+    },
+    _addHashTableEntry$2: function(table, element) {
       if (table[element] != null)
         return false;
       table[element] = this._newLinkedCell$1(element);
       return true;
-    }, "call$2", "get$_addHashTableEntry", 4, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "bool__dynamic_E", ret: P.bool, args: [null, E]};
-      }, this.$receiver, "_LinkedHashSet");
-    }, 173, 233, "_addHashTableEntry"],
-    _removeHashTableEntry$2: [function(table, element) {
+    },
+    _removeHashTableEntry$2: function(table, element) {
       var cell;
       if (table == null)
         return false;
@@ -4884,8 +4618,8 @@ var $$ = {};
       this._unlinkCell$1(cell);
       delete table[element];
       return true;
-    }, "call$2", "get$_removeHashTableEntry", 4, 0, 302, 173, 233, "_removeHashTableEntry"],
-    _newLinkedCell$1: [function(element) {
+    },
+    _newLinkedCell$1: function(element) {
       var cell, last;
       cell = new P.LinkedHashSetCell(element, null, null);
       if (this._first == null) {
@@ -4900,12 +4634,8 @@ var $$ = {};
       ++this._collection$_length;
       this._modifications = this._modifications + 1 & 67108863;
       return cell;
-    }, "call$1", "get$_newLinkedCell", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "LinkedHashSetCell__E", ret: P.LinkedHashSetCell, args: [E]};
-      }, this.$receiver, "_LinkedHashSet");
-    }, 233, "_newLinkedCell"],
-    _unlinkCell$1: [function(cell) {
+    },
+    _unlinkCell$1: function(cell) {
       var previous, next;
       previous = cell.get$_previous();
       next = cell.get$_next();
@@ -4919,11 +4649,11 @@ var $$ = {};
         next.set$_previous(previous);
       --this._collection$_length;
       this._modifications = this._modifications + 1 & 67108863;
-    }, "call$1", "get$_unlinkCell", 2, 0, 303, 301, "_unlinkCell"],
-    _computeHashCode$1: [function(element) {
+    },
+    _computeHashCode$1: function(element) {
       return J.get$hashCode$(element) & 0x3ffffff;
-    }, "call$1", "get$_computeHashCode", 2, 0, 35, 233, "_computeHashCode"],
-    _findBucketIndex$2: [function(bucket, element) {
+    },
+    _findBucketIndex$2: function(bucket, element) {
       var $length, i;
       if (bucket == null)
         return -1;
@@ -4932,27 +4662,23 @@ var $$ = {};
         if (J.$eq(bucket[i].get$_element(), element))
           return i;
       return -1;
-    }, "call$2", "get$_findBucketIndex", 4, 0, 297, 298, 233, "_findBucketIndex"],
-    static: {_LinkedHashSet__newHashTable: [function() {
+    },
+    static: {_LinkedHashSet__newHashTable: function() {
         var table = Object.create(null);
         table["<non-identifier-key>"] = table;
         delete table["<non-identifier-key>"];
         return table;
-      }, "call$0", "_LinkedHashSet__newHashTable$closure", 0, 0, 10, "_newHashTable"]}
+      }}
   },
   LinkedHashSetCell: {
-    "^": "Object;_element<-,_next@-,_previous@-"
+    "^": "Object;_element<,_next@,_previous@"
   },
   LinkedHashSetIterator: {
-    "^": "Object;_set-,_modifications-,_cell-,_collection$_current-",
-    get$current: [function() {
+    "^": "Object;_set,_modifications,_cell,_collection$_current",
+    get$current: function() {
       return this._collection$_current;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E_3", ret: E};
-      }, this.$receiver, "LinkedHashSetIterator");
-    }, "current"],
-    moveNext$0: [function() {
+    },
+    moveNext$0: function() {
       var t1 = this._set;
       if (this._modifications !== t1._modifications)
         throw H.wrapException(P.ConcurrentModificationError$(t1));
@@ -4967,40 +4693,29 @@ var $$ = {};
           return true;
         }
       }
-    }, "call$0", "get$moveNext", 0, 0, 240, "moveNext"]
-  },
-  HashMap: {
-    "^": "Object;",
-    $isMap: true
+    }
   },
   _HashSetBase: {
     "^": "IterableBase;",
-    toString$0: [function(_) {
+    toString$0: function(_) {
       return H.IterableMixinWorkaround_toStringIterable(this, "{", "}");
-    }, "call$0", "get$toString", 0, 0, 14, "toString"]
-  },
-  HashSet: {
-    "^": "Object;"
+    }
   },
   IterableBase: {
     "^": "Object;",
-    forEach$1: [function(_, f) {
+    forEach$1: function(_, f) {
       var t1;
       for (t1 = this.get$iterator(this); t1.moveNext$0();)
         f.call$1(t1.get$current());
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__void__E3", void: true, args: [{func: "void__E3", void: true, args: [E]}]};
-      }, this.$receiver, "IterableBase");
-    }, 121, "forEach"],
-    get$length: [function(_) {
+    },
+    get$length: function(_) {
       var it, count;
       it = this.get$iterator(this);
       for (count = 0; it.moveNext$0();)
         ++count;
       return count;
-    }, null, null, 1, 0, 229, "length"],
-    elementAt$1: [function(_, index) {
+    },
+    elementAt$1: function(_, index) {
       var t1, remaining, element;
       if (index < 0)
         throw H.wrapException(P.RangeError$value(index));
@@ -5011,39 +4726,20 @@ var $$ = {};
         --remaining;
       }
       throw H.wrapException(P.RangeError$value(index));
-    }, "call$1", "get$elementAt", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E__int0", ret: E, args: [P.$int]};
-      }, this.$receiver, "IterableBase");
-    }, 43, "elementAt"],
-    toString$0: [function(_) {
+    },
+    toString$0: function(_) {
       return P._iterableToString(this);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"]
-  },
-  LinkedHashMap: {
-    "^": "Object;",
-    $isMap: true
-  },
-  LinkedHashSet: {
-    "^": "Object;"
+    }
   },
   ListMixin: {
     "^": "Object;",
-    get$iterator: [function(receiver) {
+    get$iterator: function(receiver) {
       return new H.ListIterator(receiver, this.get$length(receiver), 0, null);
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "Iterator_5", ret: [P.Iterator, E]};
-      }, this.$receiver, "ListMixin");
-    }, "iterator"],
-    elementAt$1: [function(receiver, index) {
+    },
+    elementAt$1: function(receiver, index) {
       return this.$index(receiver, index);
-    }, "call$1", "get$elementAt", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E__int1", ret: E, args: [P.$int]};
-      }, this.$receiver, "ListMixin");
-    }, 43, "elementAt"],
-    forEach$1: [function(receiver, action) {
+    },
+    forEach$1: function(receiver, action) {
       var $length, t1, i;
       $length = this.get$length(receiver);
       for (t1 = receiver.length, i = 0; i < $length; ++i) {
@@ -5053,12 +4749,8 @@ var $$ = {};
         if ($length !== t1)
           throw H.wrapException(P.ConcurrentModificationError$(receiver));
       }
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__void__E4", void: true, args: [{func: "void__E4", void: true, args: [E]}]};
-      }, this.$receiver, "ListMixin");
-    }, 285, "forEach"],
-    toString$0: [function(receiver) {
+    },
+    toString$0: function(receiver) {
       var result;
       if ($.get$_toStringVisiting().contains$1(0, receiver))
         return "[...]";
@@ -5072,13 +4764,13 @@ var $$ = {};
         $.get$_toStringVisiting().remove$1(0, receiver);
       }
       return result.get$_contents();
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     $isList: true,
     $asList: null
   },
   Maps_mapToString_closure: {
-    "^": "Closure:38;box_0-,result_1-",
-    call$2: [function(k, v) {
+    "^": "Closure:7;box_0,result_1",
+    call$2: function(k, v) {
       var t1 = this.box_0;
       if (!t1.first_0)
         this.result_1.write$1(", ");
@@ -5087,18 +4779,14 @@ var $$ = {};
       t1.write$1(k);
       t1.write$1(": ");
       t1.write$1(v);
-    }, "call$2", null, 4, 0, 38, 304, 305, "call"]
+    }
   },
   ListQueue: {
-    "^": "IterableBase;_table-,_head-,_tail-,_modificationCount-",
-    get$iterator: [function(_) {
+    "^": "IterableBase;_table,_head,_tail,_modificationCount",
+    get$iterator: function(_) {
       return new P._ListQueueIterator(this, this._tail, this._modificationCount, this._head, null);
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "Iterator_6", ret: [P.Iterator, E]};
-      }, this.$receiver, "ListQueue");
-    }, "iterator"],
-    forEach$1: [function(_, action) {
+    },
+    forEach$1: function(_, action) {
       var modificationCount, i, t1;
       modificationCount = this._modificationCount;
       for (i = this._head; i !== this._tail; i = (i + 1 & this._table.length - 1) >>> 0) {
@@ -5109,18 +4797,14 @@ var $$ = {};
         if (modificationCount !== this._modificationCount)
           H.throwExpression(P.ConcurrentModificationError$(this));
       }
-    }, "call$1", "get$forEach", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__void__E5", void: true, args: [{func: "void__E5", void: true, args: [E]}]};
-      }, this.$receiver, "ListQueue");
-    }, 285, "forEach"],
-    get$isEmpty: [function(_) {
+    },
+    get$isEmpty: function(_) {
       return this._head === this._tail;
-    }, null, null, 1, 0, 240, "isEmpty"],
-    get$length: [function(_) {
+    },
+    get$length: function(_) {
       return (this._tail - this._head & this._table.length - 1) >>> 0;
-    }, null, null, 1, 0, 229, "length"],
-    clear$0: [function(_) {
+    },
+    clear$0: function(_) {
       var i, t1, t2, t3, t4;
       i = this._head;
       t1 = this._tail;
@@ -5134,11 +4818,11 @@ var $$ = {};
         this._head = 0;
         ++this._modificationCount;
       }
-    }, "call$0", "get$clear", 0, 0, 116, "clear"],
-    toString$0: [function(_) {
+    },
+    toString$0: function(_) {
       return H.IterableMixinWorkaround_toStringIterable(this, "{", "}");
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    removeFirst$0: [function() {
+    },
+    removeFirst$0: function() {
       var t1, t2, t3, result;
       t1 = this._head;
       if (t1 === this._tail)
@@ -5152,12 +4836,8 @@ var $$ = {};
       t2[t1] = null;
       this._head = (t1 + 1 & t3 - 1) >>> 0;
       return result;
-    }, "call$0", "get$removeFirst", 0, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E_4", ret: E};
-      }, this.$receiver, "ListQueue");
-    }, "removeFirst"],
-    _add$1: [function(element) {
+    },
+    _add$1: function(element) {
       var t1, t2, t3;
       t1 = this._table;
       t2 = this._tail;
@@ -5170,12 +4850,8 @@ var $$ = {};
       if (this._head === t3)
         this._grow$0();
       ++this._modificationCount;
-    }, "call$1", "get$_add", 2, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "void__E5", void: true, args: [E]};
-      }, this.$receiver, "ListQueue");
-    }, 233, "_add"],
-    _grow$0: [function() {
+    },
+    _grow$0: function() {
       var t1, newTable, t2, split;
       t1 = Array(this._table.length * 2);
       t1.fixed$length = init;
@@ -5190,24 +4866,20 @@ var $$ = {};
       this._head = 0;
       this._tail = this._table.length;
       this._table = newTable;
-    }, "call$0", "get$_grow", 0, 0, 116, "_grow"],
-    ListQueue$1: [function(initialCapacity, $E) {
+    },
+    ListQueue$1: function(initialCapacity, $E) {
       var t1 = Array(8);
       t1.fixed$length = init;
       this._table = H.setRuntimeTypeInfo(t1, [$E]);
-    }, null, null, 0, 2, 306, 94, 307, ""],
-    static: {"^": "ListQueue__INITIAL_CAPACITY-"}
+    },
+    static: {"^": "ListQueue__INITIAL_CAPACITY"}
   },
   _ListQueueIterator: {
-    "^": "Object;_queue-,_end-,_modificationCount-,_position-,_collection$_current-",
-    get$current: [function() {
+    "^": "Object;_queue,_end,_modificationCount,_position,_collection$_current",
+    get$current: function() {
       return this._collection$_current;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(E) {
-        return {func: "E_5", ret: E};
-      }, this.$receiver, "_ListQueueIterator");
-    }, "current"],
-    moveNext$0: [function() {
+    },
+    moveNext$0: function() {
       var t1, t2, t3;
       t1 = this._queue;
       if (this._modificationCount !== t1._modificationCount)
@@ -5224,15 +4896,15 @@ var $$ = {};
       this._collection$_current = t1[t2];
       this._position = (t2 + 1 & t3 - 1) >>> 0;
       return true;
-    }, "call$0", "get$moveNext", 0, 0, 240, "moveNext"]
+    }
   }
 }],
 ["dart.core", "dart:core", , P, {
   "^": "",
-  _symbolToString: [function(symbol) {
+  _symbolToString: function(symbol) {
     return H.Symbol_getName(symbol);
-  }, "call$1", "_symbolToString$closure", 2, 0, 184, 138, "_symbolToString"],
-  Error_safeToString: [function(object) {
+  },
+  Error_safeToString: function(object) {
     var buffer, t1, i, t2, codeUnit;
     if (typeof object === "number" || typeof object === "boolean" || null == object)
       return J.toString$0(object);
@@ -5273,17 +4945,17 @@ var $$ = {};
       return t1;
     }
     return "Instance of '" + H.Primitives_objectTypeName(object) + "'";
-  }, "call$1", "Error_safeToString$closure", 2, 0, 36, 1, "safeToString"],
-  Exception_Exception: [function(message) {
+  },
+  Exception_Exception: function(message) {
     return new P._ExceptionImplementation(message);
-  }, "call$1", null, 0, 2, 199, 94, 20, "new Exception"],
+  },
   identical: [function(a, b) {
     return a == null ? b == null : a === b;
-  }, "call$2", "identical$closure", 4, 0, 200, 174, 175, "identical"],
+  }, "call$2", "identical$closure", 4, 0, 4],
   identityHashCode: [function(object) {
     return H.objectHashCode(object);
-  }, "call$1", "identityHashCode$closure", 2, 0, 201, 1, "identityHashCode"],
-  List_List$from: [function(other, growable, $E) {
+  }, "call$1", "identityHashCode$closure", 2, 0, 5],
+  List_List$from: function(other, growable, $E) {
     var list, t1;
     list = H.setRuntimeTypeInfo([], [$E]);
     for (t1 = other.get$iterator(other); t1.moveNext$0();)
@@ -5292,23 +4964,19 @@ var $$ = {};
       return list;
     list.fixed$length = init;
     return list;
-  }, "call$2$growable", null, 2, 3, function() {
-    return H.computeSignature(function(E) {
-      return {func: "List__Iterable__bool", ret: [P.List, E], args: [P.Iterable], named: {growable: P.bool}};
-    }, this.$receiver, "List");
-  }, 202, 203, 204, "new List$from"],
-  print: [function(object) {
+  },
+  print: function(object) {
     var line = H.S(object);
     H.printString(line);
-  }, "call$1", "print$closure", 2, 0, 205, 1, "print"],
+  },
   NoSuchMethodError_toString_closure: {
-    "^": "Closure:308;box_0-",
-    call$2: [function(key, value) {
+    "^": "Closure:16;box_0",
+    call$2: function(key, value) {
       var t1 = this.box_0;
       if (t1.i_1 > 0)
         t1.sb_0.write$1(", ");
       t1.sb_0.write$1(P._symbolToString(key));
-    }, "call$2", null, 4, 0, 308, 39, 32, "call"]
+    }
   },
   bool: {
     "^": "Object;",
@@ -5316,32 +4984,31 @@ var $$ = {};
   },
   "+bool": 0,
   $double: {
-    "^": "num;",
-    $is$double: true
+    "^": "num;"
   },
   "+double": 0,
   Duration: {
-    "^": "Object;_duration-",
-    $add: [function(_, other) {
+    "^": "Object;_duration",
+    $add: function(_, other) {
       return P.Duration$(0, 0, C.JSInt_methods.$add(this._duration, other.get$_duration()), 0, 0, 0);
-    }, "call$1", "get$+", 2, 0, 309, 203, "+"],
-    $lt: [function(_, other) {
+    },
+    $lt: function(_, other) {
       return C.JSInt_methods.$lt(this._duration, other.get$_duration());
-    }, "call$1", "get$<", 2, 0, 310, 203, "<"],
-    $ge: [function(_, other) {
+    },
+    $ge: function(_, other) {
       return C.JSInt_methods.$ge(this._duration, other.get$_duration());
-    }, "call$1", "get$>=", 2, 0, 310, 203, ">="],
-    $eq: [function(_, other) {
+    },
+    $eq: function(_, other) {
       if (other == null)
         return false;
       if (!J.getInterceptor(other).$isDuration)
         return false;
       return this._duration === other._duration;
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(_) {
+    },
+    get$hashCode: function(_) {
       return this._duration & 0x1FFFFFFF;
-    }, null, null, 1, 0, 229, "hashCode"],
-    toString$0: [function(_) {
+    },
+    toString$0: function(_) {
       var t1, t2, twoDigitMinutes, twoDigitSeconds, sixDigitUs;
       t1 = new P.Duration_toString_twoDigits();
       t2 = this._duration;
@@ -5351,15 +5018,15 @@ var $$ = {};
       twoDigitSeconds = t1.call$1(C.JSInt_methods.remainder$1(C.JSInt_methods._tdivFast$1(t2, 1000000), 60));
       sixDigitUs = new P.Duration_toString_sixDigits().call$1(C.JSInt_methods.remainder$1(t2, 1000000));
       return "" + C.JSInt_methods._tdivFast$1(t2, 3600000000) + ":" + H.S(twoDigitMinutes) + ":" + H.S(twoDigitSeconds) + "." + H.S(sixDigitUs);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     $isDuration: true,
-    static: {"^": "Duration_MICROSECONDS_PER_MILLISECOND-,Duration_MILLISECONDS_PER_SECOND-,Duration_SECONDS_PER_MINUTE-,Duration_MINUTES_PER_HOUR-,Duration_HOURS_PER_DAY-,Duration_MICROSECONDS_PER_SECOND-,Duration_MICROSECONDS_PER_MINUTE-,Duration_MICROSECONDS_PER_HOUR-,Duration_MICROSECONDS_PER_DAY-,Duration_MILLISECONDS_PER_MINUTE-,Duration_MILLISECONDS_PER_HOUR-,Duration_MILLISECONDS_PER_DAY-,Duration_SECONDS_PER_HOUR-,Duration_SECONDS_PER_DAY-,Duration_MINUTES_PER_DAY-,Duration_ZERO-", Duration$: [function(days, hours, microseconds, milliseconds, minutes, seconds) {
+    static: {"^": "Duration_MICROSECONDS_PER_MILLISECOND,Duration_MILLISECONDS_PER_SECOND,Duration_SECONDS_PER_MINUTE,Duration_MINUTES_PER_HOUR,Duration_HOURS_PER_DAY,Duration_MICROSECONDS_PER_SECOND,Duration_MICROSECONDS_PER_MINUTE,Duration_MICROSECONDS_PER_HOUR,Duration_MICROSECONDS_PER_DAY,Duration_MILLISECONDS_PER_MINUTE,Duration_MILLISECONDS_PER_HOUR,Duration_MILLISECONDS_PER_DAY,Duration_SECONDS_PER_HOUR,Duration_SECONDS_PER_DAY,Duration_MINUTES_PER_DAY,Duration_ZERO", Duration$: function(days, hours, microseconds, milliseconds, minutes, seconds) {
         return new P.Duration(days * 86400000000 + hours * 3600000000 + minutes * 60000000 + seconds * 1000000 + milliseconds * 1000 + microseconds);
-      }, null, null, 0, 13, 185, 186, 186, 186, 186, 186, 186, 187, 188, 189, 190, 27, 191, "new Duration"]}
+      }}
   },
   Duration_toString_sixDigits: {
-    "^": "Closure:241;",
-    call$1: [function(n) {
+    "^": "Closure:17;",
+    call$1: function(n) {
       if (n >= 100000)
         return "" + n;
       if (n >= 10000)
@@ -5371,150 +5038,139 @@ var $$ = {};
       if (n >= 10)
         return "0000" + n;
       return "00000" + n;
-    }, "call$1", null, 2, 0, 241, 311, "call"]
+    }
   },
   Duration_toString_twoDigits: {
-    "^": "Closure:241;",
-    call$1: [function(n) {
+    "^": "Closure:17;",
+    call$1: function(n) {
       if (n >= 10)
         return "" + n;
       return "0" + n;
-    }, "call$1", null, 2, 0, 241, 311, "call"]
+    }
   },
   Error: {
     "^": "Object;",
-    get$stackTrace: [function() {
+    get$stackTrace: function() {
       return new H._StackTrace(this.$thrownJsError, null);
-    }, null, null, 1, 0, 312, "stackTrace"],
+    },
     $isError: true
   },
   NullThrownError: {
     "^": "Error;",
-    toString$0: [function(_) {
+    toString$0: function(_) {
       return "Throw of null.";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"]
+    }
   },
   ArgumentError: {
-    "^": "Error;message-",
-    toString$0: [function(_) {
+    "^": "Error;message",
+    toString$0: function(_) {
       var t1 = this.message;
       if (t1 != null)
         return "Illegal argument(s): " + H.S(t1);
       return "Illegal argument(s)";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    static: {ArgumentError$: [function(message) {
+    },
+    static: {ArgumentError$: function(message) {
         return new P.ArgumentError(message);
-      }, null, null, 0, 2, 192, 94, 20, "new ArgumentError"]}
+      }}
   },
   RangeError: {
-    "^": "ArgumentError;message-",
-    toString$0: [function(_) {
+    "^": "ArgumentError;message",
+    toString$0: function(_) {
       return "RangeError: " + H.S(this.message);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    static: {RangeError$value: [function(value) {
+    },
+    static: {RangeError$value: function(value) {
         return new P.RangeError("value " + H.S(value));
-      }, null, null, 2, 0, 193, 32, "new RangeError$value"], RangeError$range: [function(value, start, end) {
+      }, RangeError$range: function(value, start, end) {
         return new P.RangeError("value " + H.S(value) + " not in range " + start + ".." + H.S(end));
-      }, null, null, 6, 0, 194, 32, 126, 127, "new RangeError$range"]}
+      }}
   },
   UnsupportedError: {
-    "^": "Error;message-",
-    toString$0: [function(_) {
+    "^": "Error;message",
+    toString$0: function(_) {
       return "Unsupported operation: " + this.message;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    static: {UnsupportedError$: [function(message) {
+    },
+    static: {UnsupportedError$: function(message) {
         return new P.UnsupportedError(message);
-      }, null, null, 2, 0, 45, 20, "new UnsupportedError"]}
+      }}
   },
   UnimplementedError: {
-    "^": "Error;message-",
-    toString$0: [function(_) {
+    "^": "Error;message",
+    toString$0: function(_) {
       var t1 = this.message;
       return t1 != null ? "UnimplementedError: " + H.S(t1) : "UnimplementedError";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     $isError: true,
-    static: {UnimplementedError$: [function(message) {
+    static: {UnimplementedError$: function(message) {
         return new P.UnimplementedError(message);
-      }, null, null, 0, 2, 195, 94, 20, "new UnimplementedError"]}
+      }}
   },
   StateError: {
-    "^": "Error;message-",
-    toString$0: [function(_) {
+    "^": "Error;message",
+    toString$0: function(_) {
       return "Bad state: " + this.message;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    static: {StateError$: [function(message) {
+    },
+    static: {StateError$: function(message) {
         return new P.StateError(message);
-      }, null, null, 2, 0, 45, 20, "new StateError"]}
+      }}
   },
   ConcurrentModificationError: {
-    "^": "Error;modifiedObject-",
-    toString$0: [function(_) {
+    "^": "Error;modifiedObject",
+    toString$0: function(_) {
       var t1 = this.modifiedObject;
       if (t1 == null)
         return "Concurrent modification during iteration.";
       return "Concurrent modification during iteration: " + H.S(P.Error_safeToString(t1)) + ".";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    static: {ConcurrentModificationError$: [function(modifiedObject) {
+    },
+    static: {ConcurrentModificationError$: function(modifiedObject) {
         return new P.ConcurrentModificationError(modifiedObject);
-      }, null, null, 0, 2, 196, 94, 197, "new ConcurrentModificationError"]}
+      }}
   },
   StackOverflowError: {
     "^": "Object;",
-    toString$0: [function(_) {
+    toString$0: function(_) {
       return "Stack Overflow";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    get$stackTrace: [function() {
+    },
+    get$stackTrace: function() {
       return;
-    }, null, null, 1, 0, 312, "stackTrace"],
+    },
     $isError: true
   },
   CyclicInitializationError: {
-    "^": "Error;variableName-",
-    toString$0: [function(_) {
+    "^": "Error;variableName",
+    toString$0: function(_) {
       return "Reading static variable '" + this.variableName + "' during its initialization";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    static: {CyclicInitializationError$: [function(variableName) {
+    },
+    static: {CyclicInitializationError$: function(variableName) {
         return new P.CyclicInitializationError(variableName);
-      }, null, null, 0, 2, 195, 94, 198, "new CyclicInitializationError"]}
-  },
-  Exception: {
-    "^": "Object;"
+      }}
   },
   _ExceptionImplementation: {
-    "^": "Object;message-",
-    toString$0: [function(_) {
+    "^": "Object;message",
+    toString$0: function(_) {
       var t1 = this.message;
       if (t1 == null)
         return "Exception";
       return "Exception: " + H.S(t1);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"]
+    }
   },
   Expando: {
-    "^": "Object;name-",
-    toString$0: [function(_) {
+    "^": "Object;name",
+    toString$0: function(_) {
       return "Expando:" + H.S(this.name);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    $index: [function(_, object) {
+    },
+    $index: function(_, object) {
       var values = H.Primitives_getProperty(object, "expando$values");
       return values == null ? null : H.Primitives_getProperty(values, this._getKey$0());
-    }, "call$1", "get$[]", 2, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "T__Object", ret: T, args: [P.Object]};
-      }, this.$receiver, "Expando");
-    }, 1, "[]"],
-    $indexSet: [function(_, object, value) {
+    },
+    $indexSet: function(_, object, value) {
       var values = H.Primitives_getProperty(object, "expando$values");
       if (values == null) {
         values = new P.Object();
         H.Primitives_setProperty(object, "expando$values", values);
       }
       H.Primitives_setProperty(values, this._getKey$0(), value);
-    }, "call$2", "get$[]=", 4, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "void__Object_T", void: true, args: [P.Object, T]};
-      }, this.$receiver, "Expando");
-    }, 1, 32, "[]="],
-    _getKey$0: [function() {
+    },
+    _getKey$0: function() {
       var key, t1;
       key = H.Primitives_getProperty(this, "expando$key");
       if (key == null) {
@@ -5524,20 +5180,14 @@ var $$ = {};
         H.Primitives_setProperty(this, "expando$key", key);
       }
       return key;
-    }, "call$0", "get$_getKey", 0, 0, 14, "_getKey"],
-    static: {"^": "Expando__KEY_PROPERTY_NAME-,Expando__EXPANDO_PROPERTY_NAME-,Expando__keyCount-"}
-  },
-  Function: {
-    "^": "Object;"
+    },
+    static: {"^": "Expando__KEY_PROPERTY_NAME,Expando__EXPANDO_PROPERTY_NAME,Expando__keyCount"}
   },
   $int: {
     "^": "num;",
     $is$int: true
   },
   "+int": 0,
-  Iterable: {
-    "^": "Object;"
-  },
   Iterator: {
     "^": "Object;"
   },
@@ -5547,15 +5197,11 @@ var $$ = {};
     $asList: null
   },
   "+List": 0,
-  Map: {
-    "^": "Object;",
-    $isMap: true
-  },
   Null: {
     "^": "Object;",
-    toString$0: [function(_) {
+    toString$0: function(_) {
       return "null";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"]
+    }
   },
   "+Null": 0,
   num: {
@@ -5565,15 +5211,15 @@ var $$ = {};
   "+num": 0,
   Object: {
     "^": ";",
-    $eq: [function(_, other) {
+    $eq: function(_, other) {
       return this === other;
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(_) {
+    },
+    get$hashCode: function(_) {
       return H.Primitives_objectHashCode(this);
-    }, null, null, 1, 0, 229, "hashCode"],
-    toString$0: [function(_) {
+    },
+    toString$0: function(_) {
       return H.Primitives_objectToString(this);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"]
+    }
   },
   StackTrace: {
     "^": "Object;"
@@ -5584,14 +5230,14 @@ var $$ = {};
   },
   "+String": 0,
   StringBuffer: {
-    "^": "Object;_contents<-",
-    get$length: [function(_) {
+    "^": "Object;_contents<",
+    get$length: function(_) {
       return this._contents.length;
-    }, null, null, 1, 0, 229, "length"],
-    write$1: [function(obj) {
+    },
+    write$1: function(obj) {
       this._contents += typeof obj === "string" ? obj : H.S(obj);
-    }, "call$1", "get$write", 2, 0, 205, 111, "write"],
-    writeAll$2: [function(objects, separator) {
+    },
+    writeAll$2: function(objects, separator) {
       var iterator, str;
       iterator = J.get$iterator$ax(objects);
       if (!iterator.moveNext$0())
@@ -5609,33 +5255,31 @@ var $$ = {};
           this._contents += typeof str === "string" ? str : H.S(str);
         }
       }
-    }, function(objects) {
-      return this.writeAll$2(objects, "");
-    }, "writeAll$1", "call$2", "call$1", "get$writeAll", 2, 2, 313, 206, 314, 315, "writeAll"],
-    toString$0: [function(_) {
+    },
+    toString$0: function(_) {
       return this._contents;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    StringBuffer$1: [function($content) {
+    },
+    StringBuffer$1: function($content) {
       this._contents = $content;
-    }, null, null, 0, 2, 196, 206, 207, ""],
-    static: {StringBuffer$: [function($content) {
+    },
+    static: {StringBuffer$: function($content) {
         var t1 = new P.StringBuffer("");
         t1.StringBuffer$1($content);
         return t1;
-      }, null, null, 0, 2, 196, 206, 207, "new StringBuffer"]}
+      }}
   },
-  Symbol0: {
+  Symbol: {
     "^": "Object;"
   }
 }],
 ["dart.dom.html", "dart:html", , W, {
   "^": "",
-  _JenkinsSmiHash_combine: [function(hash, value) {
+  _JenkinsSmiHash_combine: function(hash, value) {
     hash = 536870911 & hash + value;
     hash = 536870911 & hash + ((524287 & hash) << 10 >>> 0);
     return hash ^ hash >>> 6;
-  }, "call$2", "_JenkinsSmiHash_combine$closure", 4, 0, 208, 209, 32, "combine"],
-  _convertNativeToDart_EventTarget: [function(e) {
+  },
+  _convertNativeToDart_EventTarget: function(e) {
     var $window;
     if (e == null)
       return;
@@ -5646,29 +5290,29 @@ var $$ = {};
       return;
     } else
       return e;
-  }, "call$1", "_convertNativeToDart_EventTarget$closure", 2, 0, 210, 16, "_convertNativeToDart_EventTarget"],
-  _wrapZone: [function(callback) {
+  },
+  _wrapZone: function(callback) {
     var t1 = $.Zone__current;
     if (t1 === C.C__RootZone)
       return callback;
     return t1.bindUnaryCallback$2$runGuarded(callback, true);
-  }, "call$1", "_wrapZone$closure", 2, 0, 213, 28, "_wrapZone"],
+  },
   HtmlElement: {
     "^": "Element;",
     "%": "HTMLAppletElement|HTMLBRElement|HTMLBaseElement|HTMLButtonElement|HTMLContentElement|HTMLDListElement|HTMLDataListElement|HTMLDetailsElement|HTMLDialogElement|HTMLDirectoryElement|HTMLDivElement|HTMLFieldSetElement|HTMLFontElement|HTMLFrameElement|HTMLHRElement|HTMLHeadElement|HTMLHeadingElement|HTMLHtmlElement|HTMLKeygenElement|HTMLLIElement|HTMLLabelElement|HTMLLegendElement|HTMLLinkElement|HTMLMapElement|HTMLMarqueeElement|HTMLMenuElement|HTMLMetaElement|HTMLMeterElement|HTMLModElement|HTMLOListElement|HTMLOptGroupElement|HTMLOptionElement|HTMLOutputElement|HTMLParagraphElement|HTMLParamElement|HTMLPreElement|HTMLProgressElement|HTMLQuoteElement|HTMLScriptElement|HTMLShadowElement|HTMLSourceElement|HTMLSpanElement|HTMLStyleElement|HTMLTableCaptionElement|HTMLTableCellElement|HTMLTableColElement|HTMLTableDataCellElement|HTMLTableElement|HTMLTableHeaderCellElement|HTMLTableRowElement|HTMLTableSectionElement|HTMLTemplateElement|HTMLTextAreaElement|HTMLTitleElement|HTMLTrackElement|HTMLUListElement|HTMLUnknownElement;HTMLElement"
   },
   AnchorElement: {
     "^": "HtmlElement;",
-    toString$0: [function(receiver) {
+    toString$0: function(receiver) {
       return receiver.toString();
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     "%": "HTMLAnchorElement"
   },
   AreaElement: {
     "^": "HtmlElement;",
-    toString$0: [function(receiver) {
+    toString$0: function(receiver) {
       return receiver.toString();
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     "%": "HTMLAreaElement"
   },
   BodyElement: {
@@ -5677,50 +5321,50 @@ var $$ = {};
     "%": "HTMLBodyElement"
   },
   CanvasElement: {
-    "^": "HtmlElement;height%-,width%-",
-    get$context2D: [function(receiver) {
+    "^": "HtmlElement;height%,width%",
+    get$context2D: function(receiver) {
       return receiver.getContext("2d");
-    }, null, null, 1, 0, 222, "context2D"],
+    },
     "%": "HTMLCanvasElement"
   },
   CharacterData: {
-    "^": "Node;length=-",
+    "^": "Node;length=",
     "%": "CDATASection|CharacterData|Comment|ProcessingInstruction|Text"
   },
   DomException: {
     "^": "Interceptor;",
-    toString$0: [function(receiver) {
+    toString$0: function(receiver) {
       return receiver.toString();
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     "%": "DOMException"
   },
   Element: {
     "^": "Node;",
-    get$offset: [function(receiver) {
+    get$offset: function(receiver) {
       return P.Rectangle$(receiver.offsetLeft, receiver.offsetTop, receiver.offsetWidth, receiver.offsetHeight, null);
-    }, null, null, 1, 0, 223, "offset"],
-    toString$0: [function(receiver) {
+    },
+    toString$0: function(receiver) {
       return receiver.localName;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    getBoundingClientRect$0: [function(receiver) {
+    },
+    getBoundingClientRect$0: function(receiver) {
       return receiver.getBoundingClientRect();
-    }, "call$0", "get$getBoundingClientRect", 0, 0, 223, "getBoundingClientRect"],
-    get$onClick: [function(receiver) {
+    },
+    get$onClick: function(receiver) {
       return H.setRuntimeTypeInfo(new W._ElementEventStreamImpl(receiver, C.EventStreamProvider_click._eventType, false), [null]);
-    }, null, null, 1, 0, 224, "onClick"],
-    get$onMouseMove: [function(receiver) {
+    },
+    get$onMouseMove: function(receiver) {
       return H.setRuntimeTypeInfo(new W._ElementEventStreamImpl(receiver, C.EventStreamProvider_mousemove._eventType, false), [null]);
-    }, null, null, 1, 0, 224, "onMouseMove"],
+    },
     $isElement: true,
     $isEventTarget: true,
     "%": ";Element"
   },
   EmbedElement: {
-    "^": "HtmlElement;height%-,width%-",
+    "^": "HtmlElement;height%,width%",
     "%": "HTMLEmbedElement"
   },
   ErrorEvent: {
-    "^": "Event;error=-",
+    "^": "Event;error=",
     "%": "ErrorEvent"
   },
   Event: {
@@ -5729,46 +5373,40 @@ var $$ = {};
   },
   EventTarget: {
     "^": "Interceptor;",
-    addEventListener$3: [function(receiver, type, listener, useCapture) {
+    addEventListener$3: function(receiver, type, listener, useCapture) {
       return receiver.addEventListener(type, H.convertDartClosureToJS(listener, 1), useCapture);
-    }, function($receiver, type, listener) {
-      listener = H.convertDartClosureToJS(listener, 1);
-      return $receiver.addEventListener(type, listener);
-    }, "addEventListener$2", "call$3", "call$2", "get$addEventListener", 4, 2, 225, 94, 95, 226, 227, "addEventListener"],
-    removeEventListener$3: [function(receiver, type, listener, useCapture) {
+    },
+    removeEventListener$3: function(receiver, type, listener, useCapture) {
       return receiver.removeEventListener(type, H.convertDartClosureToJS(listener, 1), useCapture);
-    }, function($receiver, type, listener) {
-      listener = H.convertDartClosureToJS(listener, 1);
-      return $receiver.removeEventListener(type, listener);
-    }, "removeEventListener$2", "call$3", "call$2", "get$removeEventListener", 4, 2, 225, 94, 95, 226, 227, "removeEventListener"],
+    },
     $isEventTarget: true,
     "%": ";EventTarget"
   },
   FormElement: {
-    "^": "HtmlElement;length=-",
+    "^": "HtmlElement;length=",
     "%": "HTMLFormElement"
   },
   IFrameElement: {
-    "^": "HtmlElement;height%-,width%-",
+    "^": "HtmlElement;height%,width%",
     "%": "HTMLIFrameElement"
   },
   ImageElement: {
-    "^": "HtmlElement;height%-,width%-",
+    "^": "HtmlElement;height%,width%",
     "%": "HTMLImageElement"
   },
   InputElement: {
-    "^": "HtmlElement;height%-,width%-",
+    "^": "HtmlElement;height%,width%",
     $isElement: true,
     $isEventTarget: true,
     "%": "HTMLInputElement"
   },
   MediaElement: {
-    "^": "HtmlElement;error=-",
+    "^": "HtmlElement;error=",
     "%": "HTMLAudioElement;HTMLMediaElement"
   },
   MouseEvent: {
     "^": "UIEvent;",
-    get$offset: [function(receiver) {
+    get$offset: function(receiver) {
       var target, t1, t2, t3, t4, t5, point;
       if (!!receiver.offsetX)
         return H.setRuntimeTypeInfo(new P.Point(receiver.offsetX, receiver.offsetY), [null]);
@@ -5793,27 +5431,27 @@ var $$ = {};
         point = H.setRuntimeTypeInfo(new P.Point(t3 - t4, t5 - t2), [H.getTypeArgumentByIndex(t1, 0)]);
         return H.setRuntimeTypeInfo(new P.Point(J.toInt$0$n(point.x), J.toInt$0$n(point.y)), [null]);
       }
-    }, null, null, 1, 0, 228, "offset"],
+    },
     "%": "DragEvent|MSPointerEvent|MouseEvent|MouseScrollEvent|MouseWheelEvent|PointerEvent|WheelEvent"
   },
   Node: {
     "^": "EventTarget;",
-    toString$0: [function(receiver) {
+    toString$0: function(receiver) {
       var t1 = receiver.nodeValue;
       return t1 == null ? J.Interceptor.prototype.toString$0.call(this, receiver) : t1;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     "%": "Attr|Document|DocumentFragment|DocumentType|HTMLDocument|Notation|ShadowRoot|XMLDocument;Node"
   },
   ObjectElement: {
-    "^": "HtmlElement;height%-,width%-",
+    "^": "HtmlElement;height%,width%",
     "%": "HTMLObjectElement"
   },
   SelectElement: {
-    "^": "HtmlElement;length=-",
+    "^": "HtmlElement;length=",
     "%": "HTMLSelectElement"
   },
   SpeechRecognitionError: {
-    "^": "Event;error=-",
+    "^": "Event;error=",
     "%": "SpeechRecognitionError"
   },
   UIEvent: {
@@ -5821,23 +5459,23 @@ var $$ = {};
     "%": "CompositionEvent|FocusEvent|KeyboardEvent|SVGZoomEvent|TextEvent|TouchEvent;UIEvent"
   },
   VideoElement: {
-    "^": "MediaElement;height%-,width%-",
+    "^": "MediaElement;height%,width%",
     "%": "HTMLVideoElement"
   },
   Window: {
     "^": "EventTarget;",
-    toString$0: [function(receiver) {
+    toString$0: function(receiver) {
       return receiver.toString();
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
+    },
     $isEventTarget: true,
     "%": "DOMWindow|Window"
   },
   _ClientRect: {
-    "^": "Interceptor;bottom=-,height=-,left=-,right=-,top=-,width=-",
-    toString$0: [function(receiver) {
+    "^": "Interceptor;bottom=,height=,left=,right=,top=,width=",
+    toString$0: function(receiver) {
       return "Rectangle (" + H.S(receiver.left) + ", " + H.S(receiver.top) + ") " + H.S(receiver.width) + " x " + H.S(receiver.height);
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    $eq: [function(receiver, other) {
+    },
+    $eq: function(receiver, other) {
       var t1, t2, t3;
       if (other == null)
         return false;
@@ -5863,8 +5501,8 @@ var $$ = {};
       } else
         t1 = false;
       return t1;
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(receiver) {
+    },
+    get$hashCode: function(receiver) {
       var t1, t2, t3, t4, hash;
       t1 = J.get$hashCode$(receiver.left);
       t2 = J.get$hashCode$(receiver.top);
@@ -5874,10 +5512,10 @@ var $$ = {};
       hash = 536870911 & t4 + ((67108863 & t4) << 3 >>> 0);
       hash ^= hash >>> 11;
       return 536870911 & hash + ((16383 & hash) << 15 >>> 0);
-    }, null, null, 1, 0, 229, "hashCode"],
-    get$topLeft: [function(receiver) {
+    },
+    get$topLeft: function(receiver) {
       return H.setRuntimeTypeInfo(new P.Point(receiver.left, receiver.top), [null]);
-    }, null, null, 1, 0, 228, "topLeft"],
+    },
     $isRectangle: true,
     $asRectangle: function() {
       return [null];
@@ -5889,140 +5527,125 @@ var $$ = {};
     $isEventTarget: true,
     "%": "HTMLFrameSetElement"
   },
-  WindowBase: {
-    "^": "Object;",
-    $isEventTarget: true
-  },
   EventStreamProvider: {
-    "^": "Object;_eventType-"
-  },
-  ElementStream: {
-    "^": "Object;"
+    "^": "Object;_eventType"
   },
   _EventStream: {
     "^": "Stream;",
-    listen$4$cancelOnError$onDone$onError: [function(onData, cancelOnError, onDone, onError) {
+    listen$4$cancelOnError$onDone$onError: function(onData, cancelOnError, onDone, onError) {
       var t1 = new W._EventStreamSubscription(0, this._target, this._eventType, W._wrapZone(onData), this._useCapture);
       t1.$builtinTypeInfo = this.$builtinTypeInfo;
       t1._tryResume$0();
       return t1;
-    }, function(onData) {
-      return this.listen$4$cancelOnError$onDone$onError(onData, null, null, null);
-    }, "listen$1", function(onData, onError) {
-      return this.listen$4$cancelOnError$onDone$onError(onData, null, null, onError);
-    }, "listen$2$onError", "call$4$cancelOnError$onDone$onError", "call$1", "call$2$onError", "get$listen", 2, 7, function() {
-      return H.computeSignature(function(T) {
-        return {func: "StreamSubscription__void__T__bool_void__Function", ret: [P.StreamSubscription, T], args: [{func: "void__T1", void: true, args: [T]}], named: {cancelOnError: P.bool, onDone: {func: "void_", void: true}, onError: P.Function}};
-      }, this.$receiver, "_EventStream");
-    }, 94, 94, 94, 316, 154, 317, 318, "listen"]
+    }
   },
   _ElementEventStreamImpl: {
-    "^": "_EventStream;_target-,_eventType-,_useCapture-"
+    "^": "_EventStream;_target,_eventType,_useCapture"
   },
   _EventStreamSubscription: {
-    "^": "StreamSubscription;_pauseCount-,_target-,_eventType-,_onData-,_useCapture-",
-    cancel$0: [function() {
+    "^": "StreamSubscription;_pauseCount,_target,_eventType,_onData,_useCapture",
+    cancel$0: function() {
       if (this._target == null)
         return;
       this._unlisten$0();
       this._target = null;
       this._onData = null;
       return;
-    }, "call$0", "get$cancel", 0, 0, 319, "cancel"],
-    _tryResume$0: [function() {
+    },
+    _tryResume$0: function() {
       var t1 = this._onData;
       if (t1 != null && this._pauseCount <= 0)
         J.addEventListener$3$x(this._target, this._eventType, t1, this._useCapture);
-    }, "call$0", "get$_tryResume", 0, 0, 116, "_tryResume"],
-    _unlisten$0: [function() {
+    },
+    _unlisten$0: function() {
       var t1 = this._onData;
       if (t1 != null)
         J.removeEventListener$3$x(this._target, this._eventType, t1, this._useCapture);
-    }, "call$0", "get$_unlisten", 0, 0, 116, "_unlisten"]
+    }
   },
   _DOMWindowCrossFrame: {
-    "^": "Object;_window-",
+    "^": "Object;_window",
     $isEventTarget: true,
-    static: {_DOMWindowCrossFrame__createSafe: [function(w) {
+    static: {_DOMWindowCrossFrame__createSafe: function(w) {
         if (w === window)
           return w;
         else
           return new W._DOMWindowCrossFrame(w);
-      }, "call$1", "_DOMWindowCrossFrame__createSafe$closure", 2, 0, 211, 212, "_createSafe"]}
+      }}
   }
 }],
 ["dart.dom.svg", "dart:svg", , P, {
   "^": "",
   FEBlendElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEBlendElement"
   },
   FEColorMatrixElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEColorMatrixElement"
   },
   FEComponentTransferElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEComponentTransferElement"
   },
   FECompositeElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFECompositeElement"
   },
   FEConvolveMatrixElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEConvolveMatrixElement"
   },
   FEDiffuseLightingElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEDiffuseLightingElement"
   },
   FEDisplacementMapElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEDisplacementMapElement"
   },
   FEFloodElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEFloodElement"
   },
   FEGaussianBlurElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEGaussianBlurElement"
   },
   FEImageElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEImageElement"
   },
   FEMergeElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEMergeElement"
   },
   FEMorphologyElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEMorphologyElement"
   },
   FEOffsetElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFEOffsetElement"
   },
   FESpecularLightingElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFESpecularLightingElement"
   },
   FETileElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFETileElement"
   },
   FETurbulenceElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFETurbulenceElement"
   },
   FilterElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGFilterElement"
   },
   ForeignObjectElement: {
-    "^": "GraphicsElement;height=-,width=-",
+    "^": "GraphicsElement;height=,width=",
     "%": "SVGForeignObjectElement"
   },
   GeometryElement: {
@@ -6034,38 +5657,38 @@ var $$ = {};
     "%": "SVGAElement|SVGAltGlyphElement|SVGClipPathElement|SVGDefsElement|SVGGElement|SVGSwitchElement|SVGTSpanElement|SVGTextContentElement|SVGTextElement|SVGTextPathElement|SVGTextPositioningElement;SVGGraphicsElement"
   },
   ImageElement0: {
-    "^": "GraphicsElement;height=-,width=-",
+    "^": "GraphicsElement;height=,width=",
     "%": "SVGImageElement"
   },
   MaskElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGMaskElement"
   },
   PatternElement: {
-    "^": "SvgElement;height=-,width=-",
+    "^": "SvgElement;height=,width=",
     "%": "SVGPatternElement"
   },
   RectElement: {
-    "^": "GeometryElement;height=-,width=-",
+    "^": "GeometryElement;height=,width=",
     "%": "SVGRectElement"
   },
   SvgElement: {
     "^": "Element;",
-    get$onClick: [function(receiver) {
+    get$onClick: function(receiver) {
       return H.setRuntimeTypeInfo(new W._ElementEventStreamImpl(receiver, C.EventStreamProvider_click._eventType, false), [null]);
-    }, null, null, 1, 0, 224, "onClick"],
-    get$onMouseMove: [function(receiver) {
+    },
+    get$onMouseMove: function(receiver) {
       return H.setRuntimeTypeInfo(new W._ElementEventStreamImpl(receiver, C.EventStreamProvider_mousemove._eventType, false), [null]);
-    }, null, null, 1, 0, 224, "onMouseMove"],
+    },
     $isEventTarget: true,
     "%": "SVGAltGlyphDefElement|SVGAltGlyphItemElement|SVGAnimateElement|SVGAnimateMotionElement|SVGAnimateTransformElement|SVGAnimationElement|SVGComponentTransferFunctionElement|SVGCursorElement|SVGDescElement|SVGDiscardElement|SVGFEDistantLightElement|SVGFEDropShadowElement|SVGFEFuncAElement|SVGFEFuncBElement|SVGFEFuncGElement|SVGFEFuncRElement|SVGFEMergeNodeElement|SVGFEPointLightElement|SVGFESpotLightElement|SVGFontElement|SVGFontFaceElement|SVGFontFaceFormatElement|SVGFontFaceNameElement|SVGFontFaceSrcElement|SVGFontFaceUriElement|SVGGlyphElement|SVGGlyphRefElement|SVGGradientElement|SVGHKernElement|SVGLinearGradientElement|SVGMPathElement|SVGMarkerElement|SVGMetadataElement|SVGMissingGlyphElement|SVGRadialGradientElement|SVGScriptElement|SVGSetElement|SVGStopElement|SVGStyleElement|SVGSymbolElement|SVGTitleElement|SVGVKernElement|SVGViewElement;SVGElement"
   },
   SvgSvgElement: {
-    "^": "GraphicsElement;height=-,width=-",
+    "^": "GraphicsElement;height=,width=",
     "%": "SVGSVGElement"
   },
   UseElement: {
-    "^": "GraphicsElement;height=-,width=-",
+    "^": "GraphicsElement;height=,width=",
     "%": "SVGUseElement"
   }
 }],
@@ -6074,55 +5697,29 @@ var $$ = {};
   Capability: {
     "^": "Object;",
     $isCapability: true,
-    static: {Capability_Capability: [function() {
+    static: {Capability_Capability: function() {
         return new H.CapabilityImpl((Math.random() * 0x100000000 >>> 0) + (Math.random() * 0x100000000 >>> 0) * 4294967296);
-      }, "call$0", null, 0, 0, 214, "new Capability"]}
-  },
-  SendPort: {
-    "^": "Object;",
-    $isSendPort: true,
-    $isCapability: true
+      }}
   }
 }],
 ["dart.math", "dart:math", , P, {
   "^": "",
-  _JenkinsSmiHash_combine0: [function(hash, value) {
+  _JenkinsSmiHash_combine0: function(hash, value) {
     hash = 536870911 & hash + value;
     hash = 536870911 & hash + ((524287 & hash) << 10 >>> 0);
     return hash ^ hash >>> 6;
-  }, "call$2", "_JenkinsSmiHash_combine0$closure", 4, 0, 208, 209, 32, "combine"],
-  _JenkinsSmiHash_finish: [function(hash) {
+  },
+  _JenkinsSmiHash_finish: function(hash) {
     hash = 536870911 & hash + ((67108863 & hash) << 3 >>> 0);
     hash ^= hash >>> 11;
     return 536870911 & hash + ((16383 & hash) << 15 >>> 0);
-  }, "call$1", "_JenkinsSmiHash_finish$closure", 2, 0, 215, 209, "finish"],
-  max: [function(a, b) {
-    if (typeof a !== "number")
-      throw H.wrapException(P.ArgumentError$(a));
-    if (typeof b !== "number")
-      throw H.wrapException(P.ArgumentError$(b));
-    if (a > b)
-      return a;
-    if (a < b)
-      return b;
-    if (typeof b === "number") {
-      if (typeof a === "number")
-        if (a === 0)
-          return a + b;
-      if (isNaN(b))
-        return b;
-      return a;
-    }
-    if (b === 0 && a === 0 && 1 / a < 0)
-      return b;
-    return a;
-  }, "call$2", "max$closure", 4, 0, 216, 174, 175, "max"],
+  },
   Point: {
-    "^": "Object;x>-,y>-",
-    toString$0: [function(_) {
+    "^": "Object;x>,y>",
+    toString$0: function(_) {
       return "Point(" + H.S(this.x) + ", " + H.S(this.y) + ")";
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    $eq: [function(_, other) {
+    },
+    $eq: function(_, other) {
       var t1, t2;
       if (other == null)
         return false;
@@ -6138,14 +5735,14 @@ var $$ = {};
       } else
         t1 = false;
       return t1;
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(_) {
+    },
+    get$hashCode: function(_) {
       var t1, t2;
       t1 = J.get$hashCode$(this.x);
       t2 = J.get$hashCode$(this.y);
       return P._JenkinsSmiHash_finish(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(0, t1), t2));
-    }, null, null, 1, 0, 229, "hashCode"],
-    $add: [function(_, other) {
+    },
+    $add: function(_, other) {
       var t1, t2, t3;
       t1 = this.x;
       t2 = C.JSInt_methods.get$x(other);
@@ -6159,39 +5756,27 @@ var $$ = {};
       t3 = new P.Point(t2, C.JSNumber_methods.$add(t1, t3));
       t3.$builtinTypeInfo = this.$builtinTypeInfo;
       return t3;
-    }, "call$1", "get$+", 2, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "Point__Point", ret: [P.Point, T], args: [[P.Point, T]]};
-      }, this.$receiver, "Point");
-    }, 203, "+"],
+    },
     $isPoint: true
   },
   _RectangleBase: {
     "^": "Object;",
-    get$right: [function(_) {
+    get$right: function(_) {
       var t1 = this.get$left(this);
       if (typeof t1 !== "number")
         return t1.$add();
       return t1 + this.width;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "T_1", ret: T};
-      }, this.$receiver, "_RectangleBase");
-    }, "right"],
-    get$bottom: [function(_) {
+    },
+    get$bottom: function(_) {
       var t1 = this.get$top(this);
       if (typeof t1 !== "number")
         return t1.$add();
       return t1 + this.height;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "T_1", ret: T};
-      }, this.$receiver, "_RectangleBase");
-    }, "bottom"],
-    toString$0: [function(_) {
+    },
+    toString$0: function(_) {
       return "Rectangle (" + H.S(this.get$left(this)) + ", " + H.S(this.top) + ") " + this.width + " x " + this.height;
-    }, "call$0", "get$toString", 0, 0, 14, "toString"],
-    $eq: [function(_, other) {
+    },
+    $eq: function(_, other) {
       var t1, t2, t3;
       if (other == null)
         return false;
@@ -6218,8 +5803,8 @@ var $$ = {};
       } else
         t1 = false;
       return t1;
-    }, "call$1", "get$==", 2, 0, 24, 203, "=="],
-    get$hashCode: [function(_) {
+    },
+    get$hashCode: function(_) {
       var t1, t2, t3, t4;
       t1 = J.get$hashCode$(this.get$left(this));
       t2 = this.top;
@@ -6230,22 +5815,18 @@ var $$ = {};
       if (typeof t2 !== "number")
         return t2.$add();
       return P._JenkinsSmiHash_finish(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(0, t1), t3), t4 + this.width & 0x1FFFFFFF), t2 + this.height & 0x1FFFFFFF));
-    }, null, null, 1, 0, 229, "hashCode"],
-    get$topLeft: [function(_) {
+    },
+    get$topLeft: function(_) {
       var t1 = new P.Point(this.get$left(this), this.top);
       t1.$builtinTypeInfo = this.$builtinTypeInfo;
       return t1;
-    }, null, null, 1, 0, function() {
-      return H.computeSignature(function(T) {
-        return {func: "Point_0", ret: [P.Point, T]};
-      }, this.$receiver, "_RectangleBase");
-    }, "topLeft"]
+    }
   },
   Rectangle: {
-    "^": "_RectangleBase;left>-,top>-,width>-,height>-",
+    "^": "_RectangleBase;left>,top>,width>,height>",
     $isRectangle: true,
     $asRectangle: null,
-    static: {Rectangle$: [function(left, $top, width, height, $T) {
+    static: {Rectangle$: function(left, $top, width, height, $T) {
         var t1, t2;
         if (typeof width !== "number")
           return width.$lt();
@@ -6260,43 +5841,39 @@ var $$ = {};
         else
           t2 = height;
         return H.setRuntimeTypeInfo(new P.Rectangle(left, $top, t1, t2), [$T]);
-      }, null, null, 8, 0, function() {
-        return H.computeSignature(function(T) {
-          return {func: "dynamic__T_T_T_T", args: [T, T, T, T]};
-        }, this.$receiver, "Rectangle");
-      }, 217, 218, 219, 220, "new Rectangle"]}
+      }}
   }
 }],
 ["dart.typed_data.implementation", "dart:_native_typed_data", , H, {
   "^": "",
   NativeTypedData: {
     "^": "Interceptor;",
-    _invalidIndex$2: [function(receiver, index, $length) {
+    _invalidIndex$2: function(receiver, index, $length) {
       var t1 = J.getInterceptor$n(index);
       if (t1.$lt(index, 0) || t1.$ge(index, $length))
         throw H.wrapException(P.RangeError$range(index, 0, $length));
       else
         throw H.wrapException(P.ArgumentError$("Invalid list index " + H.S(index)));
-    }, "call$2", "get$_invalidIndex", 4, 0, 230, 43, 231, "_invalidIndex"],
+    },
     "%": ";ArrayBufferView;NativeTypedArray|NativeTypedArray_ListMixin|NativeTypedArray_ListMixin_FixedLengthListMixin|NativeTypedArrayOfInt"
   },
   NativeUint8List: {
     "^": "NativeTypedArrayOfInt;",
-    get$length: [function(receiver) {
+    get$length: function(receiver) {
       return receiver.length;
-    }, null, null, 1, 0, 229, "length"],
-    $index: [function(receiver, index) {
+    },
+    $index: function(receiver, index) {
       var t1 = receiver.length;
       if (index >>> 0 !== index || index >= t1)
         this._invalidIndex$2(receiver, index, t1);
       return receiver[index];
-    }, "call$1", "get$[]", 2, 0, 215, 43, "[]"],
-    $indexSet: [function(receiver, index, value) {
+    },
+    $indexSet: function(receiver, index, value) {
       var t1 = receiver.length;
       if (index >>> 0 !== index || index >= t1)
         this._invalidIndex$2(receiver, index, t1);
       receiver[index] = value;
-    }, "call$2", "get$[]=", 4, 0, 230, 43, 32, "[]="],
+    },
     $isList: true,
     $asList: function() {
       return [P.$int];
@@ -6305,9 +5882,9 @@ var $$ = {};
   },
   NativeTypedArray: {
     "^": "NativeTypedData;",
-    get$length: [function(receiver) {
+    get$length: function(receiver) {
       return receiver.length;
-    }, null, null, 1, 0, 229, "length"],
+    },
     $isJavaScriptIndexingBehavior: true
   },
   NativeTypedArrayOfInt: {
@@ -6330,7 +5907,7 @@ var $$ = {};
 }],
 ["dart2js._js_primitives", "dart:_js_primitives", , H, {
   "^": "",
-  printString: [function(string) {
+  printString: function(string) {
     if (typeof dartPrint == "function") {
       dartPrint(string);
       return;
@@ -6346,18 +5923,33 @@ var $$ = {};
       return;
     }
     throw "Unable to print message: " + String(string);
-  }, "call$1", "printString$closure", 2, 0, 78, 221, "printString"]
+  }
 }],
 ["diameter2d", "diameter.dart", , M, {
   "^": "",
-  Unit2DDiameter: {
+  UnitDiameter: {
     "^": "Object;",
-    get$intWidth: [function() {
+    get$intWidth: function() {
       return 1;
-    }, null, null, 1, 0, 229, "intWidth"],
-    get$intHeight: [function() {
+    },
+    get$intHeight: function() {
       return 1;
-    }, null, null, 1, 0, 229, "intHeight"]
+    }
+  },
+  CustomIntDiameter: {
+    "^": "Object;",
+    get$intDiameter: function() {
+      return this.diameter2d$CustomIntDiameter$_diameter;
+    },
+    get$intWidth: function() {
+      return this.diameter2d$CustomIntDiameter$_diameter;
+    },
+    get$intHeight: function() {
+      return this.diameter2d$CustomIntDiameter$_diameter;
+    },
+    setIntDiameter$1: function(diameter) {
+      this.diameter2d$CustomIntDiameter$_diameter = diameter;
+    }
   }
 }],
 ["", "main.dart", , F, {
@@ -6370,8 +5962,8 @@ var $$ = {};
     H.setRuntimeTypeInfo(new W._EventStreamSubscription(0, t1._target, t1._eventType, W._wrapZone(new F.main_closure()), t1._useCapture), [H.getTypeArgumentByIndex(t1, 0)])._tryResume$0();
     t1 = J.get$onMouseMove$x($.get$canvas());
     H.setRuntimeTypeInfo(new W._EventStreamSubscription(0, t1._target, t1._eventType, W._wrapZone(new F.main_closure0()), t1._useCapture), [H.getTypeArgumentByIndex(t1, 0)])._tryResume$0();
-  }, "call$0", "main$closure", 0, 0, 116, "main"],
-  render: [function() {
+  }, "call$0", "main$closure", 0, 0, 1],
+  render: function() {
     var t1 = $.get$context();
     t1.fillStyle = "rgba(0, 0, 0, 1)";
     t1.fillRect(0, 0, J.get$width$x($.get$canvas()), J.get$height$x($.get$canvas()));
@@ -6386,19 +5978,19 @@ var $$ = {};
     t1.closePath();
     t1.fill();
     t1.stroke();
-  }, "call$0", "render$closure", 0, 0, 116, "render"],
-  Cell: {
-    "^": "AbstractInt2DShape_CustomInt2DCorner_Unit2DDiameter;corner2d$CustomInt2DCorner$_x-,corner2d$CustomInt2DCorner$_y-"
   },
-  AbstractInt2DShape_CustomInt2DCorner0: {
+  Cell: {
+    "^": "AbstractInt2DShape_CustomInt2DCorner_UnitDiameter;corner2d$CustomInt2DCorner$_x,corner2d$CustomInt2DCorner$_y"
+  },
+  AbstractInt2DShape_CustomInt2DCorner: {
     "^": "AbstractInt2DShape+CustomInt2DCorner;"
   },
-  AbstractInt2DShape_CustomInt2DCorner_Unit2DDiameter: {
-    "^": "AbstractInt2DShape_CustomInt2DCorner0+Unit2DDiameter;"
+  AbstractInt2DShape_CustomInt2DCorner_UnitDiameter: {
+    "^": "AbstractInt2DShape_CustomInt2DCorner+UnitDiameter;"
   },
   main_closure: {
-    "^": "Closure:320;",
-    call$1: [function(e) {
+    "^": "Closure:18;",
+    call$1: function(e) {
       var t1, t2, shape, t3;
       t1 = J.getInterceptor$x(e);
       t2 = t1.get$offset(e);
@@ -6425,11 +6017,11 @@ var $$ = {};
       }
       t1.root.findNode$1(shape)._shapes.push(shape);
       F.render();
-    }, "call$1", null, 2, 0, 320, 16, "call"]
+    }
   },
   main_closure0: {
-    "^": "Closure:320;",
-    call$1: [function(e) {
+    "^": "Closure:18;",
+    call$1: function(e) {
       var t1, t2, x, y;
       F.render();
       t1 = J.getInterceptor$x(e);
@@ -6446,11 +6038,11 @@ var $$ = {};
         return t1.$div();
       y = C.JSNumber_methods.toInt$0(Math.floor(t1 / 16));
       $.get$context().strokeRect(x * 16 + 1, y * 16 + 1, 14, 14);
-    }, "call$1", null, 2, 0, 320, 16, "call"]
+    }
   },
   render_closure: {
-    "^": "Closure:321;",
-    call$1: [function(shape) {
+    "^": "Closure:19;",
+    call$1: function(shape) {
       var t1, t2, t3;
       t1 = $.get$context();
       t2 = shape.get$intLeftX();
@@ -6460,13 +6052,16 @@ var $$ = {};
       if (typeof t3 !== "number")
         return t3.$mul();
       t1.fillRect(t2 * 16 + 2, t3 * 16 + 2, 12, 12);
-    }, "call$1", null, 2, 0, 321, 322, "call"]
+    }
   },
   render_closure0: {
-    "^": "Closure:323;",
-    call$1: [function(node) {
-      var size, t1, t2, t3;
-      size = 16 * node.get$intDiameter();
+    "^": "Closure:20;",
+    call$1: function(node) {
+      var t1, size, t2, t3;
+      t1 = node.get$intDiameter();
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      size = 16 * t1;
       t1 = $.get$context();
       t2 = node.get$intLeftX();
       if (typeof t2 !== "number")
@@ -6475,7 +6070,7 @@ var $$ = {};
       if (typeof t3 !== "number")
         return t3.$mul();
       t1.strokeRect(t2 * 16, t3 * 16, size, size);
-    }, "call$1", null, 2, 0, 323, 324, "call"]
+    }
   }
 },
 1],
@@ -6485,24 +6080,18 @@ var $$ = {};
     "^": "Object;"
   },
   QuadTree: {
-    "^": "Abstract2DSpacePartitioningSystem;root-",
-    QuadTree$3: [function(x, y, size, $S) {
-      var t1, t2, t3;
-      t1 = H.setRuntimeTypeInfo(Array(4), [K.QuadTreeNode]);
-      t2 = H.setRuntimeTypeInfo([], [$S]);
-      t3 = new A.CustomInt2DBox(null, null, null, null);
-      t3.setIntCorner$2(0, 0);
-      t3.setIntSize$2(1, 1);
-      t3 = H.setRuntimeTypeInfo(new K.QuadTreeNode(null, this, t1, t2, t3, null, null, null, null), [$S]);
-      t3.setIntCorner$2(x, y);
-      t3.setIntSize$2(size, size);
-      this.root = t3;
-    }, null, null, 6, 0, 325, 25, 276, 326, ""]
+    "^": "Abstract2DSpacePartitioningSystem;root",
+    QuadTree$3: function(x, y, size, $S) {
+      var t1 = H.setRuntimeTypeInfo(new K.QuadTreeNode(null, this, H.setRuntimeTypeInfo(Array(4), [K.QuadTreeNode]), H.setRuntimeTypeInfo([], [$S]), null, null, null), [$S]);
+      t1.setIntCorner$2(x, y);
+      t1.setIntDiameter$1(size);
+      this.root = t1;
+    }
   },
   QuadTreeNode: {
-    "^": "CustomInt2DBox;_parent-,_system-,_children-,_shapes-,serviceShape-,size2d$CustomInt2DSize$_width-,size2d$CustomInt2DSize$_height-,corner2d$CustomInt2DCorner$_x-,corner2d$CustomInt2DCorner$_y-",
-    findNode$1: [function(shape) {
-      var t1, t2, t3, t4, x, y, t5, t6, t7, t8;
+    "^": "AbstractInt2DShape_CustomInt2DCorner_CustomIntDiameter;_parent,_system,_children,_shapes,diameter2d$CustomIntDiameter$_diameter,corner2d$CustomInt2DCorner$_x,corner2d$CustomInt2DCorner$_y",
+    findNode$1: function(shape) {
+      var t1, t2, t3, t4, x, y, t5, t6;
       t1 = shape.get$intLeftX();
       t1.toString;
       t2 = this.get$intLeftX();
@@ -6569,46 +6158,49 @@ var $$ = {};
           y = t1 < t2 ? 1 : 0;
           t1 = this.get$intLeftX();
           t2 = this.get$intDiameter();
+          if (typeof t2 !== "number")
+            return t2.$mul();
           if (typeof t1 !== "number")
             return t1.$sub();
           t3 = this.get$intTopY();
           t4 = this.get$intDiameter();
+          if (typeof t4 !== "number")
+            return t4.$mul();
           if (typeof t3 !== "number")
             return t3.$sub();
-          t5 = this.get$intDiameter() * 2;
-          t6 = H.setRuntimeTypeInfo(Array(4), [K.QuadTreeNode]);
-          t7 = H.setRuntimeTypeInfo([], [null]);
-          t8 = new A.CustomInt2DBox(null, null, null, null);
-          t8.setIntCorner$2(0, 0);
-          t8.setIntSize$2(1, 1);
-          t8 = H.setRuntimeTypeInfo(new K.QuadTreeNode(null, this._system, t6, t7, t8, null, null, null, null), [null]);
-          t8.setIntCorner$2(t1 - t2 * x, t3 - t4 * y);
-          t8.setIntSize$2(t5, t5);
-          this._parent = t8;
-          t5 = t8._children;
+          t5 = this.get$intDiameter();
+          if (typeof t5 !== "number")
+            return t5.$mul();
+          t6 = H.setRuntimeTypeInfo(new K.QuadTreeNode(null, this._system, H.setRuntimeTypeInfo(Array(4), [K.QuadTreeNode]), H.setRuntimeTypeInfo([], [null]), null, null, null), [null]);
+          t6.setIntCorner$2(t1 - t2 * x, t3 - t4 * y);
+          t6.setIntDiameter$1(t5 * 2);
+          this._parent = t6;
+          t5 = t6._children;
           t4 = x + y * 2;
           if (t4 >= 4)
             return H.ioore(t5, t4);
           t5[t4] = this;
-          t1 = t8;
+          t1 = t6;
         }
         this._system.root = t1;
         return t1.findNode$1(shape);
       }
       return this._findNode$1(shape);
-    }, "call$1", "get$findNode", 2, 0, function() {
-      return H.computeSignature(function(S) {
-        return {func: "QuadTreeNode__S", ret: [K.QuadTreeNode, S], args: [S]};
-      }, this.$receiver, "QuadTreeNode");
-    }, 322, "findNode"],
-    _findNode$1: [function(shape) {
-      var t1, t2, t3, posX, t4, posY, pos, child, t5, t6, t7, t8, t9;
+    },
+    _findNode$1: function(shape) {
+      var t1, t2, t3, posX, t4, posY, pos, child, t5, t6, t7, t8;
       $loop$0: {
-        if (this.get$intDiameter() > 2) {
+        t1 = this.get$intDiameter();
+        if (typeof t1 !== "number")
+          return t1.$gt();
+        if (t1 > 2) {
           t1 = shape.get$intLeftX();
           t1.toString;
           t2 = this.get$intLeftX();
-          t3 = C.JSInt_methods._tdivFast$1(this.get$intDiameter(), 2);
+          t3 = this.get$intDiameter();
+          if (typeof t3 !== "number")
+            return t3.$tdiv();
+          t3 = C.JSInt_methods._tdivFast$1(t3, 2);
           if (typeof t2 !== "number")
             return t2.$add();
           if (typeof t1 !== "number")
@@ -6620,7 +6212,10 @@ var $$ = {};
             if (typeof t1 !== "number")
               return t1.$add();
             t3 = this.get$intLeftX();
-            t4 = C.JSInt_methods._tdivFast$1(this.get$intDiameter(), 2);
+            t4 = this.get$intDiameter();
+            if (typeof t4 !== "number")
+              return t4.$tdiv();
+            t4 = C.JSInt_methods._tdivFast$1(t4, 2);
             if (typeof t3 !== "number")
               return t3.$add();
             t4 = t1 + t2 > t3 + t4;
@@ -6632,7 +6227,10 @@ var $$ = {};
           t1 = shape.get$intTopY();
           t1.toString;
           t2 = this.get$intTopY();
-          t3 = C.JSInt_methods._tdivFast$1(this.get$intDiameter(), 2);
+          t3 = this.get$intDiameter();
+          if (typeof t3 !== "number")
+            return t3.$tdiv();
+          t3 = C.JSInt_methods._tdivFast$1(t3, 2);
           if (typeof t2 !== "number")
             return t2.$add();
           if (typeof t1 !== "number")
@@ -6644,7 +6242,10 @@ var $$ = {};
             if (typeof t1 !== "number")
               return t1.$add();
             t3 = this.get$intTopY();
-            t4 = C.JSInt_methods._tdivFast$1(this.get$intDiameter(), 2);
+            t4 = this.get$intDiameter();
+            if (typeof t4 !== "number")
+              return t4.$tdiv();
+            t4 = C.JSInt_methods._tdivFast$1(t4, 2);
             if (typeof t3 !== "number")
               return t3.$add();
             t4 = t1 + t2 > t3 + t4;
@@ -6660,25 +6261,31 @@ var $$ = {};
           child = t1[pos];
           if (child == null) {
             t2 = this.get$intLeftX();
-            t3 = C.JSInt_methods._tdivFast$1(this.get$intDiameter(), 2);
+            t3 = this.get$intDiameter();
+            if (typeof t3 !== "number")
+              return t3.$tdiv();
+            t3 = C.JSInt_methods._tdivFast$1(t3, 2);
             if (typeof t2 !== "number")
               return t2.$add();
             t4 = this.get$intTopY();
-            t5 = C.JSInt_methods._tdivFast$1(this.get$intDiameter(), 2);
+            t5 = this.get$intDiameter();
+            if (typeof t5 !== "number")
+              return t5.$tdiv();
+            t5 = C.JSInt_methods._tdivFast$1(t5, 2);
             if (typeof t4 !== "number")
               return t4.$add();
-            t6 = C.JSInt_methods._tdivFast$1(this.get$intDiameter(), 2);
+            t6 = this.get$intDiameter();
+            if (typeof t6 !== "number")
+              return t6.$tdiv();
+            t6 = C.JSInt_methods._tdivFast$1(t6, 2);
             t7 = Array(4);
             t7.$builtinTypeInfo = [K.QuadTreeNode];
             t8 = [];
             t8.$builtinTypeInfo = [H.getTypeArgumentByIndex(this, 0)];
-            t9 = new A.CustomInt2DBox(null, null, null, null);
-            t9.setIntCorner$2(0, 0);
-            t9.setIntSize$2(1, 1);
-            child = new K.QuadTreeNode(this, this._system, t7, t8, t9, null, null, null, null);
+            child = new K.QuadTreeNode(this, this._system, t7, t8, null, null, null);
             child.$builtinTypeInfo = this.$builtinTypeInfo;
             child.setIntCorner$2(t2 + posX * t3, t4 + posY * t5);
-            child.setIntSize$2(t6, t6);
+            child.setIntDiameter$1(t6);
             t1[pos] = child;
           }
           return child._findNode$1(shape);
@@ -6686,19 +6293,11 @@ var $$ = {};
         return this;
       }
       return this;
-    }, "call$1", "get$_findNode", 2, 0, function() {
-      return H.computeSignature(function(S) {
-        return {func: "QuadTreeNode__S", ret: [K.QuadTreeNode, S], args: [S]};
-      }, this.$receiver, "QuadTreeNode");
-    }, 322, "_findNode"],
-    applyFunction$2: [function(region, func) {
+    },
+    applyFunction$2: function(region, func) {
       this._applyFunction$1(func);
-    }, "call$2", "get$applyFunction", 4, 0, function() {
-      return H.computeSignature(function(S) {
-        return {func: "void__Abstract2DShape_void__S", void: true, args: [R.Abstract2DShape, {func: "void__S", void: true, args: [S]}]};
-      }, this.$receiver, "QuadTreeNode");
-    }, 327, 328, "applyFunction"],
-    _applyFunction$1: [function(func) {
+    },
+    _applyFunction$1: function(func) {
       var t1, pos, child;
       for (t1 = this._shapes, t1 = new H.ListIterator(t1, t1.length, 0, null); t1.moveNext$0();)
         func.call$1(t1._current);
@@ -6707,19 +6306,11 @@ var $$ = {};
         if (child != null)
           child._applyFunction$1(func);
       }
-    }, "call$1", "get$_applyFunction", 2, 0, function() {
-      return H.computeSignature(function(S) {
-        return {func: "void__void__S", void: true, args: [{func: "void__S", void: true, args: [S]}]};
-      }, this.$receiver, "QuadTreeNode");
-    }, 328, "_applyFunction"],
-    applyFunctionToNodes$2: [function(region, func) {
+    },
+    applyFunctionToNodes$2: function(region, func) {
       this._applyFunctionToNodes$1(func);
-    }, "call$2", "get$applyFunctionToNodes", 4, 0, function() {
-      return H.computeSignature(function(S) {
-        return {func: "void__Abstract2DShape_void__QuadTreeNode", void: true, args: [R.Abstract2DShape, {func: "void__QuadTreeNode", void: true, args: [[K.QuadTreeNode, S]]}]};
-      }, this.$receiver, "QuadTreeNode");
-    }, 327, 328, "applyFunctionToNodes"],
-    _applyFunctionToNodes$1: [function(func) {
+    },
+    _applyFunctionToNodes$1: function(func) {
       var t1, pos, child;
       func.call$1(this);
       for (t1 = this._children, pos = 0; pos < 4; ++pos) {
@@ -6727,11 +6318,13 @@ var $$ = {};
         if (child != null)
           child._applyFunctionToNodes$1(func);
       }
-    }, "call$1", "get$_applyFunctionToNodes", 2, 0, function() {
-      return H.computeSignature(function(S) {
-        return {func: "void__void__QuadTreeNode", void: true, args: [{func: "void__QuadTreeNode", void: true, args: [[K.QuadTreeNode, S]]}]};
-      }, this.$receiver, "QuadTreeNode");
-    }, 328, "_applyFunctionToNodes"]
+    }
+  },
+  AbstractInt2DShape_CustomInt2DCorner0: {
+    "^": "AbstractInt2DShape+CustomInt2DCorner;"
+  },
+  AbstractInt2DShape_CustomInt2DCorner_CustomIntDiameter: {
+    "^": "AbstractInt2DShape_CustomInt2DCorner0+CustomIntDiameter;"
   }
 }],
 ["shape2d", "shape.dart", , R, {
@@ -6741,25 +6334,6 @@ var $$ = {};
   },
   AbstractInt2DShape: {
     "^": "Abstract2DShape;"
-  }
-}],
-["size2d", "size.dart", , Q, {
-  "^": "",
-  CustomInt2DSize: {
-    "^": "Object;",
-    get$intDiameter: [function() {
-      return P.max(this.size2d$CustomInt2DSize$_width, this.size2d$CustomInt2DSize$_height);
-    }, null, null, 1, 0, 229, "intDiameter"],
-    get$intWidth: [function() {
-      return this.size2d$CustomInt2DSize$_width;
-    }, null, null, 1, 0, 229, "intWidth"],
-    get$intHeight: [function() {
-      return this.size2d$CustomInt2DSize$_height;
-    }, null, null, 1, 0, 229, "intHeight"],
-    setIntSize$2: [function(width, height) {
-      this.size2d$CustomInt2DSize$_width = width;
-      this.size2d$CustomInt2DSize$_height = height;
-    }, "call$2", "get$setIntSize", 4, 0, 230, 219, 220, "setIntSize"]
   }
 }],
 ]);
@@ -6783,8 +6357,8 @@ H._IsolateEvent.$isObject = true;
 H._IsolateContext.$isObject = true;
 R.Abstract2DShape.$isAbstract2DShape = true;
 R.Abstract2DShape.$isObject = true;
-P.Symbol0.$isSymbol0 = true;
-P.Symbol0.$isObject = true;
+P.Symbol.$isSymbol = true;
+P.Symbol.$isObject = true;
 P.bool.$isbool = true;
 P.bool.$isObject = true;
 P.StackTrace.$isStackTrace = true;
@@ -7219,335 +6793,27 @@ Isolate.$lazy($, "context", "context", "get$context", function() {
 
 init.functionAliases = {};
 ;
-init.metadata = [{func: "args1", args: [null]},
-"object",
-{func: "args4", args: [null, null, null, null]},
-"interceptor",
-"proto",
-"extension",
-"indexability",
-{func: "dynamic___IsolateContext_Function", args: [H._IsolateContext, P.Function]},
-"isolate",
-"function",
-{func: "args0"},
-{func: "void__dynamic_dynamic", void: true, args: [null, null]},
-"entry",
-"args",
-{func: "String_", ret: P.String},
-"sender",
-"e",
-"msg",
-{func: "void__Function_List_dynamic_bool_bool_SendPort", void: true, args: [P.Function, [P.List, P.String], null, P.bool, P.bool, P.SendPort]},
-"topLevel",
-"message",
-"isSpawnUri",
-"startPaused",
-"replyTo",
-{func: "bool__dynamic", ret: P.bool, args: [null]},
-"x",
-{func: "dynamic__int_void_", args: [P.$int, {func: "void_", void: true}]},
-"milliseconds",
-"callback",
-{func: "bool__dynamic_dynamic", ret: P.bool, args: [null, null]},
-"record",
-{func: "String__dynamic", ret: P.String, args: [null]},
-"value",
-{func: "ReflectionInfo__dynamic", ret: H.ReflectionInfo, args: [null]},
-"jsFunction",
-{func: "int__dynamic", ret: P.$int, args: [null]},
-{func: "String__Object", ret: P.String, args: [P.Object]},
-"charCode",
-{func: "args2", args: [null, null]},
-"key",
-{func: "void__dynamic_dynamic_dynamic", void: true, args: [null, null, null]},
-"argument",
-"receiver",
-"index",
-"ex",
-{func: "dynamic__String", args: [P.String]},
-"expression",
-{func: "dynamic__String_dynamic", args: [P.String, null]},
-"_message",
-"match",
-{func: "dynamic__dynamic_Map", args: [null, P.Map]},
-"keyValuePairs",
-"result",
-{func: "dynamic__Function_dynamic_int_dynamic_dynamic_dynamic_dynamic", args: [P.Function, null, P.$int, null, null, null, null]},
-"closure",
-"numberOfArguments",
-"arg1",
-"arg2",
-"arg3",
-"arg4",
-{func: "dynamic__dynamic_int", args: [null, P.$int]},
-"arity",
-{func: "dynamic__dynamic_List_List_bool_dynamic_String", args: [null, P.List, P.List, P.bool, null, P.String]},
-"functions",
-"reflectionInfo",
-"isStatic",
-"jsArguments",
-"propertyName",
-{func: "dynamic__int_bool_String_dynamic", args: [P.$int, P.bool, P.String, null]},
-"isSuperCall",
-"stubName",
-{func: "dynamic__dynamic_dynamic_bool", args: [null, null, P.bool]},
-"isIntercepted",
-"name",
-{func: "args6", args: [null, null, null, null, null, null]},
-{func: "dynamic__BoundClosure", args: [H.BoundClosure]},
-{func: "String__String", ret: P.String, args: [P.String]},
-"fieldName",
-{func: "void__String", void: true, args: [P.String]},
-"staticName",
-"list",
-{func: "RuntimeFunctionType__dynamic_dynamic_dynamic", ret: H.RuntimeFunctionType, args: [null, null, null]},
-"returnType",
-"parameterTypes",
-"optionalParameterTypes",
-{func: "RuntimeType_", ret: H.RuntimeType},
-{func: "Object__Object_dynamic", ret: P.Object, args: [P.Object, null]},
-"target",
-"typeInfo",
-{func: "dynamic__Object", args: [P.Object]},
-"substitutionName",
-{func: "dynamic__Object_String_int", args: [P.Object, P.String, P.$int]},
-{func: "dynamic__Object_int", args: [P.Object, P.$int]},
-{func: "String__dynamic__String__int", ret: P.String, args: [null], named: {onTypeVariable: {func: "String__int", ret: P.String, args: [P.$int]}}},
-,
-"type",
-"onTypeVariable",
-{func: "String__dynamic_int__String__int", ret: P.String, args: [null, P.$int], named: {onTypeVariable: {func: "String__int", ret: P.String, args: [P.$int]}}},
-"types",
-"startIndex",
-"substitution",
-"arguments",
-"s",
-"t",
-{func: "args3", args: [null, null, null]},
-"signature",
-"context",
-"contextName",
-{func: "bool__List_List_bool", ret: P.bool, args: [P.List, P.List, P.bool]},
-"allowShorter",
-{func: "Object__dynamic_dynamic_dynamic", ret: P.Object, args: [null, null, null]},
-"obj",
-{func: "void__dynamic_String_dynamic", void: true, args: [null, P.String, null]},
-"property",
-"tag",
-"interceptorClass",
+init.metadata = [{func: "void__void_", void: true, args: [{func: "void_", void: true}]},
 {func: "void_", void: true},
-"transformer",
-"hooks",
-"iterable",
-{func: "void__Iterable_void__dynamic", void: true, args: [P.Iterable, {func: "void__dynamic", void: true, args: [null]}]},
-"f",
-{func: "String__Iterable_String_String", ret: P.String, args: [P.Iterable, P.String, P.String]},
-"leftDelimiter",
-"rightDelimiter",
-{func: "void__List_int_int_Iterable_int", void: true, args: [P.List, P.$int, P.$int, P.Iterable, P.$int]},
-"start",
-"end",
-"from",
-"skipCount",
-{func: "StateError_", ret: P.StateError},
-{func: "void__List_int_List_int_int", void: true, args: [P.List, P.$int, P.List, P.$int, P.$int]},
-"src",
-"srcStart",
-"dst",
-"dstStart",
-"count",
-{func: "String__Symbol", ret: P.String, args: [H.Symbol]},
-"symbol",
-{func: "List__dynamic", ret: P.List, args: [null]},
-"victim",
-{func: "Function_", ret: P.Function},
-{func: "void__void_", void: true, args: [{func: "void_", void: true}]},
-{func: "Function__Function_Zone", ret: P.Function, args: [P.Function, P.Zone]},
-"errorHandler",
-"zone",
-{func: "void__Future__Future", void: true, args: [P.Future, P._Future]},
-"source",
-{func: "void___Future__Future", void: true, args: [P._Future, P._Future]},
-"listeners",
-{func: "void__dynamic", void: true, args: [null]},
-{func: "dynamic__args0_args1_dynamic__dynamic_StackTrace", args: [{func: "args0"}, {func: "args1", args: [null]}, {func: "dynamic__dynamic_StackTrace", args: [null, P.StackTrace]}]},
-"userCode",
-"onSuccess",
-"onError",
-{func: "void__StreamSubscription__Future_dynamic_StackTrace", void: true, args: [P.StreamSubscription, P._Future, null, P.StackTrace]},
-"subscription",
-"future",
-"error",
-"stackTrace",
-{func: "dynamic__StreamSubscription__Future", args: [P.StreamSubscription, P._Future]},
-{func: "Timer__Duration_void_", ret: P.Timer, args: [P.Duration, {func: "void_", void: true}]},
-"duration",
-{func: "Zone__Zone", ret: P.Zone, args: [P.Zone]},
-{func: "void__Zone_ZoneDelegate_Zone_dynamic_StackTrace", void: true, args: [P.Zone, P.ZoneDelegate, P.Zone, null, P.StackTrace]},
-"self",
-"parent",
-{func: "dynamic__Zone_ZoneDelegate_Zone_args0", args: [P.Zone, P.ZoneDelegate, P.Zone, {func: "args0"}]},
-{func: "dynamic__Zone_ZoneDelegate_Zone_args1_dynamic", args: [P.Zone, P.ZoneDelegate, P.Zone, {func: "args1", args: [null]}, null]},
-"arg",
-{func: "dynamic__Zone_ZoneDelegate_Zone_args2_dynamic_dynamic", args: [P.Zone, P.ZoneDelegate, P.Zone, {func: "args2", args: [null, null]}, null, null]},
-{func: "void__Zone_ZoneDelegate_Zone_args0", void: true, args: [P.Zone, P.ZoneDelegate, P.Zone, {func: "args0"}]},
-{func: "Timer__Zone_ZoneDelegate_Zone_Duration_void_", ret: P.Timer, args: [P.Zone, P.ZoneDelegate, P.Zone, P.Duration, {func: "void_", void: true}]},
-"table",
-"a",
-"b",
-"equals",
-"hashCode",
-"isValidKey",
-{func: "String__Iterable", ret: P.String, args: [P.Iterable]},
-{func: "void__Iterable_List", void: true, args: [P.Iterable, P.List]},
-"parts",
-{func: "String__Map", ret: P.String, args: [P.Map]},
-"m",
-{func: "String__Symbol0", ret: P.String, args: [P.Symbol0]},
-{func: "dynamic___int_int_int_int_int_int", named: {days: P.$int, hours: P.$int, microseconds: P.$int, milliseconds: P.$int, minutes: P.$int, seconds: P.$int}},
-0,
-"days",
-"hours",
-"minutes",
-"seconds",
-"microseconds",
-{func: "dynamic___dynamic", opt: [null]},
-{func: "dynamic__num", args: [P.num]},
-{func: "dynamic__num_num_num", args: [P.num, P.num, P.num]},
-{func: "dynamic___String", opt: [P.String]},
-{func: "dynamic___Object", opt: [P.Object]},
-"modifiedObject",
-"variableName",
-{func: "Exception___dynamic", ret: P.Exception, opt: [null]},
+{func: "bool__dynamic_dynamic", ret: P.bool, args: [null, null]},
+{func: "int__dynamic", ret: P.$int, args: [null]},
 {func: "bool__Object_Object", ret: P.bool, args: [P.Object, P.Object]},
 {func: "int__Object", ret: P.$int, args: [P.Object]},
-true,
-"other",
-"growable",
-{func: "void__Object", void: true, args: [P.Object]},
-"",
-"content",
-{func: "int__int_int", ret: P.$int, args: [P.$int, P.$int]},
-"hash",
-{func: "EventTarget__dynamic", ret: W.EventTarget, args: [null]},
-{func: "WindowBase__dynamic", ret: W.WindowBase, args: [null]},
-"w",
-{func: "dynamic__args1", args: [{func: "args1", args: [null]}]},
-{func: "Capability_", ret: P.Capability},
-{func: "int__int", ret: P.$int, args: [P.$int]},
-{func: "num__num_num", ret: P.num, args: [P.num, P.num]},
-"left",
-"top",
-"width",
-"height",
-"string",
-{func: "CanvasRenderingContext2D_", ret: W.CanvasRenderingContext2D},
-{func: "Rectangle_", ret: P.Rectangle},
-{func: "ElementStream_", ret: [W.ElementStream, W.MouseEvent]},
-{func: "void__String_EventListener__bool", void: true, args: [P.String, {func: "dynamic__Event", args: [W.Event]}], opt: [P.bool]},
-"listener",
-"useCapture",
-{func: "Point_", ret: P.Point},
-{func: "int_", ret: P.$int},
-{func: "void__int_int", void: true, args: [P.$int, P.$int]},
-"length",
-{func: "bool__Object", ret: P.bool, args: [P.Object]},
-"element",
-{func: "void__int", void: true, args: [P.$int]},
-"newLength",
-{func: "num__num", ret: P.num, args: [P.num]},
-{func: "bool__num", ret: P.bool, args: [P.num]},
-{func: "String__int__int", ret: P.String, args: [P.$int], opt: [P.$int]},
-"endIndex",
-{func: "bool_", ret: P.bool},
-{func: "String__int", ret: P.String, args: [P.$int]},
-{func: "dynamic__Function", args: [P.Function]},
-{func: "void__Capability_Capability", void: true, args: [P.Capability, P.Capability]},
-"authentification",
-"resume",
-{func: "void__Capability", void: true, args: [P.Capability]},
-{func: "void__SendPort", void: true, args: [P.SendPort]},
-"responsePort",
-{func: "void__Capability_bool", void: true, args: [P.Capability, P.bool]},
-"errorsAreFatal",
-{func: "void__SendPort_int", void: true, args: [P.SendPort, P.$int]},
-"pingType",
-{func: "void__Capability_int", void: true, args: [P.Capability, P.$int]},
-"priority",
-"code",
-{func: "RawReceivePortImpl__int", ret: H.RawReceivePortImpl, args: [P.$int]},
-"portId",
-{func: "void__int_RawReceivePortImpl", void: true, args: [P.$int, H.RawReceivePortImpl]},
-"port",
-{func: "_IsolateEvent_", ret: H._IsolateEvent},
-"dataEvent",
-{func: "dynamic__SendPort", args: [P.SendPort]},
-{func: "dynamic__Capability", args: [P.Capability]},
-{func: "SendPort__List", ret: P.SendPort, args: [P.List]},
-{func: "Capability__List", ret: P.Capability, args: [P.List]},
-"info",
-{func: "List__List", ret: P.List, args: [P.List]},
-{func: "Map__Map", ret: P.Map, args: [P.Map]},
-"map",
-"val",
-{func: "dynamic__List", args: [P.List]},
-{func: "dynamic__Map", args: [P.Map]},
-{func: "Map__List", ret: P.Map, args: [P.List]},
-"o",
+{func: "args0"},
+{func: "args2", args: [null, null]},
+{func: "args1", args: [null]},
 {func: "dynamic__dynamic_String", args: [null, P.String]},
-"y",
-{func: "dynamic__bool", args: [P.bool]},
-{func: "_AsyncError_", ret: P._AsyncError},
-{func: "void__Object_StackTrace", void: true, args: [P.Object, P.StackTrace]},
-{func: "void___Future", void: true, args: [P._Future]},
-{func: "_Future_", ret: P._Future},
+{func: "dynamic__String", args: [P.String]},
 {func: "void__dynamic__StackTrace", void: true, args: [null], opt: [P.StackTrace]},
+,
 {func: "dynamic__dynamic__dynamic", args: [null], opt: [null]},
-"ignored",
-"action",
-{func: "Future_", ret: [P.Future, P.$int]},
-"_",
+{func: "bool_", ret: P.bool},
 {func: "dynamic__dynamic_StackTrace", args: [null, P.StackTrace]},
-{func: "dynamic__args0", args: [{func: "args0"}]},
-{func: "dynamic__args1_dynamic", args: [{func: "args1", args: [null]}, null]},
-{func: "ZoneCallback__args0__bool", ret: {func: "args0"}, args: [{func: "args0"}], named: {runGuarded: P.bool}},
-"runGuarded",
-{func: "ZoneUnaryCallback__args1__bool", ret: {func: "args1", args: [null]}, args: [{func: "args1", args: [null]}], named: {runGuarded: P.bool}},
-{func: "ZoneCallback__args0", ret: {func: "args0"}, args: [{func: "args0"}]},
-{func: "ZoneUnaryCallback__args1", ret: {func: "args1", args: [null]}, args: [{func: "args1", args: [null]}]},
-{func: "List_", ret: P.List},
-{func: "int__dynamic_dynamic", ret: P.$int, args: [null, null]},
-"bucket",
-"each",
-{func: "void__LinkedHashMapCell", void: true, args: [P.LinkedHashMapCell]},
-"cell",
-{func: "bool__dynamic_Object", ret: P.bool, args: [null, P.Object]},
-{func: "void__LinkedHashSetCell", void: true, args: [P.LinkedHashSetCell]},
-"k",
-"v",
-{func: "dynamic___int", opt: [P.$int]},
-"initialCapacity",
-{func: "dynamic__Symbol_dynamic", args: [P.Symbol0, null]},
-{func: "Duration__Duration", ret: P.Duration, args: [P.Duration]},
-{func: "bool__Duration", ret: P.bool, args: [P.Duration]},
-"n",
-{func: "StackTrace_", ret: P.StackTrace},
-{func: "void__Iterable__String", void: true, args: [P.Iterable], opt: [P.String]},
-"objects",
-"separator",
-"onData",
-"onDone",
-"cancelOnError",
-{func: "Future_0", ret: P.Future},
+{func: "dynamic__Symbol_dynamic", args: [P.Symbol, null]},
+{func: "String__int", ret: P.String, args: [P.$int]},
 {func: "dynamic__MouseEvent", args: [W.MouseEvent]},
 {func: "dynamic__Abstract2DShape", args: [R.Abstract2DShape]},
-"shape",
 {func: "dynamic__QuadTreeNode", args: [K.QuadTreeNode]},
-"node",
-{func: "dynamic__int_int_int", args: [P.$int, P.$int, P.$int]},
-"size",
-"region",
-"func",
 ];
 $ = null;
 Isolate = Isolate.$finishIsolateConstructor(Isolate);

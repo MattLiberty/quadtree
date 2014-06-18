@@ -1,5 +1,6 @@
 import "shape.dart";
-import "custom.dart";
+import "corner.dart";
+import "diameter.dart";
 
 
 abstract class Abstract2DSpacePartitioningSystem<S extends Abstract2DShape> {
@@ -23,8 +24,6 @@ class QuadTree<S extends Abstract2DShape>
   QuadTreeNode<S> findNode(S shape) => root.findNode(shape);
 
   S findShape(S shape) => root.findShape(shape);
-  S findShapeByRegionCoords(int x, int y, int width, int height)
-      => root.findShapeByRegionCoords(x, y, width, height);
 
   void insertShape(S shape) {
     root.insertShape(shape);
@@ -49,14 +48,17 @@ class QuadTree<S extends Abstract2DShape>
 }
 
 
-class QuadTreeNode<S extends Abstract2DShape> extends CustomInt2DBox {
+class QuadTreeNode<S extends Abstract2DShape> extends AbstractInt2DShape
+    with CustomInt2DCorner, CustomIntDiameter {
   QuadTreeNode _parent;
   QuadTree _system;
   final List<QuadTreeNode> _children = new List<QuadTreeNode>(4);
   final List<S> _shapes = new List<S>();
 
-  QuadTreeNode(int x, int y, int size, this._parent, this._system)
-      : super(x, y, size, size);
+  QuadTreeNode(int x, int y, int size, this._parent, this._system) {
+    setIntCorner(x, y);
+    setIntDiameter(size);
+  }
 
   QuadTreeNode<S> findNode(S shape) {
     if(shape.leftX < intLeftX || shape.rightX > intRightX
@@ -91,13 +93,6 @@ class QuadTreeNode<S extends Abstract2DShape> extends CustomInt2DBox {
       return child._findNode(shape);
     }
     return this;
-  }
-
-  final serviceShape = new CustomInt2DBox.unit();
-  S findShapeByRegionCoords(int x, int y, int width, int height) {
-    serviceShape.setCornerCoords(x, y);
-    serviceShape.setSize(width, height);
-    return findShape(serviceShape);
   }
 
   S findShape(Abstract2DShape shape) {
